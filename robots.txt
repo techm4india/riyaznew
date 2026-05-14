@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.techm4u.com/sitemap.xml
+Sitemap: https://www.techm4india.com/sitemap.xml
 
 # TechM4India - Building India's Innovation Ecosystem
-# www.techm4u.com
+# www.techm4india.com
