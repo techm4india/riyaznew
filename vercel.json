@@ -3,8 +3,8 @@
   "version": 2,
 
   "routes": [
+    { "src": "/", "dest": "/index.html" }
     {"src": "/home","dest": "/index.html"},
-    { "src": "/", "dest": "/index.html" },
     { "src": "/engineering", "dest": "/engineering.html" },
     { "src": "/solutions", "dest": "/solutions.html" },
     { "src": "/space", "dest": "/space.html" },
