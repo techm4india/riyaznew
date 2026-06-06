@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+
 Disallow: /admin
 Disallow: /admin.html
-Sitemap: https://www.techm4india.com/sitemap.xml
+
+Sitemap: https://techm4india.com/sitemap.xml
