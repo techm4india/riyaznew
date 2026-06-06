@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-
+Disallow: /admin
+Disallow: /admin.html
 Sitemap: https://www.techm4india.com/sitemap.xml
-
-# TechM4India - Building India's Innovation Ecosystem
-# www.techm4india.com

@@ -18,14 +18,14 @@ PRIORITY_MAP = {
     "/solutions": "0.9",
     "/space": "0.9",
     "/schools": "0.9",
-    "/about": "0.8",
+    "/research": "0.9",
     "/programs": "0.8",
-    "/research": "0.8",
     "/ecosystem": "0.8",
-    "/impact": "0.7",
-    "/vision": "0.7",
+    "/about": "0.7",
+    "/contact": "0.7",
     "/careers": "0.7",
-    "/contact": "0.6"
+    "/impact": "0.7",
+    "/vision": "0.7"
 }
 
 CHANGEFREQ_MAP = {
