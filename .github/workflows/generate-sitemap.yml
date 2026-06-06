@@ -1,0 +1,39 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.html'
+      - 'vercel.json'
+      - 'generate_sitemap.py'
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history so git log can determine file modification dates
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run Sitemap Generator
+        run: python generate_sitemap.py
+
+      - name: Commit and Push Sitemap Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          if ! git diff --quiet --cached; then
+            git commit -m "chore: auto-generate sitemap.xml [skip ci]"
+            git push
+          else
+            echo "No changes to sitemap.xml"
+          fi
