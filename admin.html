@@ -8,25 +8,54 @@
 <title>Dashboard — TechM4India</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --orange:#FF6B35;--pink:#FF4D8D;--purple:#7B2FF7;--blue:#0EA5E9;
-  --green:#22C55E;--yellow:#FFD60A;--ink:#1A1A2E;--bg:#F4F6FA;
-  --g-main:linear-gradient(135deg,#FF6B35,#FF4D8D);
-  --g-cool:linear-gradient(135deg,#0EA5E9,#7B2FF7);
+  --navy:#0B1F3A;
+  --royal:#1A3F7A;
+  --blue:#1E6FD9;
+  --red:#D72638;
+  --orange:#FF6B35;
+  --white:#FFFFFF;
+  --offwhite:#F7F9FC;
+  --grey:#C9D1D9;
+  --grey2:#8B98A9;
+  --ink:#0D1B2A;
+  --civil:#1E6FD9;
+  --mech:#D72638;
+  --g-civil:linear-gradient(135deg,#1E6FD9,#0B1F3A);
+  --g-mech:linear-gradient(135deg,#D72638,#7B0F1E);
+  --g-brand:linear-gradient(135deg,#FF6B35,#D72638);
+  --shadow-sm:0 2px 8px rgba(11,31,58,.08);
+  --shadow-md:0 8px 32px rgba(11,31,58,.12);
+  --shadow-lg:0 24px 64px rgba(11,31,58,.18);
+  
+  /* Fallback aliases for legacy variables */
+  --bg:#F7F9FC;
+  --ink-l:#8B98A9;
+  --border:rgba(11,31,58,.08);
+  --surface:#FFFFFF;
+  --pink:#D72638;
+  --purple:#1A3F7A;
+  --green:#16A34A;
+  --yellow:#FF6B35;
+  --teal:#1E6FD9;
+  --g-main:linear-gradient(135deg,#FF6B35,#D72638);
+  --g-cool:linear-gradient(135deg,#1E6FD9,#0B1F3A);
+  --g-warm:linear-gradient(135deg,#FF6B35,#D72638);
+  --g-green:linear-gradient(135deg,#1E6FD9,#0B1F3A);
   --sidebar-w:260px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden}
-body{font-family:'Quicksand',sans-serif;background:var(--bg);color:var(--ink);display:flex}
-h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);display:flex}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:900}
 
 /* SIDEBAR */
 .sidebar{width:var(--sidebar-w);background:var(--ink);height:100vh;display:flex;flex-direction:column;position:fixed;left:0;top:0;bottom:0;overflow-y:auto;transition:width .3s;z-index:100;flex-shrink:0}
 .sidebar::-webkit-scrollbar{width:0}
 .sb-top{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,.06)}
-.sb-logo{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.sb-logo{font-family:'Sora',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px;margin-bottom:20px}
 .sb-logo span{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .sb-user{display:flex;align-items:center;gap:12px;padding:14px 12px;background:rgba(255,255,255,.05);border-radius:12px}
 .sb-avatar{width:40px;height:40px;border-radius:50%;background:var(--g-main);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
@@ -36,7 +65,7 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
 
 .sb-nav{padding:16px 12px;flex:1}
 .sb-section{font-size:.65rem;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:1.5px;text-transform:uppercase;padding:8px 8px 4px;margin-top:8px}
-.sb-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;cursor:pointer;transition:background .2s,color .2s;text-decoration:none;margin-bottom:2px;border:none;background:transparent;width:100%;text-align:left;font-family:'Quicksand',sans-serif;color:rgba(255,255,255,.45);font-size:.88rem;font-weight:600}
+.sb-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;cursor:pointer;transition:background .2s,color .2s;text-decoration:none;margin-bottom:2px;border:none;background:transparent;width:100%;text-align:left;font-family:'Inter',sans-serif;color:rgba(255,255,255,.45);font-size:.88rem;font-weight:600}
 .sb-item:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
 .sb-item.active{background:rgba(255,107,53,.15);color:var(--orange)}
 .sb-item.active .sb-icon{color:var(--orange)}
@@ -54,15 +83,15 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
 .main::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:99px}
 
 /* TOPBAR */
-.topbar{background:#fff;border-bottom:1px solid rgba(0,0,0,.07);padding:0 32px;height:68px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:50}
+.topbar{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);padding:0 32px;height:68px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:50}
 .topbar-title{font-size:1.1rem;font-weight:800;color:var(--ink);flex:1}
 .topbar-title span{color:rgba(26,26,46,.35);font-weight:600;font-size:.9rem;margin-left:8px}
-.search-bar{display:flex;align-items:center;gap:8px;background:var(--bg);border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:8px 14px;width:260px}
-.search-bar input{border:none;background:transparent;outline:none;font-size:.88rem;font-family:'Quicksand',sans-serif;color:var(--ink);width:100%}
+.search-bar{display:flex;align-items:center;gap:8px;background:var(--bg);border:1.5px solid rgba(11,31,58,.12);border-radius:8px;padding:8px 14px;width:260px}
+.search-bar input{border:none;background:transparent;outline:none;font-size:.88rem;font-family:'Inter',sans-serif;color:var(--ink);width:100%}
 .search-bar input::placeholder{color:rgba(26,26,46,.35)}
 .search-bar .si{font-size:.9rem;color:rgba(26,26,46,.3)}
-.tb-btn{width:38px;height:38px;border-radius:10px;border:1.5px solid rgba(0,0,0,.08);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:border-color .2s,background .2s;position:relative}
-.tb-btn:hover{border-color:var(--orange);background:rgba(255,107,53,.04)}
+.tb-btn{width:38px;height:38px;border-radius:8px;border:1.5px solid rgba(11,31,58,.12);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:border-color .2s,background .2s;position:relative}
+.tb-btn:hover{border-color:var(--blue);background:rgba(30,111,217,.04)}
 .tb-notif{top:-4px;right:-4px;position:absolute;width:16px;height:16px;background:var(--orange);border-radius:50%;font-size:.6rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
 
 /* CONTENT */
@@ -86,7 +115,7 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
 .stat-change{font-size:.75rem;font-weight:700;padding:4px 8px;border-radius:99px}
 .stat-change.up{background:rgba(34,197,94,.1);color:var(--green)}
 .stat-change.dn{background:rgba(255,77,141,.1);color:var(--pink)}
-.stat-num{font-family:'Nunito',sans-serif;font-weight:900;font-size:2rem;color:var(--ink);margin-bottom:4px}
+.stat-num{font-family:'Sora',sans-serif;font-weight:900;font-size:2rem;color:var(--ink);margin-bottom:4px}
 .stat-label{font-size:.8rem;color:rgba(26,26,46,.45);font-weight:600}
 
 /* GRID LAYOUT */
@@ -188,6 +217,200 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
 @media(max-width:480px){
   .stats-row{grid-template-columns:1fr}
   .div-mini-grid{grid-template-columns:1fr 1fr}
+}
+
+/* ===== REFERENCE DESIGN SYSTEM OVERRIDES ===== */
+body, body * {
+  font-family: 'Inter', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* Cards radius, shadow, transition & hover overrides */
+[class*="-card"], .curr-phase, .stat-box, .tool-cell, .sb-user, .amb-perk, .form-wrap, .success-state, .oc, .amb-wrap, .map-wrap, .div-mini {
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.3s ease !important;
+}
+[class*="-card"]:hover, .curr-phase:hover, .stat-box:hover, .tool-cell:hover, .sb-user:hover, .amb-perk:hover, .form-wrap:hover, .success-state:hover, .oc:hover, .amb-wrap:hover, .map-wrap:hover, .div-mini:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Navigation & Header Overrides */
+header, nav#mainNav, nav#navbar, .topbar {
+  background: rgba(255,255,255,.96) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(11,31,58,.08) !important;
+  box-shadow: none !important;
+  transition: box-shadow .3s !important;
+}
+header, nav#mainNav, nav#navbar {
+  position: fixed !important;
+  top: 3px !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  height: 70px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+header.scrolled, nav#mainNav.scrolled, nav#navbar.scrolled {
+  box-shadow: 0 4px 32px rgba(11,31,58,.1) !important;
+}
+.nav-inner {
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  padding: 0 40px !important;
+  height: 70px !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+.nav-logo {
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.3rem !important;
+  color: var(--navy) !important;
+  text-decoration: none !important;
+  margin-right: auto !important;
+  letter-spacing: -0.5px !important;
+}
+.nav-logo span {
+  background: var(--g-brand) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.nav-links, .nav-menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+  list-style: none !important;
+  margin: 0 !important;
+}
+.nav-links a, .nav-menu li a, .nav-back {
+  font-size: .86rem !important;
+  font-weight: 600 !important;
+  color: var(--ink) !important;
+  text-decoration: none !important;
+  padding: 7px 14px !important;
+  border-radius: 8px !important;
+  transition: all .2s !important;
+  background: transparent !important;
+  font-family: 'Inter', sans-serif !important;
+}
+.nav-links a:hover, .nav-menu li a:hover, .nav-back:hover {
+  background: rgba(30,111,217,.07) !important;
+  color: var(--blue) !important;
+}
+.nav-links a.active, .nav-menu li a.active {
+  background: rgba(30,111,217,.1) !important;
+  color: var(--blue) !important;
+}
+.nav-ham, .nav-toggle {
+  display: none !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  cursor: pointer !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 4px !important;
+}
+.nav-ham span, .nav-toggle span {
+  display: block !important;
+  width: 22px !important;
+  height: 2px !important;
+  background: var(--ink) !important;
+  border-radius: 2px !important;
+}
+@media(max-width: 900px) {
+  .nav-links, .nav-menu {
+    display: none !important;
+  }
+  .nav-ham, .nav-toggle {
+    display: flex !important;
+  }
+}
+
+/* Form inputs overrides */
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], select, textarea {
+  font-family: 'Inter', sans-serif !important;
+  border: 1.5px solid rgba(11,31,58,.12) !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  background: #fff !important;
+  outline: none !important;
+  transition: border-color .2s, box-shadow .2s !important;
+  color: var(--ink) !important;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, select:focus, textarea:focus {
+  border-color: var(--blue) !important;
+  box-shadow: 0 0 0 3px rgba(30,111,217,.1) !important;
+}
+
+/* Button overrides - Primary */
+[class*="primary"], [class*="submit"], [class*="apply"], [class*="glow"], [class*="btn-p"], [class*="btn-white"], [class*="nav-cta"], [class*="success-btn"], [class*="view-btn"], [class*="quiz-btn"] {
+  background: var(--g-brand) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  transition: all .25s !important;
+  box-shadow: 0 4px 12px rgba(215,38,56,.15) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-family: 'Inter', sans-serif !important;
+}
+[class*="primary"]:hover, [class*="submit"]:hover, [class*="apply"]:hover, [class*="glow"]:hover, [class*="btn-p"]:hover, [class*="btn-white"]:hover, [class*="nav-cta"]:hover, [class*="success-btn"]:hover, [class*="view-btn"]:hover, [class*="quiz-btn"]:hover {
+  opacity: .9 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(215,38,56,.3) !important;
+  color: #fff !important;
+}
+
+/* Button overrides - Ghost */
+[class*="ghost"], [class*="btn-g"], [class*="nav-login"], [class*="social-btn"], [class*="tb-btn"], [class*="tf-btn"], [class*="back-link"] {
+  border: 1.5px solid rgba(11,31,58,.15) !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  background: transparent !important;
+  color: var(--ink) !important;
+  transition: all .25s !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-family: 'Inter', sans-serif !important;
+}
+[class*="ghost"]:hover, [class*="btn-g"]:hover, [class*="nav-login"]:hover, [class*="social-btn"]:hover, [class*="tb-btn"]:hover, [class*="tf-btn"]:hover, [class*="back-link"]:hover {
+  border-color: var(--navy) !important;
+  background: rgba(11,31,58,.04) !important;
+  color: var(--navy) !important;
+}
+
+/* Footer overrides */
+footer {
+  background: #060E1A !important;
+  color: rgba(255,255,255,.4) !important;
+  border-top: 1px solid rgba(255,255,255,.04) !important;
+}
+footer a {
+  color: rgba(255,255,255,.25) !important;
+  text-decoration: none !important;
+  transition: color .2s !important;
+}
+footer a:hover {
+  color: rgba(255,255,255,.7) !important;
+}
+footer h4 {
+  color: rgba(255,255,255,.3) !important;
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 700 !important;
 }
 </style>
 </head>
@@ -483,19 +706,19 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
       <div class="dash-card">
         <div class="card-header"><h3>Quick Actions</h3></div>
         <div style="padding:20px;display:flex;flex-direction:column;gap:12px">
-          <button onclick="alert('Add Student form coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(255,107,53,.06);border:1.5px solid rgba(255,107,53,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Quicksand',sans-serif" onmouseover="this.style.background='rgba(255,107,53,.1)'" onmouseout="this.style.background='rgba(255,107,53,.06)'">
+          <button onclick="alert('Add Student form coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(255,107,53,.06);border:1.5px solid rgba(255,107,53,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Inter',sans-serif" onmouseover="this.style.background='rgba(255,107,53,.1)'" onmouseout="this.style.background='rgba(255,107,53,.06)'">
             <span style="font-size:1.3rem">➕</span>
             <div><div style="font-size:.9rem;font-weight:700;color:var(--ink)">Add New Student</div><div style="font-size:.77rem;color:rgba(26,26,46,.45)">Manually enrol a student</div></div>
           </button>
-          <button onclick="alert('Course creator coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(14,165,233,.06);border:1.5px solid rgba(14,165,233,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Quicksand',sans-serif" onmouseover="this.style.background='rgba(14,165,233,.1)'" onmouseout="this.style.background='rgba(14,165,233,.06)'">
+          <button onclick="alert('Course creator coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(14,165,233,.06);border:1.5px solid rgba(14,165,233,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Inter',sans-serif" onmouseover="this.style.background='rgba(14,165,233,.1)'" onmouseout="this.style.background='rgba(14,165,233,.06)'">
             <span style="font-size:1.3rem">📚</span>
             <div><div style="font-size:.9rem;font-weight:700;color:var(--ink)">Create New Course</div><div style="font-size:.77rem;color:rgba(26,26,46,.45)">Add a course to any division</div></div>
           </button>
-          <button onclick="alert('Partner form coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(34,197,94,.06);border:1.5px solid rgba(34,197,94,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Quicksand',sans-serif" onmouseover="this.style.background='rgba(34,197,94,.1)'" onmouseout="this.style.background='rgba(34,197,94,.06)'">
+          <button onclick="alert('Partner form coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(34,197,94,.06);border:1.5px solid rgba(34,197,94,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Inter',sans-serif" onmouseover="this.style.background='rgba(34,197,94,.1)'" onmouseout="this.style.background='rgba(34,197,94,.06)'">
             <span style="font-size:1.3rem">🤝</span>
             <div><div style="font-size:.9rem;font-weight:700;color:var(--ink)">Add Institution Partner</div><div style="font-size:.77rem;color:rgba(26,26,46,.45)">Onboard a new college or school</div></div>
           </button>
-          <button onclick="window.open('about.html')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(123,47,247,.06);border:1.5px solid rgba(123,47,247,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Quicksand',sans-serif" onmouseover="this.style.background='rgba(123,47,247,.1)'" onmouseout="this.style.background='rgba(123,47,247,.06)'">
+          <button onclick="window.open('about.html')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(123,47,247,.06);border:1.5px solid rgba(123,47,247,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Inter',sans-serif" onmouseover="this.style.background='rgba(123,47,247,.1)'" onmouseout="this.style.background='rgba(123,47,247,.06)'">
             <span style="font-size:1.3rem">🌐</span>
             <div><div style="font-size:.9rem;font-weight:700;color:var(--ink)">View Public Website</div><div style="font-size:.77rem;color:rgba(26,26,46,.45)">See what visitors see</div></div>
           </button>

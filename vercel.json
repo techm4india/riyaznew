@@ -1,25 +1,67 @@
 {
   "name": "techm4india",
   "version": 2,
-
   "routes": [
-    { "src": "/", "dest": "/index.html" },
-    {"src": "/home","dest": "/index.html"},
-    { "src": "/engineering", "dest": "/engineering.html" },
-    { "src": "/solutions", "dest": "/solutions.html" },
-    { "src": "/space", "dest": "/space.html" },
-    { "src": "/schools", "dest": "/techm4schools.html" },
-    { "src": "/about", "dest": "/about.html" },
-    { "src": "/programs", "dest": "/programs.html" },
-    { "src": "/research", "dest": "/research.html" },
-    { "src": "/impact", "dest": "/impact.html" },
-    { "src": "/careers", "dest": "/careers.html" },
-    { "src": "/contact", "dest": "/contact.html" },
-    { "src": "/ecosystem", "dest": "/ecosystem.html" },
-    { "src": "/vision", "dest": "/vision.html" },
-    { "src": "/(.*)", "dest": "/$1" }
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    { 
+      "src": "/home", 
+      "dest": "/index.html" },
+    {
+      "src": "/engineering",
+      "dest": "/engineering.html"
+    },
+    {
+      "src": "/solutions",
+      "dest": "/solutions.html"
+    },
+    {
+      "src": "/space",
+      "dest": "/space.html"
+    },
+    {
+      "src": "/schools",
+      "dest": "/techm4schools.html"
+    },
+    {
+      "src": "/about",
+      "dest": "/about.html"
+    },
+    {
+      "src": "/programs",
+      "dest": "/programs.html"
+    },
+    {
+      "src": "/research",
+      "dest": "/research.html"
+    },
+    {
+      "src": "/impact",
+      "dest": "/impact.html"
+    },
+    {
+      "src": "/careers",
+      "dest": "/careers.html"
+    },
+    {
+      "src": "/contact",
+      "dest": "/contact.html"
+    },
+    {
+      "src": "/ecosystem",
+      "dest": "/ecosystem.html"
+    },
+    {
+      "src": "/vision",
+      "dest": "/vision.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
   ],
-
   "headers": [
     {
       "source": "/(.*)",
@@ -78,7 +120,6 @@
       ]
     }
   ],
-
   "cleanUrls": true,
   "trailingSlash": false
 }
