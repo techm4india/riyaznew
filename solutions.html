@@ -31,7 +31,6 @@
 <meta name="twitter:title" content="TechM4Solutions — Intelligent Platform Engineering for India">
 <meta name="twitter:description" content="TechM4Solutions engineers intelligent digital platforms, AI-powered tools, and scalable technology solutions for India's fastest-growing industries and institutions.">
 <meta name="twitter:image" content="https://www.techm4india.com/og-image.png">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,980 +73,505 @@
   ]
 }
 </script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-/* ===== DESIGN SYSTEM SPEC TOKENS ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FFFBF5;--ink:#1A1A2E;--ink-l:#4A4A6A;
+  --orange:#FF6B35;--pink:#FF4D8D;--purple:#7B2FF7;
+  --blue:#0EA5E9;--green:#22C55E;--yellow:#FFD60A;
+  --border:rgba(26,26,46,.08);--surface:#FFFFFF;
+  --g-main:linear-gradient(135deg,#FF6B35,#FF4D8D);
+  --g-cool:linear-gradient(135deg,#0EA5E9,#7B2FF7);
+  --g-green:linear-gradient(135deg,#22C55E,#14B8A6);
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(255,107,53,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,107,53,.02) 1px,transparent 1px);background-size:44px 44px}
+#spb{position:fixed;top:0;left:0;height:3px;background:var(--g-cool);z-index:2000;width:0}
+#loader{position:fixed;inset:0;z-index:9999;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;transition:opacity .7s,visibility .7s}
+#loader.out{opacity:0;visibility:hidden}
+.ld-ring{width:64px;height:64px;position:relative;margin-bottom:.5rem}
+.ld-ring::before,.ld-ring::after{content:'';position:absolute;inset:0;border-radius:50%;border:2.5px solid transparent}
+.ld-ring::before{border-top-color:var(--orange);animation:ldSpin 1s linear infinite}
+.ld-ring::after{border-bottom-color:var(--pink);animation:ldSpin 1.5s linear infinite reverse;inset:10px}
+@keyframes ldSpin{to{transform:rotate(360deg)}}
+.ld-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+.ld-text{font-family:'Sora',sans-serif;font-weight:900;font-size:1.4rem;color:#fff}
+.ld-text span{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ld-bar{width:200px;height:3px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.ld-fill{height:100%;background:var(--g-main);animation:ldFill 1.8s ease forwards}
+@keyframes ldFill{to{width:100%}}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:70px;display:flex;align-items:center;padding:0 5%;background:rgba(255,251,245,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 32px rgba(26,26,46,.09)}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:900;font-size:1.2rem;text-decoration:none;color:var(--ink)}
+.nav-logo span{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:2rem;margin:0 auto}
+.nav-links a{text-decoration:none;color:var(--ink-l);font-size:.87rem;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:var(--orange)}
+.nav-back{color:var(--ink-l);font-size:.82rem;text-decoration:none;font-weight:700;transition:color .2s}
+.nav-back:hover{color:var(--orange)}
+.nav-cta{background:var(--g-main);color:#fff;border:none;border-radius:100px;padding:.52rem 1.4rem;font-family:'Sora',sans-serif;font-size:.85rem;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(255,107,53,.3);transition:transform .2s;white-space:nowrap}
+.nav-cta:hover{transform:translateY(-2px)}
+@media(max-width:900px){.nav-links{display:none}}
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;padding:9rem 5% 5rem;text-align:center;overflow:hidden;background:var(--ink)}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:blobDrift ease-in-out infinite alternate}
+.hb1{width:600px;height:500px;top:5%;left:15%;background:rgba(255,107,53,.07);animation-duration:9s}
+.hb2{width:450px;height:450px;top:30%;right:8%;background:rgba(255,77,141,.06);animation-duration:11s;animation-delay:-4s}
+.hb3{width:350px;height:350px;bottom:10%;left:38%;background:rgba(123,47,247,.06);animation-duration:8s;animation-delay:-2s}
+@keyframes blobDrift{from{transform:scale(1) translate(0,0)}to{transform:scale(1.1) translate(25px,18px)}}
+.hero-grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px}
+.hero-content{position:relative;z-index:1;max-width:900px}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.25);border-radius:100px;padding:.42rem 1.1rem;font-size:.7rem;font-weight:800;letter-spacing:.12em;color:var(--orange);margin-bottom:2rem;text-transform:uppercase;animation:fadeUp .7s .3s both}
+.hb-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:dotBlink 2s infinite}
+@keyframes dotBlink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{font-family:'Sora',sans-serif;font-weight:900;font-size:clamp(2.8rem,6vw,5.5rem);line-height:1.04;color:#fff;margin-bottom:1.6rem;animation:fadeUp .8s .5s both}
+.h1g{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.h1c{background:var(--g-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.58);line-height:1.88;max-width:650px;margin:0 auto 2.8rem;animation:fadeUp .8s .65s both}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .8s both;margin-bottom:3.5rem}
+.btn-glow{background:var(--g-main);color:#fff;padding:.9rem 2.2rem;border-radius:100px;font-family:'Sora',sans-serif;font-weight:800;font-size:.95rem;text-decoration:none;box-shadow:0 6px 28px rgba(255,107,53,.38);transition:transform .2s,box-shadow .2s}
+.btn-glow:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(255,107,53,.6)}
+.btn-ghost-sol{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8);padding:.9rem 2.2rem;border-radius:100px;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid rgba(255,255,255,.15);transition:border-color .2s,background .2s}
+.btn-ghost-sol:hover{border-color:var(--orange);background:rgba(255,107,53,.1)}
+.hero-stats{display:flex;gap:4rem;justify-content:center;padding-top:3rem;border-top:1px solid rgba(255,255,255,.08);animation:fadeUp .8s 1s both;flex-wrap:wrap}
+.hs-item{text-align:center}
+.hs-num{font-family:'Sora',sans-serif;font-size:2.4rem;font-weight:900;background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hs-label{font-size:.77rem;color:rgba(255,255,255,.4);font-weight:700;margin-top:.3rem}
+/* TICKER */
+.ticker-wrap{background:var(--purple);border-top:3px solid var(--pink);border-bottom:3px solid var(--orange);padding:.85rem 0;overflow:hidden}
+.ticker{display:flex;width:max-content;animation:tickerRun 22s linear infinite}
+.ti{font-family:'Sora',sans-serif;font-size:.82rem;font-weight:800;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:.6rem;padding:0 2rem;white-space:nowrap}
+.ti-dot{width:5px;height:5px;border-radius:50%;background:var(--yellow)}
+.ti-lit{color:#fff}
+@keyframes tickerRun{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* SECTION COMMONS */
+.section{padding:8rem 5%;max-width:1300px;margin:0 auto;position:relative;z-index:1}
+.sec-label{font-size:.7rem;font-weight:800;color:var(--orange);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.8rem}
+.sec-title{font-family:'Sora',sans-serif;font-size:clamp(2rem,3.8vw,3rem);font-weight:900;line-height:1.15;margin-bottom:1rem}
+.sec-title em{font-style:normal;color:var(--orange)}
+.sec-title .g{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sec-sub{color:var(--ink-l);max-width:560px;line-height:1.8;margin-bottom:4rem;font-size:.95rem}
+/* PRODUCTS */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.prod-card{background:var(--surface);border:1.5px solid var(--border);border-radius:22px;padding:2.2rem;transition:border-color .3s,box-shadow .3s,transform .35s;position:relative;overflow:hidden}
+.prod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;opacity:0;transition:opacity .3s}
+.prod-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(26,26,46,.1)}
+.prod-card:hover::before{opacity:1}
+.pc-or::before{background:var(--g-main)}.pc-or:hover{border-color:rgba(255,107,53,.15)}
+.pc-co::before{background:var(--g-cool)}.pc-co:hover{border-color:rgba(14,165,233,.15)}
+.pc-gr::before{background:var(--g-green)}.pc-gr:hover{border-color:rgba(34,197,94,.15)}
+.pc-pu::before{background:linear-gradient(135deg,#7B2FF7,#0EA5E9)}.pc-pu:hover{border-color:rgba(123,47,247,.15)}
+.prod-icon{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.4rem;animation:floatIcon 3.5s ease-in-out infinite}
+.prod-card:nth-child(2) .prod-icon{animation-delay:-.7s}.prod-card:nth-child(3) .prod-icon{animation-delay:-1.4s}.prod-card:nth-child(4) .prod-icon{animation-delay:-2.1s}.prod-card:nth-child(5) .prod-icon{animation-delay:-2.8s}
+@keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.pi-or{background:rgba(255,107,53,.1)}.pi-co{background:rgba(14,165,233,.1)}.pi-gr{background:rgba(34,197,94,.1)}.pi-pu{background:rgba(123,47,247,.1)}.pi-ye{background:rgba(255,214,10,.12)}
+.prod-tag{font-size:.63rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:.5rem}
+.pt-or{color:var(--orange)}.pt-co{color:var(--blue)}.pt-gr{color:var(--green)}.pt-pu{color:var(--purple)}.pt-ye{color:#92400E}
+.prod-name{font-family:'Sora',sans-serif;font-size:1.15rem;font-weight:900;color:var(--ink);margin-bottom:.65rem}
+.prod-desc{font-size:.85rem;color:var(--ink-l);line-height:1.72}
+.prod-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem}
+.prod-chip{font-size:.64rem;font-weight:700;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:.22rem .55rem;color:var(--ink-l)}
+/* CAPABILITIES */
+.cap-sect{background:var(--ink);padding:8rem 5%;position:relative;overflow:hidden}
+.cap-blob1{position:absolute;width:500px;height:400px;top:-100px;right:-80px;background:rgba(255,77,141,.06);border-radius:50%;filter:blur(90px);pointer-events:none}
+.cap-blob2{position:absolute;width:400px;height:400px;bottom:-100px;left:-60px;background:rgba(123,47,247,.07);border-radius:50%;filter:blur(90px);pointer-events:none}
+.cap-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;position:relative;z-index:1}
+.cap-inner .sec-label{color:var(--orange)}
+.cap-inner .sec-title{color:#fff}
+.cap-inner .sec-sub{color:rgba(255,255,255,.5);max-width:100%}
+.cap-list{display:flex;flex-direction:column;gap:1.2rem}
+.cap-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:1.6rem;display:flex;gap:1.2rem;align-items:flex-start;transition:border-color .3s,transform .25s}
+.cap-item:hover{border-color:rgba(255,107,53,.25);transform:translateX(6px)}
+.ci-icon{font-size:1.4rem;flex-shrink:0;width:42px;height:42px;border-radius:12px;background:rgba(255,107,53,.1);display:flex;align-items:center;justify-content:center}
+.ci-title{font-family:'Sora',sans-serif;font-weight:800;font-size:.95rem;color:#fff;margin-bottom:.3rem}
+.ci-desc{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.65}
+/* INDUSTRIES */
+.ind-sect{padding:7rem 5%}
+.ind-inner{max-width:1300px;margin:0 auto}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
+.ind-card{background:var(--surface);border:1.5px solid var(--border);border-radius:18px;padding:1.8rem 1.4rem;text-align:center;transition:transform .3s,border-color .3s,box-shadow .3s}
+.ind-card:hover{transform:translateY(-5px);border-color:rgba(255,107,53,.15);box-shadow:0 16px 40px rgba(26,26,46,.08)}
+.ind-icon{font-size:2rem;display:block;margin-bottom:.7rem}
+.ind-name{font-family:'Sora',sans-serif;font-size:.9rem;font-weight:900;color:var(--ink);margin-bottom:.4rem}
+.ind-desc{font-size:.78rem;color:var(--ink-l);line-height:1.6}
+/* CTA */
+.cta-sol{background:var(--ink);padding:8rem 5%;text-align:center;position:relative;overflow:hidden}
+.cta-sol-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
+.cta-sol h2{font-family:'Sora',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1.2rem}
+.cta-sol p{font-size:1rem;color:rgba(255,255,255,.52);max-width:520px;margin:0 auto 2.8rem;line-height:1.85}
+footer{background:rgba(26,26,46,.98);border-top:1px solid rgba(255,255,255,.06);padding:3rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;position:relative;z-index:1}
+footer .fn{font-family:'Sora',sans-serif;font-weight:900;font-size:1rem;color:#fff}
+footer .fn span{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+footer p{font-size:.78rem;color:rgba(255,255,255,.28)}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.8rem;font-weight:700;transition:color .2s}
+.footer-links a:hover{color:var(--orange)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-26px);transition:opacity .7s,transform .7s}
+.reveal-l.visible{opacity:1;transform:none}
+.reveal-r{opacity:0;transform:translateX(26px);transition:opacity .7s,transform .7s}
+.reveal-r.visible{opacity:1;transform:none}
+@media(max-width:1100px){.prod-grid{grid-template-columns:1fr 1fr}.ind-grid{grid-template-columns:1fr 1fr}.cap-inner{grid-template-columns:1fr;gap:3rem}}
+@media(max-width:700px){.prod-grid{grid-template-columns:1fr}.ind-grid{grid-template-columns:1fr 1fr}.hero,.section,.ind-sect,.cap-sect,.cta-sol{padding:4rem 1.5rem}footer{flex-direction:column}}
+
+/* ===== UNIFIED DESIGN SYSTEM OVERRIDES ===== */
 :root {
-  /* Colors */
-  --color-primary-blue: #2b4dff;
-  --color-dark-navy: #0a165e;
-  --color-white: #ffffff;
-  --color-text-primary: #585b6f;
-  --color-text-secondary: #69727d;
-  --color-light-blue: #e5eaff;
-  --color-light-gray: #f5f6f7;
-  --color-border-gray: #ededed;
-
-  /* Typography (Unified Font: Space Grotesk) */
-  --font-heading-large-family: 'Space Grotesk', sans-serif;
-  --font-heading-large-size: 36px;
-  --font-heading-large-weight: 700;
-  --font-heading-large-line-height: 46px;
-  --font-heading-large-letter-spacing: -1px;
-
-  --font-heading-medium-family: 'Space Grotesk', sans-serif;
-  --font-heading-medium-size: 28px;
-  --font-heading-medium-weight: 700;
-  --font-heading-medium-line-height: 38px;
-
-  --font-heading-small-family: 'Space Grotesk', sans-serif;
-  --font-heading-small-size: 22px;
-  --font-heading-small-weight: 700;
-  --font-heading-small-line-height: 30px;
-  --font-heading-small-letter-spacing: -0.5px;
-
-  --font-body-large-family: 'Space Grotesk', sans-serif;
-  --font-body-large-size: 17px;
-  --font-body-large-weight: 400;
-  --font-body-large-line-height: 27px;
-
-  --font-body-medium-family: 'Space Grotesk', sans-serif;
-  --font-body-medium-size: 16px;
-  --font-body-medium-weight: 400;
-  --font-body-medium-line-height: 27px;
-
-  --font-label-family: 'Space Grotesk', sans-serif;
-  --font-label-size: 15px;
-  --font-label-weight: 500;
-  --font-label-line-height: 15px;
-
-  /* Spacing */
-  --spacing-xs: 5px;
-  --spacing-sm: 10px;
-  --spacing-md: 15px;
-  --spacing-lg: 20px;
-  --spacing-xl: 25px;
-  --spacing-2xl: 30px;
-  --spacing-3xl: 40px;
-  --spacing-4xl: 50px;
-
-  /* Border Radius */
-  --radius-sm: 4px;
-  --radius-md: 5px;
-  --radius-lg: 10px;
-  --radius-xl: 15px;
-  --radius-full: 50px;
-}
-
-/* ===== RESET & GLOBAL STYLES ===== */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Sora', sans-serif;
+  --white: #FFFFFF;
+  --offwhite: #F7F9FC;
+  --grey: #C9D1D9;
+  --grey2: #8B98A9;
+  --shadow-sm: 0 2px 8px rgba(11,31,58,.08);
+  --shadow-md: 0 8px 32px rgba(11,31,58,.12);
+  --shadow-lg: 0 24px 64px rgba(11,31,58,.18);
 }
 body {
-  font-family: var(--font-body-large-family);
-  font-size: var(--font-body-large-size);
-  font-weight: var(--font-body-large-weight);
-  line-height: var(--font-body-large-line-height);
-  background: var(--color-white);
-  color: var(--color-text-primary);
-  overflow-x: hidden;
+  font-family: 'Inter', sans-serif !important;
+  background: var(--white) !important;
+  color: var(--ink) !important;
 }
-h1 {
-  font-family: var(--font-heading-large-family);
-  font-size: var(--font-heading-large-size);
-  font-weight: var(--font-heading-large-weight);
-  line-height: var(--font-heading-large-line-height);
-  letter-spacing: var(--font-heading-large-letter-spacing);
-  color: var(--color-dark-navy);
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sora', sans-serif !important;
 }
-h2 {
-  font-family: var(--font-heading-medium-family);
-  font-size: var(--font-heading-medium-size);
-  font-weight: var(--font-heading-medium-weight);
-  line-height: var(--font-heading-medium-line-height);
-  color: var(--color-dark-navy);
-}
-h3 {
-  font-family: var(--font-heading-small-family);
-  font-size: var(--font-heading-small-size);
-  font-weight: var(--font-heading-small-weight);
-  line-height: var(--font-heading-small-line-height);
-  letter-spacing: var(--font-heading-small-letter-spacing);
-  color: var(--color-dark-navy);
-}
-p {
-  color: var(--color-text-primary);
-}
-
-/* Centered content container */
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-lg);
-  width: 100%;
-}
-
 /* ===== PROGRESS BAR ===== */
-#spb {
+#progress-bar {
   position: fixed;
   top: 0;
   left: 0;
   height: 3px;
-  background: var(--color-primary-blue);
-  z-index: 2000;
-  width: 0;
-  transition: width 0.1s;
+  background: var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));
+  width: 0%;
+  z-index: 9999;
+  transition: width .1s;
 }
-
 /* ===== LOADER ===== */
 #loader {
   position: fixed;
   inset: 0;
-  z-index: 9999;
-  background: var(--color-dark-navy);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-lg);
-  transition: opacity 0.7s, visibility 0.7s;
-}
-#loader.out {
-  opacity: 0;
-  visibility: hidden;
-}
-.ld-ring {
-  width: 64px;
-  height: 64px;
-  position: relative;
-  margin-bottom: var(--spacing-xs);
-}
-.ld-ring::before, .ld-ring::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-full);
-  border: 2.5px solid transparent;
-}
-.ld-ring::before {
-  border-top-color: var(--color-primary-blue);
-  animation: ldSpin 1s linear infinite;
-}
-.ld-ring::after {
-  border-bottom-color: var(--color-light-blue);
-  animation: ldSpin 1.5s linear infinite reverse;
-  inset: 10px;
-}
-@keyframes ldSpin {
-  to { transform: rotate(360deg); }
-}
-.ld-icon {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-}
-.ld-text {
-  font-family: var(--font-heading-medium-family);
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--color-white);
-}
-.ld-text span {
-  color: var(--color-primary-blue);
-}
-.ld-bar {
-  width: 200px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-}
-.ld-fill {
-  height: 100%;
-  background: var(--color-primary-blue);
-  animation: ldFill 1.8s ease forwards;
-}
-@keyframes ldFill {
-  to { width: 100%; }
-}
-
-/* ===== NAVIGATION ===== */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-border-gray);
-  transition: box-shadow 0.3s;
-}
-nav.scrolled {
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 10px -2px;
-}
-.nav-back {
-  color: var(--color-text-secondary);
-  font-size: var(--font-body-medium-size);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-}
-.nav-back:hover {
-  color: var(--color-primary-blue);
-}
-.nav-logo {
-  font-family: var(--font-heading-small-family);
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--color-dark-navy);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-  margin-left: var(--spacing-lg);
-}
-.nav-logo span {
-  color: var(--color-primary-blue);
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xl);
-  margin-left: auto;
-}
-.nav-links a {
-  text-decoration: none;
-  color: var(--color-text-primary);
-  font-family: var(--font-label-family);
-  font-size: var(--font-label-size);
-  font-weight: var(--font-label-weight);
-  transition: color 0.2s;
-}
-.nav-links a:hover {
-  color: var(--color-primary-blue);
-}
-.nav-contact-email {
-  color: var(--color-text-secondary) !important;
-  font-weight: 400 !important;
-  border-left: 1px solid var(--color-border-gray);
-  padding-left: var(--spacing-xl);
-}
-.nav-cta {
-  background: var(--color-primary-blue);
-  color: var(--color-white);
-  border: none;
-  border-radius: var(--radius-md);
-  padding: var(--spacing-sm) var(--spacing-lg);
-  font-family: var(--font-label-family);
-  font-size: var(--font-label-size);
-  font-weight: var(--font-label-weight);
-  text-decoration: none;
-  margin-left: var(--spacing-xl);
-  transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 4px 10px rgba(43, 77, 255, 0.2);
-}
-.nav-cta:hover {
-  background: #1a39cc;
-  transform: translateY(-1px);
-}
-@media(max-width: 900px){
-  .nav-links, .nav-contact-email { display: none; }
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-  background: var(--color-dark-navy);
-  padding: 150px 0 var(--spacing-4xl);
-  position: relative;
-  overflow: hidden;
-  color: var(--color-white);
-  margin-bottom: var(--spacing-lg);
-}
-.hero-glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(43,77,255,0.18) 0%, transparent 70%);
-  top: -100px;
-  right: -100px;
-  pointer-events: none;
-}
-.hero-glow-2 {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(43,77,255,0.08) 0%, transparent 70%);
-  bottom: -150px;
-  left: -100px;
-  pointer-events: none;
-}
-.hero-grid-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: var(--spacing-3xl);
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-.hero-content {
-  text-align: left;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-full);
-  padding: var(--spacing-xs) var(--spacing-md);
-  font-family: var(--font-label-family);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--color-light-blue);
-  text-transform: uppercase;
-  margin-bottom: var(--spacing-xl);
-}
-.hb-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: var(--radius-full);
-  background: var(--color-primary-blue);
-  animation: dotBlink 2s infinite;
-}
-@keyframes dotBlink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
-.hero h1 {
-  color: var(--color-white);
-  margin-bottom: var(--spacing-lg);
-  font-size: 42px;
-  line-height: 52px;
-  letter-spacing: -1.5px;
-}
-.h1g {
-  color: var(--color-light-blue);
-  background: linear-gradient(135deg, var(--color-white), var(--color-light-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.h1c {
-  color: var(--color-primary-blue);
-  background: linear-gradient(135deg, var(--color-light-blue), var(--color-primary-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero-sub {
-  font-family: var(--font-body-large-family);
-  font-size: var(--font-body-large-size);
-  color: var(--color-text-secondary);
-  line-height: 1.8;
-  max-width: 580px;
-  margin-bottom: var(--spacing-2xl);
-}
-.hero-btns {
-  display: flex;
-  gap: var(--spacing-md);
-}
-.btn-glow {
-  background: var(--color-primary-blue) !important;
-  color: var(--color-white) !important;
-  border-radius: var(--radius-md) !important;
-  padding: var(--spacing-md) var(--spacing-2xl) !important;
-  font-family: var(--font-label-family) !important;
-  font-size: var(--font-label-size) !important;
-  font-weight: var(--font-label-weight) !important;
-  text-decoration: none !important;
-  display: inline-flex !important;
+  background: var(--navy, #0B1F3A) !important;
+  display: flex !important;
+  flex-direction: column !important;
   align-items: center !important;
-  gap: var(--spacing-xs) !important;
-  box-shadow: 0 4px 14px rgba(43,77,255,0.3) !important;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important;
-  border: none !important;
-}
-.btn-glow:hover {
-  background: #1a39cc !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 20px rgba(43,77,255,0.45) !important;
-}
-.btn-ghost-sol {
-  border: 1.5px solid rgba(255,255,255,0.2) !important;
-  color: var(--color-white) !important;
-  border-radius: var(--radius-md) !important;
-  padding: var(--spacing-md) var(--spacing-2xl) !important;
-  font-family: var(--font-label-family) !important;
-  font-size: var(--font-label-size) !important;
-  font-weight: var(--font-label-weight) !important;
-  text-decoration: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  transition: border-color 0.2s, background 0.2s !important;
-  background: transparent !important;
-}
-.btn-ghost-sol:hover {
-  border-color: var(--color-white) !important;
-  background: rgba(255,255,255,0.06) !important;
-}
-.hero-stats {
-  display: flex;
-  gap: var(--spacing-3xl);
-  padding-top: var(--spacing-2xl);
-  border-top: 1px solid rgba(255,255,255,0.08);
-  margin-top: var(--spacing-2xl);
-}
-.hs-item {
-  text-align: left;
-}
-.hs-num {
-  font-family: var(--font-heading-medium-family);
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--color-primary-blue);
-  background: linear-gradient(135deg, var(--color-white), var(--color-primary-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hs-label {
-  font-size: 12px;
-  color: var(--color-text-secondary);
-  font-weight: 500;
-  margin-top: var(--spacing-xs);
-  text-transform: uppercase;
-}
-
-/* ===== WORKFLOW DIAGRAM ===== */
-.workflow-diagram {
-  position: relative;
-  width: 380px;
-  height: 380px;
-  margin: 0 auto;
-}
-.wf-connections {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-.wf-line {
-  fill: none;
-  stroke: var(--color-primary-blue);
-  stroke-width: 1.5;
-  stroke-dasharray: 6 4;
-  animation: dash 8s linear infinite;
-  filter: drop-shadow(0 0 3px var(--color-primary-blue));
-}
-@keyframes dash {
-  to { stroke-dashoffset: -80; }
-}
-.wf-node {
-  position: absolute;
-  width: 105px;
-  padding: var(--spacing-sm);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px dashed rgba(43, 77, 255, 0.4);
-  border-radius: var(--radius-lg);
-  text-align: center;
-  color: var(--color-white);
-  transition: transform 0.3s, background 0.3s, border-color 0.3s;
-}
-.wf-node:hover {
-  transform: scale(1.04);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--color-primary-blue);
-}
-.wf-center-node {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px;
-  padding: var(--spacing-md);
-  background: var(--color-primary-blue);
-  border-radius: var(--radius-lg);
-  text-align: center;
-  color: var(--color-white);
-  box-shadow: 0 0 20px rgba(43, 77, 255, 0.4);
-  z-index: 10;
-}
-.wf-node-icon {
-  font-size: 20px;
-  margin-bottom: var(--spacing-xs);
-}
-.wf-node-name {
-  font-family: var(--font-label-family);
-  font-size: 11px;
-  font-weight: 600;
-}
-.node-tl { left: 5px; top: 15px; }
-.node-tr { right: 5px; top: 15px; }
-.node-bl { left: 5px; bottom: 15px; }
-.node-br { right: 5px; bottom: 15px; }
-
-/* ===== PARTNER LOGOS ===== */
-.partners-sec {
-  background: var(--color-light-gray);
-  border-bottom: 1px solid var(--color-border-gray);
-  padding: var(--spacing-xl) 0;
-  margin-bottom: var(--spacing-lg);
-}
-.partners-title {
-  font-family: var(--font-label-family);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--color-text-secondary);
-  text-align: center;
-  letter-spacing: 1px;
-  margin-bottom: var(--spacing-md);
-  text-transform: uppercase;
-}
-.partners-grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-lg);
-  flex-wrap: wrap;
-}
-.partner-logo {
-  font-family: var(--font-heading-small-family);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--color-text-secondary);
-  opacity: 0.6;
-  transition: opacity 0.2s;
-  cursor: default;
-}
-.partner-logo:hover {
+  justify-content: center !important;
+  z-index: 10000 !important;
+  transition: opacity .7s, visibility .7s !important;
   opacity: 1;
+  visibility: visible;
 }
-
-/* ===== GENERAL SECTION & SCANNABLE CARD DESIGN ===== */
-section.section {
-  padding: var(--spacing-3xl) 0;
-  margin-bottom: var(--spacing-lg);
+#loader.hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
-.sec-label {
-  font-family: var(--font-label-family);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-primary-blue);
+.loader-blueprint {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(30,111,217,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(30,111,217,.06) 1px,transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+.loader-ring {
+  width: 72px;
+  height: 72px;
+  border: 3px solid rgba(255,255,255,.1);
+  border-top-color: var(--orange, #FF6B35);
+  border-right-color: var(--blue, #1E6FD9);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 24px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loader-brand {
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #fff !important;
+  letter-spacing: -0.5px;
+}
+.loader-brand span {
+  background: var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.loader-sub {
+  font-size: .78rem;
+  color: rgba(255,255,255,.35) !important;
+  margin-top: 8px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: var(--spacing-sm);
 }
-.sec-title {
-  font-family: var(--font-heading-medium-family);
-  font-size: var(--font-heading-medium-size);
-  font-weight: 700;
-  line-height: var(--font-heading-medium-line-height);
-  margin-bottom: var(--spacing-sm);
-}
-.sec-title em {
-  font-style: normal;
-  color: var(--color-primary-blue);
-}
-.sec-title .g {
-  background: linear-gradient(135deg, var(--color-dark-navy), var(--color-primary-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.sec-sub {
-  font-family: var(--font-body-large-family);
-  font-size: var(--font-body-large-size);
-  color: var(--color-text-primary);
-  line-height: 1.8;
-  max-width: 580px;
-  margin-bottom: var(--spacing-2xl);
-}
-
-/* Products Grid */
-.prod-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-lg); /* Consistent 20px spacing */
-}
-.prod-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-border-gray);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px -2px; /* Soft elevations */
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-  position: relative;
+.loader-bar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255,255,255,.08);
+  border-radius: 99px;
+  margin-top: 24px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-  text-align: left;
 }
-.prod-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-primary-blue);
-  box-shadow: rgba(43, 77, 255, 0.1) 0px 8px 24px -2px;
+.loader-fill {
+  height: 100%;
+  background: var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));
+  border-radius: 99px;
+  animation: fill 2.2s ease forwards;
 }
-.prod-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: var(--spacing-sm);
-  background: var(--color-light-gray);
+@keyframes fill { from { width: 0 } to { width: 100% } }
+/* ===== NAV ===== */
+nav {
+  position: fixed !important;
+  top: 3px !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(255,255,255,.96) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(11,31,58,.08) !important;
+  transition: box-shadow .3s !important;
+  height: 70px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
 }
-.pi-or { background: #fff4f0; }
-.pi-co { background: #f0f4ff; }
-.pi-gr { background: #f0fff4; }
-.pi-pu { background: #f6f0ff; }
-.pi-ye { background: #fffff0; }
-
-.prod-tag {
-  font-family: var(--font-label-family);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--color-text-secondary);
+nav.scrolled {
+  box-shadow: 0 4px 32px rgba(11,31,58,.1) !important;
 }
-.pt-or { color: #e65100; }
-.pt-co { color: var(--color-primary-blue); }
-.pt-gr { color: #2e7d32; }
-.pt-pu { color: #6a1b9a; }
-.pt-ye { color: #f57f17; }
-
-.prod-name {
-  font-family: var(--font-heading-small-family);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-dark-navy);
-  margin-bottom: var(--spacing-xs);
+.nav-inner {
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  padding: 0 40px !important;
+  height: 70px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: 100% !important;
 }
-.prod-desc {
-  font-family: var(--font-body-medium-family);
-  font-size: var(--font-body-medium-size);
-  color: var(--color-text-primary);
-  line-height: 1.6;
+.nav-logo {
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.3rem !important;
+  color: var(--navy, #0B1F3A) !important;
+  text-decoration: none !important;
+  margin-right: auto !important;
+  letter-spacing: -0.5px !important;
 }
-.prod-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-xs);
-  margin-top: var(--spacing-md);
+.nav-logo span {
+  background: var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
-.prod-chip {
-  font-family: var(--font-label-family);
-  font-size: 11px;
-  font-weight: 500;
-  background: var(--color-light-gray);
-  border: 1px solid var(--color-border-gray);
-  border-radius: var(--radius-sm);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  color: var(--color-text-primary);
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+  list-style: none !important;
+  position: static !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  width: auto !important;
+  flex-direction: row !important;
 }
-
-/* ===== CAPABILITIES (Midnight Navy Dark block) ===== */
-.cap-sect {
-  background: var(--color-dark-navy);
-  padding: var(--spacing-4xl) 0;
-  position: relative;
-  overflow: hidden;
-  color: var(--color-white);
-  margin-bottom: var(--spacing-lg);
+.nav-links a {
+  font-size: .86rem !important;
+  font-weight: 600 !important;
+  color: var(--ink, #0D1B2A) !important;
+  text-decoration: none !important;
+  padding: 7px 14px !important;
+  border-radius: 8px !important;
+  transition: all .2s !important;
 }
-.cap-blob1 {
-  position: absolute;
-  width: 500px;
-  height: 400px;
-  top: -100px;
-  right: -80px;
-  background: rgba(43,77,255,0.06);
-  border-radius: 50%;
-  filter: blur(90px);
-  pointer-events: none;
+.nav-links a:hover {
+  background: rgba(30,111,217,.07) !important;
+  color: var(--blue, #1E6FD9) !important;
 }
-.cap-blob2 {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  bottom: -100px;
-  left: -60px;
-  background: rgba(43,77,255,0.08);
-  border-radius: 50%;
-  filter: blur(90px);
-  pointer-events: none;
+.nav-links a.active {
+  background: rgba(30,111,217,.1) !important;
+  color: var(--blue, #1E6FD9) !important;
 }
-.cap-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3xl);
-  align-items: center;
-  position: relative;
-  z-index: 1;
+.nav-cta {
+  background: var(--navy, #0B1F3A) !important;
+  color: #fff !important;
+  padding: 9px 22px !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  transition: all .2s !important;
+  box-shadow: none !important;
 }
-.cap-inner .sec-label {
-  color: var(--color-primary-blue);
+.nav-cta:hover {
+  background: var(--royal, #1A3F7A) !important;
+  transform: translateY(-1px) !important;
 }
-.cap-inner .sec-title {
-  color: var(--color-white);
+.nav-toggle {
+  display: none !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  cursor: pointer !important;
+  margin-left: 12px !important;
 }
-.cap-inner .sec-sub {
-  color: var(--color-text-secondary);
+.nav-toggle span {
+  width: 22px !important;
+  height: 2px !important;
+  background: var(--ink, #0D1B2A) !important;
+  border-radius: 2px !important;
+  display: block !important;
 }
-.cap-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-}
-.cap-item {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
-  display: flex;
-  gap: var(--spacing-md);
-  align-items: flex-start;
-  transition: border-color 0.2s, transform 0.2s;
-  text-align: left;
-}
-.cap-item:hover {
-  border-color: rgba(43, 77, 255, 0.35);
-  transform: translateX(6px);
-  background: rgba(255, 255, 255, 0.06);
-}
-.ci-icon {
-  font-size: 1.4rem;
-  flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-md);
-  background: rgba(43, 77, 255, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-primary-blue);
-}
-.ci-title {
-  font-family: var(--font-heading-small-family);
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--color-white);
-  margin-bottom: var(--spacing-xs);
-}
-.ci-desc {
-  font-family: var(--font-body-medium-family);
-  font-size: 13px;
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-}
-
-/* ===== INDUSTRIES ===== */
-.ind-sect {
-  padding: var(--spacing-3xl) 0;
-  margin-bottom: var(--spacing-lg);
-}
-.ind-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-lg); /* Consistent 20px gap */
-}
-.ind-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-border-gray);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-xl) var(--spacing-md);
-  text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px -2px;
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-}
-.ind-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-primary-blue);
-  box-shadow: rgba(43, 77, 255, 0.08) 0px 8px 20px -2px;
-}
-.ind-icon {
-  font-size: 1.8rem;
-  display: block;
-  margin-bottom: var(--spacing-sm);
-}
-.ind-name {
-  font-family: var(--font-heading-small-family);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-dark-navy);
-  margin-bottom: var(--spacing-xs);
-}
-.ind-desc {
-  font-family: var(--font-body-medium-family);
-  font-size: 12px;
-  color: var(--color-text-primary);
-  line-height: 1.6;
-}
-
-/* ===== CTA SECTION ===== */
-.cta-sol {
-  background: var(--color-dark-navy);
-  padding: var(--spacing-4xl) 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  color: var(--color-white);
-  margin-bottom: var(--spacing-lg);
-}
-.cta-sol-inner {
-  max-width: 760px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-.cta-sol h2 {
-  color: var(--color-white);
-  font-size: 32px;
-  margin-bottom: var(--spacing-md);
-}
-.cta-sol p {
-  color: var(--color-text-secondary);
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: var(--spacing-xl);
-}
-.cta-btns-row {
-  display: flex;
-  gap: var(--spacing-md);
-  justify-content: center;
-}
-
 /* ===== FOOTER ===== */
 footer {
-  background: #04082c;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: var(--spacing-xl) 0;
-  position: relative;
-  z-index: 1;
+  background: #060E1A !important;
+  padding: 72px 40px 32px !important;
+  border-top: 1px solid rgba(255,255,255,.04) !important;
+  color: rgba(255,255,255,.6) !important;
 }
 .footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: var(--spacing-lg);
+  max-width: 1300px !important;
+  margin: 0 auto !important;
 }
-.fn {
-  font-family: var(--font-heading-small-family);
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--color-white);
+.footer-top {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr 1fr 1fr !important;
+  gap: 48px !important;
+  margin-bottom: 48px !important;
 }
-.fn span {
-  color: var(--color-primary-blue);
+.footer-brand p {
+  font-size: .84rem !important;
+  color: rgba(255,255,255,.3) !important;
+  line-height: 1.8 !important;
+  margin-top: 14px !important;
+  max-width: 260px !important;
 }
-footer p {
-  font-size: 12px;
-  color: var(--color-text-secondary);
+.footer-col h4 {
+  font-size: .7rem !important;
+  font-weight: 700 !important;
+  color: rgba(255,255,255,.3) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  margin-bottom: 18px !important;
 }
-.footer-links {
-  display: flex;
-  gap: var(--spacing-xl);
+.footer-col ul {
+  list-style: none !important;
 }
-.footer-links a {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
-  transition: color 0.2s;
+.footer-col li {
+  margin-bottom: 10px !important;
 }
-.footer-links a:hover {
-  color: var(--color-primary-blue);
+.footer-col a {
+  font-size: .84rem !important;
+  color: rgba(255,255,255,.25) !important;
+  text-decoration: none !important;
+  transition: color .2s !important;
+  display: inline !important;
 }
-
-/* ===== UTILS & RESPONSIVENESS ===== */
-.reveal {
+.footer-col a:hover {
+  color: rgba(255,255,255,.7) !important;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.04) !important;
+  padding-top: 24px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  margin-top: 0 !important;
+}
+.footer-bottom p {
+  font-size: .78rem !important;
+  color: rgba(255,255,255,.2) !important;
+}
+.footer-socials {
+  display: flex !important;
+  gap: 10px !important;
+}
+.footer-socials a {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 6px !important;
+  background: rgba(255,255,255,.04) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: rgba(255,255,255,.25) !important;
+  text-decoration: none !important;
+  font-size: .78rem !important;
+  transition: all .2s !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+}
+.footer-socials a:hover {
+  background: var(--blue, #1E6FD9) !important;
+  color: #fff !important;
+  border-color: var(--blue, #1E6FD9) !important;
+}
+/* ===== REVEAL ===== */
+.reveal, .reveal-l, .reveal-r {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: none;
+  transform: translateY(32px);
+  transition: opacity .7s ease, transform .7s ease !important;
 }
 .reveal-l {
-  opacity: 0;
-  transform: translateX(-24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal-l.visible {
-  opacity: 1;
-  transform: none;
+  transform: translateX(-32px);
 }
 .reveal-r {
-  opacity: 0;
-  transform: translateX(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateX(32px);
 }
-.reveal-r.visible {
-  opacity: 1;
-  transform: none;
+.revealed, .reveal.visible, .reveal-l.visible, .reveal-r.visible {
+  opacity: 1 !important;
+  transform: none !important;
 }
-
-@media(max-width: 1100px) {
-  .hero-inner { grid-template-columns: 1fr; text-align: center; }
-  .hero-content { text-align: center; display: flex; flex-direction: column; align-items: center; }
-  .hero-btns { justify-content: center; }
-  .prod-grid { grid-template-columns: 1fr 1fr; }
-  .ind-grid { grid-template-columns: 1fr 1fr; }
-  .cap-inner { grid-template-columns: 1fr; gap: var(--spacing-2xl); }
-}
-@media(max-width: 700px) {
-  .prod-grid { grid-template-columns: 1fr; }
-  .ind-grid { grid-template-columns: 1fr 1fr; }
-  .cta-btns-row { flex-direction: column; align-items: center; }
-  .footer-inner { flex-direction: column; align-items: center; text-align: center; }
-  nav { padding: 0 var(--spacing-md); }
+/* ===== RESPONSIVE NAV ===== */
+@media(max-width:700px){
+  .nav-links {
+    display: none !important;
+    position: fixed !important;
+    top: 73px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #fff !important;
+    flex-direction: column !important;
+    padding: 16px !important;
+    gap: 4px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.1) !important;
+    width: 100% !important;
+  }
+  .nav-links.open {
+    display: flex !important;
+  }
+  .nav-toggle {
+    display: flex !important;
+  }
 }
 </style>
 </head>
 <body>
-<div id="spb"></div>
+<div id="progress-bar"></div>
+
+<!-- LOADER -->
 <div id="loader">
-  <div class="ld-ring"><div class="ld-icon">🤖</div></div>
-  <div class="ld-text">TechM4<span>Solutions</span></div>
-  <div class="ld-bar"><div class="ld-fill"></div></div>
+  <div class="loader-blueprint"></div>
+  <div class="loader-ring"></div>
+  <div class="loader-brand">Tech<span>M4</span>Solutions</div>
+  <div class="loader-sub">AI · Scalable Software · Intelligent Platforms</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
-<nav id="mainNav">
-  <div class="nav-inner container">
-    <a href="index.html" class="nav-back">← TechM4</a>
-    <a href="solutions.html" class="nav-logo">TechM4<span>Solutions</span></a>
-    <div class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#industries">Industries</a>
-      <a href="#contact" class="nav-contact-email">hello@techm4india.com</a>
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Tech<span>M4</span>India</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="">Home</a></li>
+      <li><a href="about.html" class="">About</a></li>
+      <li><a href="engineering.html" class="">Engineering</a></li>
+      <li><a href="solutions.html" class="active">Solutions</a></li>
+      <li><a href="space.html" class="">Space</a></li>
+      <li><a href="techm4schools.html" class="">Schools</a></li>
+      <li><a href="contact.html" class="nav-cta">Get In Touch →</a></li>
+    </ul>
+    <div class="nav-toggle" onclick="toggleNav()">
+      <span></span><span></span><span></span>
     </div>
-    <a href="#contact" class="nav-cta">Start a Project →</a>
   </div>
 </nav>
 
@@ -1055,120 +579,92 @@ footer p {
 <section class="hero">
   <div class="hero-blob hb1"></div><div class="hero-blob hb2"></div><div class="hero-blob hb3"></div>
   <div class="hero-grid-bg"></div>
-  <div class="container hero-inner">
-    <!-- Left -->
-    <div class="hero-content">
-      <div class="hero-badge"><span class="hb-dot"></span>AI & Software Division · TechM4India</div>
-      <h1>Engineering<br><span class="h1g">Intelligent Platforms</span><br>for <span class="h1c">India's Future.</span></h1>
-      <p class="hero-sub">Next-generation AI-powered digital platforms built to solve India's most pressing challenges — from education to agriculture to employment. We don't build products. We build the digital infrastructure of tomorrow.</p>
-      <div class="hero-btns">
-        <a href="#products" class="btn-glow">Explore Our Platforms →</a>
-        <a href="#capabilities" class="btn-ghost-sol">Our Capabilities</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hs-item"><div class="hs-num">6+</div><div class="hs-label">AI Platforms Built</div></div>
-        <div class="hs-item"><div class="hs-num">5</div><div class="hs-label">Technology Domains</div></div>
-        <div class="hs-item"><div class="hs-num">99.9%</div><div class="hs-label">Platform Uptime</div></div>
-        <div class="hs-item"><div class="hs-num">1M+</div><div class="hs-label">Target Users</div></div>
-      </div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hb-dot"></span>AI & Software Division · TechM4India</div>
+    <h1>Engineering<br><span class="h1g">Intelligent Platforms</span><br>for <span class="h1c">India's Future.</span></h1>
+    <p class="hero-sub">Next-generation AI-powered digital platforms built to solve India's most pressing challenges — from education to agriculture to employment. We don't build products. We build the digital infrastructure of tomorrow.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-glow">Explore Our Platforms →</a>
+      <a href="#capabilities" class="btn-ghost-sol">Our Capabilities</a>
     </div>
-    <!-- Right: Workflow Diagram Slot -->
-    <div class="workflow-diagram">
-      <div class="wf-center-node">
-        <div class="wf-node-icon">🤖</div>
-        <div class="wf-node-name">Central SchoolOS</div>
-      </div>
-      <svg class="wf-connections" viewBox="0 0 400 400">
-        <!-- Dotted blue glowing lines linking nodes -->
-        <path d="M200,200 L70,80" class="wf-line" />
-        <path d="M200,200 L330,80" class="wf-line" />
-        <path d="M200,200 L70,320" class="wf-line" />
-        <path d="M200,200 L330,320" class="wf-line" />
-      </svg>
-      <div class="wf-node node-tl">
-        <div class="wf-node-icon">🌾</div>
-        <div class="wf-node-name">RythuSeva AI</div>
-      </div>
-      <div class="wf-node node-tr">
-        <div class="wf-node-icon">🔒</div>
-        <div class="wf-node-name">StaySecure</div>
-      </div>
-      <div class="wf-node node-bl">
-        <div class="wf-node-icon">💼</div>
-        <div class="wf-node-name">AutoHire Agent</div>
-      </div>
-      <div class="wf-node node-br">
-        <div class="wf-node-icon">📈</div>
-        <div class="wf-node-name">Predictive API</div>
-      </div>
+    <div class="hero-stats">
+      <div class="hs-item"><div class="hs-num">6+</div><div class="hs-label">AI Platforms Built</div></div>
+      <div class="hs-item"><div class="hs-num">5</div><div class="hs-label">Technology Domains</div></div>
+      <div class="hs-item"><div class="hs-num">99.9%</div><div class="hs-label">Platform Uptime</div></div>
+      <div class="hs-item"><div class="hs-num">1M+</div><div class="hs-label">Target Users</div></div>
     </div>
   </div>
 </section>
 
-<!-- TICKER / PARTNERS -->
-<section class="partners-sec">
-  <div class="container">
-    <div class="partners-title">INTEGRATIONS &amp; CO-DEVELOPMENTS</div>
-    <div class="partners-grid">
-      <div class="partner-logo">JPMorgan</div>
-      <div class="partner-logo">HCL Technologies</div>
-      <div class="partner-logo">Deloitte</div>
-      <div class="partner-logo">Tech Mahindra</div>
-      <div class="partner-logo">T-Hub Labs</div>
-      <div class="partner-logo">NSDC India</div>
-    </div>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ti ti-lit"><span class="ti-dot"></span>Agentic AI Platforms</span>
+    <span class="ti"><span class="ti-dot"></span>Data Intelligence Systems</span>
+    <span class="ti ti-lit"><span class="ti-dot"></span>Enterprise SaaS</span>
+    <span class="ti"><span class="ti-dot"></span>Cloud-Native Architecture</span>
+    <span class="ti ti-lit"><span class="ti-dot"></span>RAG-Powered Platforms</span>
+    <span class="ti"><span class="ti-dot"></span>Intelligent Automation</span>
+    <span class="ti ti-lit"><span class="ti-dot"></span>Machine Learning Systems</span>
+    <span class="ti"><span class="ti-dot"></span>Computer Vision</span>
+    <span class="ti ti-lit"><span class="ti-dot"></span>Agentic AI Platforms</span>
+    <span class="ti"><span class="ti-dot"></span>Data Intelligence Systems</span>
+    <span class="ti ti-lit"><span class="ti-dot"></span>Enterprise SaaS</span>
+    <span class="ti"><span class="ti-dot"></span>Cloud-Native Architecture</span>
+    <span class="ti ti-lit"><span class="ti-dot"></span>RAG-Powered Platforms</span>
+    <span class="ti"><span class="ti-dot"></span>Intelligent Automation</span>
+    <span class="ti ti-lit"><span class="ti-dot"></span>Machine Learning Systems</span>
+    <span class="ti"><span class="ti-dot"></span>Computer Vision</span>
   </div>
-</section>
+</div>
 
 <!-- PRODUCTS -->
 <section class="section" id="products">
-  <div class="container">
-    <p class="sec-label reveal">// Innovation Portfolio</p>
-    <h2 class="sec-title reveal">Six Platforms.<br>Six Problems <em>Solved.</em></h2>
-    <p class="sec-sub reveal">Every platform we build starts with a real problem millions of Indians face every day. We don't build for technology's sake — we build for India's sake.</p>
-    <div class="prod-grid">
-      <div class="prod-card pc-or reveal">
-        <div class="prod-icon pi-or">🎓</div>
-        <p class="prod-tag pt-or">EdTech · AI Platform</p>
-        <h3 class="prod-name">EAMCET College Predictor</h3>
-        <p class="prod-desc">India's most accurate AI-powered college prediction platform. Analyzes years of counseling data to show engineering aspirants exactly which colleges they can realistically get — based on rank, category, gender, and branch preference.</p>
-        <div class="prod-chips"><span class="prod-chip">Machine Learning</span><span class="prod-chip">Historical Data</span><span class="prod-chip">Personalized Reports</span></div>
-      </div>
-      <div class="prod-card pc-co reveal" style="transition-delay:.1s">
-        <div class="prod-icon pi-co">🔒</div>
-        <p class="prod-tag pt-co">Security · Digital Identity</p>
-        <h3 class="prod-name">StaySecure</h3>
-        <p class="prod-desc">The complete digital security and management platform for hostels and educational institutions. Aadhaar-based identity verification, resident management, visitor tracking, and secure digital audit trails — replacing paper chaos with digital precision.</p>
-        <div class="prod-chips"><span class="prod-chip">Aadhaar Auth</span><span class="prod-chip">Digital Identity</span><span class="prod-chip">Access Control</span></div>
-      </div>
-      <div class="prod-card pc-gr reveal" style="transition-delay:.2s">
-        <div class="prod-icon pi-gr">🌾</div>
-        <p class="prod-tag pt-gr">AgriTech · AI Platform</p>
-        <h3 class="prod-name">RythuSeva</h3>
-        <p class="prod-desc">Putting the power of AI in every farmer's hands. Crop advisory, AI plant disease detection using computer vision, GPS-based farm mapping, agricultural marketplace access, and farmer education — bridging the technology gap for India's 140 million farming families.</p>
-        <div class="prod-chips"><span class="prod-chip">Computer Vision</span><span class="prod-chip">GPS Analytics</span><span class="prod-chip">Digital Marketplace</span></div>
-      </div>
-      <div class="prod-card pc-pu reveal" style="transition-delay:.3s">
-        <div class="prod-icon pi-pu">💼</div>
-        <p class="prod-tag pt-pu">EmployTech · Agentic AI</p>
-        <h3 class="prod-name">AutoHire.AI</h3>
-        <p class="prod-desc">The world's most intelligent job application agent. AutoHire.AI autonomously scans job boards, customizes your resume for each position, submits applications, tracks responses, and prepares you for interviews — transforming job searching from exhausting to effortless.</p>
-        <div class="prod-chips"><span class="prod-chip">Agentic AI</span><span class="prod-chip">NLP</span><span class="prod-chip">Automation</span><span class="prod-chip">Interview Prep</span></div>
-      </div>
-      <div class="prod-card pc-gr reveal" style="transition-delay:.4s">
-        <div class="prod-icon pi-gr">🌿</div>
-        <p class="prod-tag pt-gr">Research · Computer Vision</p>
-        <h3 class="prod-name">Medicinal Plant Detector</h3>
-        <p class="prod-desc">Research-grade explainable AI system that identifies medicinal plant species from photographs with high accuracy. Built for researchers, Ayurvedic practitioners, and agricultural experts — making traditional knowledge accessible through modern AI.</p>
-        <div class="prod-chips"><span class="prod-chip">Computer Vision</span><span class="prod-chip">Explainable AI</span><span class="prod-chip">Mobile App</span></div>
-      </div>
-      <div class="prod-card pc-or reveal" style="transition-delay:.5s">
-        <div class="prod-icon pi-ye">🏫</div>
-        <p class="prod-tag pt-ye">EdTech · SaaS Platform</p>
-        <h3 class="prod-name">SchoolOS</h3>
-        <p class="prod-desc">The complete digital operating system for innovation-driven schools. Student management, innovation program tracking, parent communication, AI academic insights, lab booking, national leaderboards — everything a 21st-century school needs in one intelligent platform.</p>
-        <div class="prod-chips"><span class="prod-chip">Enterprise SaaS</span><span class="prod-chip">AI Insights</span><span class="prod-chip">School Management</span></div>
-      </div>
+  <p class="sec-label reveal">// Innovation Portfolio</p>
+  <h2 class="sec-title reveal">Six Platforms.<br>Six Problems <em>Solved.</em></h2>
+  <p class="sec-sub reveal">Every platform we build starts with a real problem millions of Indians face every day. We don't build for technology's sake — we build for India's sake.</p>
+  <div class="prod-grid">
+    <div class="prod-card pc-or reveal">
+      <div class="prod-icon pi-or">🎓</div>
+      <p class="prod-tag pt-or">EdTech · AI Platform</p>
+      <h3 class="prod-name">EAMCET College Predictor</h3>
+      <p class="prod-desc">India's most accurate AI-powered college prediction platform. Analyzes years of historical counseling data to show engineering aspirants exactly which colleges they can realistically get — based on rank, category, gender, and branch preference.</p>
+      <div class="prod-chips"><span class="prod-chip">Machine Learning</span><span class="prod-chip">Historical Data</span><span class="prod-chip">Personalized Reports</span></div>
+    </div>
+    <div class="prod-card pc-co reveal" style="transition-delay:.1s">
+      <div class="prod-icon pi-co">🔒</div>
+      <p class="prod-tag pt-co">Security · Digital Identity</p>
+      <h3 class="prod-name">StaySecure</h3>
+      <p class="prod-desc">The complete digital security and management platform for hostels and educational institutions. Aadhaar-based identity verification, resident management, visitor tracking, and secure digital audit trails — replacing paper chaos with digital precision.</p>
+      <div class="prod-chips"><span class="prod-chip">Aadhaar Auth</span><span class="prod-chip">Digital Identity</span><span class="prod-chip">Access Control</span></div>
+    </div>
+    <div class="prod-card pc-gr reveal" style="transition-delay:.2s">
+      <div class="prod-icon pi-gr">🌾</div>
+      <p class="prod-tag pt-gr">AgriTech · AI Platform</p>
+      <h3 class="prod-name">RythuSeva</h3>
+      <p class="prod-desc">Putting the power of AI in every farmer's hands. Crop advisory, AI plant disease detection using computer vision, GPS-based farm mapping, agricultural marketplace access, and farmer education — bridging the technology gap for India's 140 million farming families.</p>
+      <div class="prod-chips"><span class="prod-chip">Computer Vision</span><span class="prod-chip">GPS Analytics</span><span class="prod-chip">Digital Marketplace</span></div>
+    </div>
+    <div class="prod-card pc-pu reveal" style="transition-delay:.3s">
+      <div class="prod-icon pi-pu">💼</div>
+      <p class="prod-tag pt-pu">EmployTech · Agentic AI</p>
+      <h3 class="prod-name">AutoHire.AI</h3>
+      <p class="prod-desc">The world's most intelligent job application agent. AutoHire.AI autonomously scans job boards, customizes your resume for each position, submits applications, tracks responses, and prepares you for interviews — transforming job searching from exhausting to effortless.</p>
+      <div class="prod-chips"><span class="prod-chip">Agentic AI</span><span class="prod-chip">NLP</span><span class="prod-chip">Automation</span><span class="prod-chip">Interview Prep</span></div>
+    </div>
+    <div class="prod-card pc-gr reveal" style="transition-delay:.4s">
+      <div class="prod-icon pi-gr">🌿</div>
+      <p class="prod-tag pt-gr">Research · Computer Vision</p>
+      <h3 class="prod-name">Medicinal Plant Detector</h3>
+      <p class="prod-desc">Research-grade explainable AI system that identifies medicinal plant species from photographs with high accuracy. Built for researchers, Ayurvedic practitioners, and agricultural experts — making traditional knowledge accessible through modern AI.</p>
+      <div class="prod-chips"><span class="prod-chip">Computer Vision</span><span class="prod-chip">Explainable AI</span><span class="prod-chip">Mobile App</span></div>
+    </div>
+    <div class="prod-card pc-or reveal" style="transition-delay:.5s">
+      <div class="prod-icon pi-ye">🏫</div>
+      <p class="prod-tag pt-ye">EdTech · SaaS Platform</p>
+      <h3 class="prod-name">SchoolOS</h3>
+      <p class="prod-desc">The complete digital operating system for innovation-driven schools. Student management, innovation program tracking, parent communication, AI academic insights, lab booking, national leaderboards — everything a 21st-century school needs in one intelligent platform.</p>
+      <div class="prod-chips"><span class="prod-chip">Enterprise SaaS</span><span class="prod-chip">AI Insights</span><span class="prod-chip">School Management</span></div>
     </div>
   </div>
 </section>
@@ -1176,7 +672,7 @@ footer p {
 <!-- CAPABILITIES -->
 <section class="cap-sect" id="capabilities">
   <div class="cap-blob1"></div><div class="cap-blob2"></div>
-  <div class="container cap-inner">
+  <div class="cap-inner">
     <div class="reveal-l">
       <p class="sec-label">// Core Engineering Capabilities</p>
       <h2 class="sec-title" style="color:#fff">Technology That <span class="g">Powers Everything</span></h2>
@@ -1194,18 +690,18 @@ footer p {
 
 <!-- INDUSTRIES -->
 <section class="ind-sect" id="industries">
-  <div class="container">
+  <div class="ind-inner">
     <p class="sec-label reveal">// Industries We Serve</p>
     <h2 class="sec-title reveal">Built for Every Sector<br><em>Shaping India's Future.</em></h2>
     <p class="sec-sub reveal">TechM4Solutions builds intelligent systems across the sectors that matter most to India — reaching the people who need technology-driven change the most.</p>
     <div class="ind-grid">
-      <div class="ind-card reveal"><span class="ind-icon">🎓</span><div class="ind-name">Education &amp; EdTech</div><div class="ind-desc">AI platforms transforming how India's students learn, choose careers, and access opportunities.</div></div>
-      <div class="ind-card reveal" style="transition-delay:.1s"><span class="ind-icon">🌾</span><div class="ind-name">Agriculture &amp; Rural Tech</div><div class="ind-desc">Digital tools empowering India's 140 million farming families with AI-driven insights and market access.</div></div>
-      <div class="ind-card reveal" style="transition-delay:.2s"><span class="ind-icon">💼</span><div class="ind-name">Employment &amp; HR Tech</div><div class="ind-desc">Intelligent platforms connecting talent with opportunity faster, smarter, and more fairly than ever before.</div></div>
-      <div class="ind-card reveal" style="transition-delay:.3s"><span class="ind-icon">🔒</span><div class="ind-name">Security &amp; Identity</div><div class="ind-desc">Digital identity and access management systems for educational institutions and residential facilities.</div></div>
-      <div class="ind-card reveal" style="transition-delay:.4s"><span class="ind-icon">🔬</span><div class="ind-name">Research &amp; Science</div><div class="ind-desc">AI tools supporting researchers with computer vision, data analysis, and knowledge discovery systems.</div></div>
+      <div class="ind-card reveal"><span class="ind-icon">🎓</span><div class="ind-name">Education & EdTech</div><div class="ind-desc">AI platforms transforming how India's students learn, choose careers, and access opportunities.</div></div>
+      <div class="ind-card reveal" style="transition-delay:.1s"><span class="ind-icon">🌾</span><div class="ind-name">Agriculture & Rural Tech</div><div class="ind-desc">Digital tools empowering India's 140 million farming families with AI-driven insights and market access.</div></div>
+      <div class="ind-card reveal" style="transition-delay:.2s"><span class="ind-icon">💼</span><div class="ind-name">Employment & HR Tech</div><div class="ind-desc">Intelligent platforms connecting talent with opportunity faster, smarter, and more fairly than ever before.</div></div>
+      <div class="ind-card reveal" style="transition-delay:.3s"><span class="ind-icon">🔒</span><div class="ind-name">Security & Identity</div><div class="ind-desc">Digital identity and access management systems for educational institutions and residential facilities.</div></div>
+      <div class="ind-card reveal" style="transition-delay:.4s"><span class="ind-icon">🔬</span><div class="ind-name">Research & Science</div><div class="ind-desc">AI tools supporting researchers with computer vision, data analysis, and knowledge discovery systems.</div></div>
       <div class="ind-card reveal" style="transition-delay:.5s"><span class="ind-icon">🏥</span><div class="ind-name">Healthcare Technology</div><div class="ind-desc">Medical AI systems for diagnostics, patient management, and healthcare data intelligence platforms.</div></div>
-      <div class="ind-card reveal" style="transition-delay:.6s"><span class="ind-icon">🤝</span><div class="ind-name">Government &amp; Public Sector</div><div class="ind-desc">Digital infrastructure for public services, civic management, and government-citizen technology interfaces.</div></div>
+      <div class="ind-card reveal" style="transition-delay:.6s"><span class="ind-icon">🤝</span><div class="ind-name">Government & Public Sector</div><div class="ind-desc">Digital infrastructure for public services, civic management, and government-citizen technology interfaces.</div></div>
       <div class="ind-card reveal" style="transition-delay:.7s"><span class="ind-icon">🚀</span><div class="ind-name">Innovation Ecosystems</div><div class="ind-desc">Platform infrastructure for startup accelerators, innovation labs, and technology communities.</div></div>
     </div>
   </div>
@@ -1213,48 +709,122 @@ footer p {
 
 <!-- CTA -->
 <section class="cta-sol" id="contact">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(43,77,255,0.07),transparent 70%);pointer-events:none"></div>
-  <div class="container cta-sol-inner">
-    <p class="sec-label reveal" style="color:var(--color-primary-blue)">// Let's Build Together</p>
-    <h2 class="reveal">Ready to Build the <span style="color:var(--color-primary-blue)">Future Together?</span></h2>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(255,107,53,.07),transparent 70%);pointer-events:none"></div>
+  <div class="cta-sol-inner">
+    <p class="sec-label" style="color:var(--orange)" class="reveal">// Let's Build Together</p>
+    <h2 class="reveal">Ready to Build the <span style="background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Future Together?</span></h2>
     <p class="reveal">Whether you need an AI platform, a data intelligence system, or a custom digital product — TechM4Solutions brings the engineering talent, the AI expertise, and the India-scale understanding to make it real.</p>
-    <div class="cta-btns-row reveal">
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap" class="reveal">
       <a href="mailto:solutions@techm4india.com" class="btn-glow">Start a Project →</a>
       <a href="index.html" class="btn-ghost-sol">← Back to TechM4</a>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="container footer-inner">
-    <span class="fn">TechM4<span>Solutions</span></span>
-    <p>© 2026 TechM4India · AI &amp; Software Division · Engineering India's Digital Future</p>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="engineering.html">Engineering</a>
-      <a href="space.html">Space</a>
-      <a href="techm4schools.html">Schools</a>
-      <a href="about.html">About</a>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:#fff;letter-spacing:-0.5px">Tech<span style="background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent">M4</span>India</div>
+        <p>Building India's next-generation technology, space, engineering, and K-12 school education ecosystems.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Divisions</h4>
+        <ul>
+          <li><a href="engineering.html">Engineering</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="space.html">Space Tech</a></li>
+          <li><a href="techm4schools.html">Schools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="vision.html">Vision & Mission</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="research.html">Research Papers</a></li>
+          <li><a href="ecosystem.html">Ecosystem</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="impact.html">Impact Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TechM4India Innovations Pvt Ltd. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/107389911/" target="_blank">in</a>
+        <a href="https://wa.me/916301814246" target="_blank">wa</a>
+        <a href="https://www.instagram.com/techm4india" target="_blank">ig</a>
+        <a href="https://twitter.com/techm4india" target="_blank">tw</a>
+      </div>
     </div>
   </div>
 </footer>
-
 <script>
-window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('out'),1900));
-window.addEventListener('scroll',()=>{
-  const pct=(scrollY/(document.body.scrollHeight-innerHeight))*100;
-  document.getElementById('spb').style.width=pct+'%';
-  document.getElementById('mainNav').classList.toggle('scrolled',scrollY>20);
+
+// ===== LOADER =====
+window.addEventListener('load', function(){
+  setTimeout(function(){ 
+    const loader = document.getElementById('loader');
+    if (loader) loader.classList.add('hidden');
+  }, 2200);
 });
-const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*75)});},{threshold:.1});
-document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(r=>obs.observe(r));
-document.querySelectorAll('a[href$=".html"]').forEach(link=>{
-  link.addEventListener('click',e=>{
-    const href=link.getAttribute('href');if(!href)return;
-    e.preventDefault();document.body.style.opacity='0';document.body.style.transition='opacity .4s';
-    setTimeout(()=>window.location.href=href,420);
+
+// ===== PROGRESS + NAV SCROLL =====
+window.addEventListener('scroll', function(){
+  const progBar = document.getElementById('progress-bar');
+  if (progBar) {
+    const totalScroll = document.body.scrollHeight - window.innerHeight;
+    const pct = totalScroll > 0 ? (window.scrollY / totalScroll * 100) : 0;
+    progBar.style.width = pct + '%';
+  }
+  const navbar = document.getElementById('navbar');
+  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// ===== NAV TOGGLE =====
+function toggleNav() {
+  const navLinks = document.getElementById('navLinks');
+  if (navLinks) navLinks.classList.toggle('open');
+}
+
+// ===== REVEAL OBSERVER =====
+var ro = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ 
+    if(e.isIntersecting) {
+      e.target.classList.add('revealed');
+      e.target.classList.add('visible'); // support legacy styling
+    }
   });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(function(el){ ro.observe(el); });
+
+// ===== PAGE TRANSITION =====
+document.querySelectorAll('a[href]').forEach(function(a){
+  var h = a.getAttribute('href');
+  if(h && !h.startsWith('#') && !h.startsWith('mailto') && !h.startsWith('http') && !h.startsWith('tel') && !a.hasAttribute('target')){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      document.body.style.opacity = '0';
+      document.body.style.transition = 'opacity .3s';
+      setTimeout(function(){ window.location.href = h; }, 300);
+    });
+  }
 });
+document.body.style.opacity = '0';
+setTimeout(function(){ 
+  document.body.style.transition = 'opacity .5s'; 
+  document.body.style.opacity = '1'; 
+}, 80);
+
 </script>
 </body>
 </html>
