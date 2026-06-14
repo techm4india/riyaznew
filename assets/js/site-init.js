@@ -155,6 +155,39 @@
     if (anchor.getAttribute('target') === '_blank') return;
 
     e.preventDefault();
+
+    // Map clean URLs to relative file paths for local file preview (file://)
+    if (window.location.protocol === 'file:' && href.startsWith('/')) {
+      var isNested = window.location.pathname.indexOf('/divisions/') !== -1 || window.location.pathname.indexOf('/pages/') !== -1;
+      var prefix = isNested ? '../' : '';
+      
+      var parts = href.split('#');
+      var cleanPath = parts[0];
+      var hash = parts[1] ? '#' + parts[1] : '';
+      
+      var urlMap = {
+        '/': 'index.html',
+        '/engineering': 'divisions/engineering.html',
+        '/solutions': 'divisions/solutions.html',
+        '/space': 'divisions/space.html',
+        '/schools': 'divisions/schools.html',
+        '/about': 'pages/about.html',
+        '/careers': 'pages/careers.html',
+        '/contact': 'pages/contact.html',
+        '/programs': 'pages/programs.html',
+        '/research': 'pages/research.html',
+        '/impact': 'pages/impact.html',
+        '/vision': 'pages/vision.html',
+        '/ecosystem': 'pages/ecosystem.html',
+        '/login': 'pages/login.html',
+        '/admin': 'pages/admin.html'
+      };
+      
+      if (urlMap[cleanPath]) {
+        href = prefix + urlMap[cleanPath] + hash;
+      }
+    }
+
     try {
       sessionStorage.setItem(NAV_KEY, '1');
     } catch (err) {}
