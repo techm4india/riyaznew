@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta name="robots" content="noindex, nofollow">
 <title>Dashboard — TechM4India</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
 <style>
+
 :root{
   --orange:#FF6B35;--pink:#FF4D8D;--purple:#7B2FF7;--blue:#0EA5E9;
   --green:#22C55E;--yellow:#FFD60A;--ink:#1A1A2E;--bg:#F4F6FA;
@@ -18,31 +19,32 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden}
-body{font-family:'Quicksand',sans-serif;background:var(--bg);color:var(--ink);display:flex}
-h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);display:flex}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:900}
 
 /* SIDEBAR */
 .sidebar{width:var(--sidebar-w);background:var(--ink);height:100vh;display:flex;flex-direction:column;position:fixed;left:0;top:0;bottom:0;overflow-y:auto;transition:width .3s;z-index:100;flex-shrink:0}
 .sidebar::-webkit-scrollbar{width:0}
 .sb-top{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,.06)}
-.sb-logo{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.sb-logo{font-family:'Sora',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px;margin-bottom:20px}
 .sb-logo span{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .sb-user{display:flex;align-items:center;gap:12px;padding:14px 12px;background:rgba(255,255,255,.05);border-radius:12px}
-.sb-avatar{width:40px;height:40px;border-radius:50%;background:var(--g-main);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.sb-avatar{width:40px;height:40px;border-radius:50%;background:var(--g-main);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;overflow:hidden}
+.sb-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
 .sb-user-info strong{display:block;font-size:.88rem;color:#fff;font-weight:700}
 .sb-user-info span{font-size:.75rem;color:rgba(255,255,255,.4)}
 .sb-online{width:8px;height:8px;border-radius:50%;background:var(--green);margin-left:auto;flex-shrink:0}
 
-.sb-nav{padding:16px 12px;flex:1}
+.sb-
 .sb-section{font-size:.65rem;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:1.5px;text-transform:uppercase;padding:8px 8px 4px;margin-top:8px}
-.sb-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;cursor:pointer;transition:background .2s,color .2s;text-decoration:none;margin-bottom:2px;border:none;background:transparent;width:100%;text-align:left;font-family:'Quicksand',sans-serif;color:rgba(255,255,255,.45);font-size:.88rem;font-weight:600}
+.sb-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;cursor:pointer;transition:background .2s,color .2s;text-decoration:none;margin-bottom:2px;border:none;background:transparent;width:100%;text-align:left;font-family:'Inter',sans-serif;color:rgba(255,255,255,.45);font-size:.88rem;font-weight:600}
 .sb-item:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
 .sb-item.active{background:rgba(255,107,53,.15);color:var(--orange)}
 .sb-item.active .sb-icon{color:var(--orange)}
 .sb-icon{font-size:1rem;width:20px;text-align:center;flex-shrink:0}
 .sb-badge{margin-left:auto;background:var(--orange);color:#fff;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:99px}
 
-.sb-footer{padding:16px 12px;border-top:1px solid rgba(255,255,255,.06)}
+.sb-
 .sb-logout{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:10px;color:rgba(255,255,255,.3);font-size:.85rem;font-weight:600;cursor:pointer;transition:.2s;text-decoration:none}
 .sb-logout:hover{background:rgba(255,255,255,.05);color:rgba(255,255,255,.6)}
 
@@ -57,7 +59,7 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
 .topbar-title{font-size:1.1rem;font-weight:800;color:var(--ink);flex:1}
 .topbar-title span{color:rgba(26,26,46,.35);font-weight:600;font-size:.9rem;margin-left:8px}
 .search-bar{display:flex;align-items:center;gap:8px;background:var(--bg);border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:8px 14px;width:260px}
-.search-bar input{border:none;background:transparent;outline:none;font-size:.88rem;font-family:'Quicksand',sans-serif;color:var(--ink);width:100%}
+.search-bar input{border:none;background:transparent;outline:none;font-size:.88rem;font-family:'Inter',sans-serif;color:var(--ink);width:100%}
 .search-bar input::placeholder{color:rgba(26,26,46,.35)}
 .search-bar .si{font-size:.9rem;color:rgba(26,26,46,.3)}
 .tb-btn{width:38px;height:38px;border-radius:10px;border:1.5px solid rgba(0,0,0,.08);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:border-color .2s,background .2s;position:relative}
@@ -85,7 +87,7 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
 .stat-change{font-size:.75rem;font-weight:700;padding:4px 8px;border-radius:99px}
 .stat-change.up{background:rgba(34,197,94,.1);color:var(--green)}
 .stat-change.dn{background:rgba(255,77,141,.1);color:var(--pink)}
-.stat-num{font-family:'Nunito',sans-serif;font-weight:900;font-size:2rem;color:var(--ink);margin-bottom:4px}
+.stat-num{font-family:'Sora',sans-serif;font-weight:900;font-size:2rem;color:var(--ink);margin-bottom:4px}
 .stat-label{font-size:.8rem;color:rgba(26,26,46,.45);font-weight:600}
 
 /* GRID LAYOUT */
@@ -188,7 +190,75 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
   .stats-row{grid-template-columns:1fr}
   .div-mini-grid{grid-template-columns:1fr 1fr}
 }
+
+
+/* ===== STANDARDIZED PROGRESS BAR ===== */
+#progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));width:0%;z-index:9999;transition:width .1s}
+
+/* ===== STANDARDIZED LOADER ===== */
+#loader{position:fixed;inset:0;background:var(--navy, #0B1F3A);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10000;transition:opacity .7s,visibility .7s}
+#loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-blueprint{position:absolute;inset:0;background-image:linear-gradient(rgba(30,111,217,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(30,111,217,.06) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.loader-ring{width:72px;height:72px;border:3px solid rgba(255,255,255,.1);border-top-color:var(--orange, #FF6B35);border-right-color:var(--blue, #1E6FD9);border-radius:50%;animation:spin 1s linear infinite;margin-bottom:24px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-brand{font-family:'Sora',sans-serif;font-weight:800;font-size:1.6rem;color:#fff;letter-spacing:-0.5px}
+.loader-brand span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.loader-sub{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:8px;letter-spacing:2px;text-transform:uppercase}
+.loader-bar{width:200px;height:2px;background:rgba(255,255,255,.08);border-radius:99px;margin-top:24px;overflow:hidden}
+.loader-fill{height:100%;background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));border-radius:99px;animation:fill 2.2s ease forwards}
+@keyframes fill{from{width:0}to{width:100%}}
+
+/* ===== STANDARDIZED NAV ===== */
+nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
+.nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
+.nav-links a:hover{background:rgba(30,111,217,.07);color:var(--blue, #1E6FD9)}
+.nav-links a.active{background:rgba(30,111,217,.1);color:var(--blue, #1E6FD9)}
+.nav-cta{background:var(--navy, #0B1F3A) !important;color:#fff !important;padding:8px 16px !important;border-radius:8px !important;font-weight:700 !important;transition:all .2s !important;white-space:nowrap}
+.nav-cta:hover{background:var(--royal, #1A3F7A) !important;transform:translateY(-1px) !important}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;margin-left:12px}
+.nav-toggle span{width:22px;height:2px;background:var(--ink, #0D1B2A);border-radius:2px}
+
+/* ===== STANDARDIZED FOOTER ===== */
+footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,255,255,.04)}
+.footer-inner{max-width:1300px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand p{font-size:.84rem;color:rgba(255,255,255,.3);line-height:1.8;margin-top:14px;max-width:260px}
+.footer-col h4{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:2px;margin-bottom:18px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:.84rem;color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:rgba(255,255,255,.7)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.04);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.2)}
+.footer-socials{display:flex;gap:10px}
+.footer-socials a{width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);text-decoration:none;font-size:.78rem;transition:all .2s;border:1px solid rgba(255,255,255,.06)}
+.footer-socials a:hover{background:var(--blue, #1E6FD9);color:#fff;border-color:var(--blue, #1E6FD9)}
+
+/* ===== STANDARDIZED MEDIA QUERIES ===== */
+@media(max-width:1150px){
+  nav .nav-inner{padding:0 20px}
+  .nav-links{display:none;position:fixed;top:73px;left:0;right:0;background:#fff;flex-direction:column;padding:16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:flex}
+}
+@media(max-width:1100px){
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  footer{padding:56px 24px 28px}
+  .footer-top{grid-template-columns:1fr}
+}
+
 </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
@@ -197,9 +267,9 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
   <div class="sb-top">
     <a href="index.html" class="sb-logo">⚙️ Tech<span>M4</span>India</a>
     <div class="sb-user">
-      <div class="sb-avatar">👨‍💼</div>
+      <div class="sb-avatar"><img src="assets/mahesh.png" alt="Thanniru Mahesh"></div>
       <div class="sb-user-info">
-        <strong>Mahi Thanniru</strong>
+        <strong>Thanniru Mahesh</strong>
         <span>Founder &amp; Admin</span>
       </div>
       <div class="sb-online"></div>
@@ -243,7 +313,7 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
       <input type="text" placeholder="Search students, courses…"/>
     </div>
     <button class="tb-btn" title="Notifications">🔔<span class="tb-notif">4</span></button>
-    <button class="tb-btn" title="Profile">👨‍💼</button>
+    <button class="tb-btn" title="Profile" style="overflow:hidden;padding:0;"><img src="assets/mahesh.png" alt="Thanniru Mahesh" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></button>
   </div>
 
   <!-- CONTENT -->
@@ -482,19 +552,19 @@ h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900}
       <div class="dash-card">
         <div class="card-header"><h3>Quick Actions</h3></div>
         <div style="padding:20px;display:flex;flex-direction:column;gap:12px">
-          <button onclick="alert('Add Student form coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(255,107,53,.06);border:1.5px solid rgba(255,107,53,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Quicksand',sans-serif" onmouseover="this.style.background='rgba(255,107,53,.1)'" onmouseout="this.style.background='rgba(255,107,53,.06)'">
+          <button onclick="alert('Add Student form coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(255,107,53,.06);border:1.5px solid rgba(255,107,53,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Inter',sans-serif" onmouseover="this.style.background='rgba(255,107,53,.1)'" onmouseout="this.style.background='rgba(255,107,53,.06)'">
             <span style="font-size:1.3rem">➕</span>
             <div><div style="font-size:.9rem;font-weight:700;color:var(--ink)">Add New Student</div><div style="font-size:.77rem;color:rgba(26,26,46,.45)">Manually enrol a student</div></div>
           </button>
-          <button onclick="alert('Course creator coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(14,165,233,.06);border:1.5px solid rgba(14,165,233,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Quicksand',sans-serif" onmouseover="this.style.background='rgba(14,165,233,.1)'" onmouseout="this.style.background='rgba(14,165,233,.06)'">
+          <button onclick="alert('Course creator coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(14,165,233,.06);border:1.5px solid rgba(14,165,233,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Inter',sans-serif" onmouseover="this.style.background='rgba(14,165,233,.1)'" onmouseout="this.style.background='rgba(14,165,233,.06)'">
             <span style="font-size:1.3rem">📚</span>
             <div><div style="font-size:.9rem;font-weight:700;color:var(--ink)">Create New Course</div><div style="font-size:.77rem;color:rgba(26,26,46,.45)">Add a course to any division</div></div>
           </button>
-          <button onclick="alert('Partner form coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(34,197,94,.06);border:1.5px solid rgba(34,197,94,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Quicksand',sans-serif" onmouseover="this.style.background='rgba(34,197,94,.1)'" onmouseout="this.style.background='rgba(34,197,94,.06)'">
+          <button onclick="alert('Partner form coming soon!')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(34,197,94,.06);border:1.5px solid rgba(34,197,94,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Inter',sans-serif" onmouseover="this.style.background='rgba(34,197,94,.1)'" onmouseout="this.style.background='rgba(34,197,94,.06)'">
             <span style="font-size:1.3rem">🤝</span>
             <div><div style="font-size:.9rem;font-weight:700;color:var(--ink)">Add Institution Partner</div><div style="font-size:.77rem;color:rgba(26,26,46,.45)">Onboard a new college or school</div></div>
           </button>
-          <button onclick="window.open('about.html')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(123,47,247,.06);border:1.5px solid rgba(123,47,247,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Quicksand',sans-serif" onmouseover="this.style.background='rgba(123,47,247,.1)'" onmouseout="this.style.background='rgba(123,47,247,.06)'">
+          <button onclick="window.open('about.html')" style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(123,47,247,.06);border:1.5px solid rgba(123,47,247,.15);border-radius:14px;cursor:pointer;text-align:left;width:100%;transition:.2s;font-family:'Inter',sans-serif" onmouseover="this.style.background='rgba(123,47,247,.1)'" onmouseout="this.style.background='rgba(123,47,247,.06)'">
             <span style="font-size:1.3rem">🌐</span>
             <div><div style="font-size:.9rem;font-weight:700;color:var(--ink)">View Public Website</div><div style="font-size:.77rem;color:rgba(26,26,46,.45)">See what visitors see</div></div>
           </button>

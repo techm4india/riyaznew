@@ -1,0 +1,90 @@
+/* About page — mobile-first overrides */
+
+.hero {
+  padding: calc(var(--nav-height, 70px) + 24px) var(--space-x, 16px) 48px;
+}
+
+section {
+  padding: var(--space-y, 40px) var(--space-x, 16px);
+}
+
+.story-grid,
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.mv-grid,
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.div-grid,
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.hero-sub {
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+}
+
+@media (min-width: 480px) {
+  .div-grid,
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mv-grid,
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .story-grid,
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 56px;
+  }
+
+  .contact-grid {
+    gap: 64px;
+  }
+
+  .mv-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .div-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .div-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .story-grid {
+    gap: 80px;
+    margin-top: 64px;
+  }
+}
