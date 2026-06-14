@@ -7,59 +7,59 @@
   "rewrites": [
     {
       "source": "/engineering",
-      "destination": "/divisions/engineering.html"
+      "destination": "/divisions/engineering"
     },
     {
       "source": "/solutions",
-      "destination": "/divisions/solutions.html"
+      "destination": "/divisions/solutions"
     },
     {
       "source": "/space",
-      "destination": "/divisions/space.html"
+      "destination": "/divisions/space"
     },
     {
       "source": "/schools",
-      "destination": "/divisions/schools.html"
+      "destination": "/divisions/schools"
     },
     {
       "source": "/about",
-      "destination": "/pages/about.html"
+      "destination": "/pages/about"
     },
     {
       "source": "/programs",
-      "destination": "/pages/programs.html"
+      "destination": "/pages/programs"
     },
     {
       "source": "/research",
-      "destination": "/pages/research.html"
+      "destination": "/pages/research"
     },
     {
       "source": "/impact",
-      "destination": "/pages/impact.html"
+      "destination": "/pages/impact"
     },
     {
       "source": "/careers",
-      "destination": "/pages/careers.html"
+      "destination": "/pages/careers"
     },
     {
       "source": "/contact",
-      "destination": "/pages/contact.html"
+      "destination": "/pages/contact"
     },
     {
       "source": "/ecosystem",
-      "destination": "/pages/ecosystem.html"
+      "destination": "/pages/ecosystem"
     },
     {
       "source": "/vision",
-      "destination": "/pages/vision.html"
+      "destination": "/pages/vision"
     },
     {
       "source": "/login",
-      "destination": "/pages/login.html"
+      "destination": "/pages/login"
     },
     {
       "source": "/admin",
-      "destination": "/pages/admin.html"
+      "destination": "/pages/admin"
     }
   ],
 
