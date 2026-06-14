@@ -211,7 +211,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#FFFBF5;--ink:#1A1A2E;--ink-l:#4A4A6A;
-  --orange:#FF6B35;--pink:#FF4D8D;--purple:#7B2FF7;--purple:#7B2FF7;
+  --orange:#FF6B35;--pink:#FF4D8D;--purple:#7B2FF7;
   --blue:#0EA5E9;--green:#22C55E;--yellow:#FFD60A;
   --teal:#14B8A6;--border:rgba(26,26,46,.08);--surface:#FFFFFF;
   --g-main:linear-gradient(135deg,#FF6B35,#FF4D8D);
@@ -415,6 +415,30 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
 .ctr-check{color:var(--green)}
 
 
+/* ── WHY TECHM4INDIA ── */
+.why-sect{padding:8rem 5%;background:var(--surface)}
+.why-inner{max-width:1300px;margin:0 auto}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem}
+.why-card{border-radius:22px;padding:2rem 1.6rem;border:1.5px solid var(--border);background:var(--surface);text-align:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s,border-color .3s;position:relative;overflow:hidden}
+.why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;opacity:0;transition:opacity .3s}
+.why-card:hover{transform:translateY(-8px);box-shadow:0 24px 56px rgba(26,26,46,.1)}
+.why-card:hover::before{opacity:1}
+.wc-a::before{background:var(--g-main)}.wc-a:hover{border-color:rgba(255,107,53,.2)}
+.wc-b::before{background:var(--g-cool)}.wc-b:hover{border-color:rgba(14,165,233,.2)}
+.wc-c::before{background:var(--g-warm)}.wc-c:hover{border-color:rgba(255,214,10,.25)}
+.wc-d::before{background:var(--g-green)}.wc-d:hover{border-color:rgba(34,197,94,.2)}
+.why-icon{width:60px;height:60px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 1.2rem}
+.wi-a{background:rgba(255,107,53,.1)}.wi-b{background:rgba(14,165,233,.1)}.wi-c{background:rgba(255,214,10,.12)}.wi-d{background:rgba(34,197,94,.1)}
+.why-title{font-family:'Sora',sans-serif;font-size:1.05rem;font-weight:900;color:var(--ink);margin-bottom:.6rem}
+.why-desc{font-size:.86rem;color:var(--ink-l);line-height:1.72}
+
+/* ── PARTNERS ── */
+.partners-sect{padding:6rem 5%;background:var(--offwhite, #F7F9FC);border-top:1px solid var(--border)}
+.partners-inner{max-width:1300px;margin:0 auto;text-align:center}
+.partners-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2.5rem}
+.p-chip{background:var(--surface);border:1.5px solid var(--border);border-radius:100px;padding:.6rem 1.4rem;font-size:.85rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:.5rem;transition:border-color .2s,box-shadow .2s}
+.p-chip:hover{border-color:var(--orange);box-shadow:0 4px 16px rgba(255,107,53,.12)}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
 .reveal.visible{opacity:1;transform:none}
@@ -424,8 +448,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
 .reveal-r.visible{opacity:1;transform:none}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1100px){.hero-inner{grid-template-columns:1fr;gap:3rem}.div-grid{grid-template-columns:1fr}.stats-inner{grid-template-columns:1fr}}
-@media(max-width:800px){.proj-grid{grid-template-columns:1fr}.experts-grid{grid-template-columns:1fr}.divs-sect,.stats-sect,.projects-sect,.mission-sect,.experts-sect,.cta-sect{padding:5rem 1.5rem}.hero{padding:80px 1.5rem 50px}}
+@media(max-width:1100px){.hero-inner{grid-template-columns:1fr;gap:3rem}.div-grid{grid-template-columns:1fr}.stats-inner{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:800px){.proj-grid{grid-template-columns:1fr}.experts-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.divs-sect,.stats-sect,.projects-sect,.mission-sect,.experts-sect,.cta-sect,.why-sect,.partners-sect{padding:5rem 1.5rem}.hero{padding:80px 1.5rem 50px}}
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal,.reveal-l,.reveal-r{opacity:1;transform:none}
+  .ticker-track{animation:none}
+}
 
 
 /* ===== STANDARDIZED PROGRESS BAR ===== */
@@ -463,16 +492,16 @@ nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,255,255,.04)}
 .footer-inner{max-width:1300px;margin:0 auto}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.footer-brand p{font-size:.84rem;color:rgba(255,255,255,.3);line-height:1.8;margin-top:14px;max-width:260px}
-.footer-col h4{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:2px;margin-bottom:18px}
+.footer-brand p{font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.8;margin-top:14px;max-width:260px}
+.footer-col h4{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:2px;margin-bottom:18px}
 .footer-col ul{list-style:none}
 .footer-col li{margin-bottom:10px}
-.footer-col a{font-size:.84rem;color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s}
-.footer-col a:hover{color:rgba(255,255,255,.7)}
+.footer-col a{font-size:.84rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:rgba(255,255,255,.9)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.04);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.2)}
+.footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.45)}
 .footer-socials{display:flex;gap:10px}
-.footer-socials a{width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);text-decoration:none;font-size:.78rem;transition:all .2s;border:1px solid rgba(255,255,255,.06)}
+.footer-socials a{width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);text-decoration:none;font-size:.78rem;transition:all .2s;border:1px solid rgba(255,255,255,.06)}
 .footer-socials a:hover{background:var(--blue, #1E6FD9);color:#fff;border-color:var(--blue, #1E6FD9)}
 
 /* ===== STANDARDIZED MEDIA QUERIES ===== */
@@ -512,6 +541,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a class="active" href="/">Home</a></li>
+<li><a href="/about">About</a></li>
 <li><a href="/engineering">Engineering</a></li>
 <li><a href="/solutions">Solutions</a></li>
 <li><a href="/schools">Schools</a></li>
@@ -772,6 +802,53 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 </div>
 </div>
 </section>
+
+<!-- ══════ WHY TECHM4INDIA ══════ -->
+<section class="why-sect">
+<div class="why-inner">
+<p class="sec-label reveal">// Why Leading Institutions Choose Us</p>
+<h2 class="sec-title reveal">Built Different.<br/><span class="grad">Proven Results.</span></h2>
+<p class="sec-sub reveal">TechM4India doesn't just deliver programs — we build complete innovation ecosystems. Here's why 500+ institutions trust us.</p>
+<div class="why-grid">
+<div class="why-card wc-a reveal">
+<div class="why-icon wi-a">🔬</div>
+<h3 class="why-title">Experiential Learning</h3>
+<p class="why-desc">Students don't just read about technology — they build rockets, design satellites, code AI, and architect solutions with real tools.</p>
+</div>
+<div class="why-card wc-b reveal" style="transition-delay:.1s">
+<div class="why-icon wi-b">🤝</div>
+<h3 class="why-title">Industry Alignment</h3>
+<p class="why-desc">Every program is designed around tools and skills demanded by top employers — Revit, ANSYS, AWS, AI platforms, and more.</p>
+</div>
+<div class="why-card wc-c reveal" style="transition-delay:.2s">
+<div class="why-icon wi-c">📋</div>
+<h3 class="why-title">NEP 2020 Aligned</h3>
+<p class="why-desc">Our curriculum maps directly to NEP 2020, AICTE, and UGC frameworks — so institutions earn academic credit while students build real skills.</p>
+</div>
+<div class="why-card wc-d reveal" style="transition-delay:.3s">
+<div class="why-icon wi-d">🚀</div>
+<h3 class="why-title">Future Readiness</h3>
+<p class="why-desc">From K-12 to postgraduate, our programs build the critical thinking, creativity, and leadership skills that define tomorrow's innovators.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ══════ PARTNERS ══════ -->
+<section class="partners-sect">
+<div class="partners-inner">
+<p class="sec-label reveal">// Trusted Partners &amp; Recognition</p>
+<h2 class="sec-title reveal">Backed by <span class="grad">Leading Institutions</span></h2>
+<div class="partners-chips reveal">
+<div class="p-chip">🎓 Anurag University</div>
+<div class="p-chip">🏛️ NEP 2020 Aligned</div>
+<div class="p-chip">✅ AICTE Framework</div>
+<div class="p-chip">🛰️ ISRO-Inspired Curriculum</div>
+<div class="p-chip">🛡️ DRDO-Aligned Programs</div>
+<div class="p-chip">🌍 Government Initiative Partnerships</div>
+</div>
+</div>
+</section>
 <!-- ══════ CTA ══════ -->
 <section class="cta-sect">
 <div class="cta-blob cb1"></div><div class="cta-blob cb2"></div>
@@ -788,6 +865,10 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="ctr-item"><span class="ctr-check">✓</span>Custom Solution Design</div>
 <div class="ctr-item"><span class="ctr-check">✓</span>Dedicated Support</div>
 <div class="ctr-item"><span class="ctr-check">✓</span>Flexible Models</div>
+</div>
+<div class="cta-trust-row reveal" style="margin-top:1.5rem;gap:2rem">
+<a class="ctr-item" href="tel:+916301814246" style="color:rgba(255,255,255,.6);text-decoration:none">📞 +91 63018 14246</a>
+<a class="ctr-item" href="mailto:info@techm4india.com" style="color:rgba(255,255,255,.6);text-decoration:none">✉️ info@techm4india.com</a>
 </div>
 </div>
 </section>
@@ -828,7 +909,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2025 TechM4India Innovations Pvt Ltd · www.techm4india.com</p>
+<p>© 2025 TechM4India Innovations Pvt Ltd · <a href="https://techm4india.com" style="color:inherit">techm4india.com</a></p>
 <div class="footer-socials">
 <a href="https://www.linkedin.com/company/techm4india" target="_blank" rel="noopener" aria-label="LinkedIn">
 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
