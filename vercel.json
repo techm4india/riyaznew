@@ -1,59 +1,93 @@
 {
-  "name": "techm4india",
   "version": 2,
-  "builds": [
+
+  "cleanUrls": true,
+  "trailingSlash": false,
+
+  "rewrites": [
     {
-      "src": "**/*.html",
-      "use": "@vercel/static"
+      "source": "/engineering",
+      "destination": "/engineering.html"
+    },
+    {
+      "source": "/solutions",
+      "destination": "/solutions.html"
+    },
+    {
+      "source": "/space",
+      "destination": "/space.html"
+    },
+    {
+      "source": "/schools",
+      "destination": "/techm4schools.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/programs",
+      "destination": "/programs.html"
+    },
+    {
+      "source": "/research",
+      "destination": "/research.html"
+    },
+    {
+      "source": "/impact",
+      "destination": "/impact.html"
+    },
+    {
+      "source": "/careers",
+      "destination": "/careers.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/ecosystem",
+      "destination": "/ecosystem.html"
+    },
+    {
+      "source": "/vision",
+      "destination": "/vision.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/login.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
     }
   ],
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/engineering", "dest": "/engineering.html" },
-    { "src": "/solutions", "dest": "/solutions.html" },
-    { "src": "/space", "dest": "/space.html" },
-    { "src": "/schools", "dest": "/techm4schools.html" },
-    { "src": "/about", "dest": "/about.html" },
-    { "src": "/programs", "dest": "/programs.html" },
-    { "src": "/research", "dest": "/research.html" },
-    { "src": "/impact", "dest": "/impact.html" },
-    { "src": "/careers", "dest": "/careers.html" },
-    { "src": "/contact", "dest": "/contact.html" },
-    { "src": "/ecosystem", "dest": "/ecosystem.html" },
-    { "src": "/vision", "dest": "/vision.html" },
-    { "src": "/(.*)", "dest": "/$1" }
+
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    }
   ],
+
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
-      ]
-    },
-    {
-      "source": "/og-image.png",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
-      ]
-    },
-    {
-      "source": "/sitemap.xml",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" },
-        { "key": "Content-Type", "value": "application/xml" }
-      ]
-    },
-    {
-      "source": "/robots.txt",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
 }
