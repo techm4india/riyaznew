@@ -1,8 +1,22 @@
-.claude/
-make_og.py
-*.pyc
+# OS
 .DS_Store
 Thumbs.db
+
+# Editor / IDE
+.vscode/
+.claude/
+
+# Vercel
+.vercel/
+
+# Python
+*.py
+*.pyc
+__pycache__/
+
+# Node
 node_modules/
 
-.vercel
+# Dev / scratch files
+scripts/
+scratch/
