@@ -12,7 +12,7 @@
 
 <link rel="canonical" href="https://techm4india.com/engineering">
 <meta name="description" content="TechM4Engineering by TechM4India offers industry-ready engineering innovation programs for students and professionals to build future-ready skills.">
-<meta name="keywords" content="TechM4Engineering, civil engineering training, mechanical engineering courses, Revit training, STAAD Pro, ANSYS, HyperMesh, ETABS, AutoCAD, BIM, structural analysis India">
+<meta name="keywords" content="TechM4Engineering, civil engineering training, mechanical engineering courses, Revit training, STAAD Pro, ANSYS, HyperMesh, ETABS, AutoCAD, BIM, VLSI design, EV Powertrain, battery management system, full stack devops, Aspen Plus, piping engineering India">
 <meta name="author" content="TechM4India">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="geo.region" content="IN-TG">
@@ -75,8 +75,16 @@
   --ink:#0D1B2A;
   --civil:#1E6FD9;
   --mech:#D72638;
+  --cse:#7B2FF7;
+  --eee:#EAB308;
+  --ece:#0EA5E9;
+  --chem:#10B981;
   --g-civil:linear-gradient(135deg,#1E6FD9,#0B1F3A);
   --g-mech:linear-gradient(135deg,#D72638,#7B0F1E);
+  --g-cse:linear-gradient(135deg,#7B2FF7,#4F15B7);
+  --g-eee:linear-gradient(135deg,#EAB308,#B45309);
+  --g-ece:linear-gradient(135deg,#0EA5E9,#0369A1);
+  --g-chem:linear-gradient(135deg,#10B981,#047857);
   --g-brand:linear-gradient(135deg,#FF6B35,#D72638);
   --shadow-sm:0 2px 8px rgba(11,31,58,.08);
   --shadow-md:0 8px 32px rgba(11,31,58,.12);
@@ -195,7 +203,7 @@ section{padding:96px 40px}
 .p-step.red:hover .p-step-num{background:var(--red);border-color:var(--red)}
 
 /* ===== TRACKS ===== */
-.tracks-intro{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:56px}
+.tracks-intro{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
 .track-hero{border-radius:20px;padding:48px 40px;position:relative;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s}
 .track-hero:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 .track-hero.civil{background:var(--navy);border:1px solid rgba(30,111,217,.3)}
@@ -216,6 +224,65 @@ section{padding:96px 40px}
 .civil .track-cta:hover{background:var(--blue);border-color:var(--blue)}
 .mech .track-cta{background:rgba(215,38,56,.25);border:1px solid rgba(215,38,56,.4)}
 .mech .track-cta:hover{background:var(--red);border-color:var(--red)}
+
+/* ===== MULTIDISCIPLINARY TRACK STYLES ===== */
+.track-hero.cse{background:#100925;border:1px solid rgba(123,47,247,.3)}
+.track-hero.eee{background:#1A1201;border:1px solid rgba(245,158,11,.3)}
+.track-hero.ece{background:#031720;border:1px solid rgba(14,165,233,.3)}
+.track-hero.chem{background:#041A12;border:1px solid rgba(16,185,129,.3)}
+.cse .track-hero-glow{background:rgba(123,47,247,.2)}
+.eee .track-hero-glow{background:rgba(245,158,11,.2)}
+.ece .track-hero-glow{background:rgba(14,165,233,.2)}
+.chem .track-hero-glow{background:rgba(16,185,129,.2)}
+.cse .t-tool{background:rgba(123,47,247,.2);border:1px solid rgba(123,47,247,.4);color:rgba(255,255,255,.75)}
+.eee .t-tool{background:rgba(245,158,11,.2);border:1px solid rgba(245,158,11,.4);color:rgba(255,255,255,.75)}
+.ece .t-tool{background:rgba(14,165,233,.2);border:1px solid rgba(14,165,233,.4);color:rgba(255,255,255,.75)}
+.chem .t-tool{background:rgba(16,185,129,.2);border:1px solid rgba(16,185,129,.4);color:rgba(255,255,255,.75)}
+.cse .track-cta{background:rgba(123,47,247,.25);border:1px solid rgba(123,47,247,.4)}
+.cse .track-cta:hover{background:var(--cse);border-color:var(--cse)}
+.eee .track-cta{background:rgba(245,158,11,.25);border:1px solid rgba(245,158,11,.4)}
+.eee .track-cta:hover{background:var(--eee);border-color:var(--eee)}
+.ece .track-cta{background:rgba(14,165,233,.25);border:1px solid rgba(14,165,233,.4)}
+.ece .track-cta:hover{background:var(--ece);border-color:var(--ece)}
+.chem .track-cta{background:rgba(16,185,129,.25);border:1px solid rgba(16,185,129,.4)}
+.chem .track-cta:hover{background:var(--chem);border-color:var(--chem)}
+
+.tf-btn.active-cse,.tf-btn:hover.cse-btn{background:var(--cse);color:#fff;border-color:var(--cse)}
+.tf-btn.active-eee,.tf-btn:hover.eee-btn{background:var(--eee);color:#fff;border-color:var(--eee)}
+.tf-btn.active-ece,.tf-btn:hover.ece-btn{background:var(--ece);color:#fff;border-color:var(--ece)}
+.tf-btn.active-chem,.tf-btn:hover.chem-btn{background:var(--chem);color:#fff;border-color:var(--chem)}
+
+.prog-track-badge.cse{background:rgba(123,47,247,.9)}
+.prog-track-badge.eee{background:rgba(245,158,11,.9)}
+.prog-track-badge.ece{background:rgba(14,165,233,.9)}
+.prog-track-badge.chem{background:rgba(16,185,129,.9)}
+
+.prog-view-btn.cse{background:var(--cse)}
+.prog-view-btn.eee{background:var(--eee)}
+.prog-view-btn.ece{background:var(--ece)}
+.prog-view-btn.chem{background:var(--chem)}
+
+.pp-hero.cse{background:#100925}
+.pp-hero.eee{background:#1A1201}
+.pp-hero.ece{background:#031720}
+.pp-hero.chem{background:#041A12}
+.pp-hero.cse .pp-hero-glow{background:rgba(123,47,247,.25)}
+.pp-hero.eee .pp-hero-glow{background:rgba(245,158,11,.25)}
+.pp-hero.ece .pp-hero-glow{background:rgba(14,165,233,.25)}
+.pp-hero.chem .pp-hero-glow{background:rgba(16,185,129,.25)}
+.pp-hero.cse .pp-track-tag{background:rgba(123,47,247,.3);border:1px solid rgba(123,47,247,.5)}
+.pp-hero.eee .pp-track-tag{background:rgba(245,158,11,.3);border:1px solid rgba(245,158,11,.5)}
+.pp-hero.ece .pp-track-tag{background:rgba(14,165,233,.3);border:1px solid rgba(14,165,233,.5)}
+.pp-hero.chem .pp-track-tag{background:rgba(16,185,129,.3);border:1px solid rgba(16,185,129,.5)}
+.pp-hero.cse .pp-tool-badge{background:rgba(123,47,247,.2);border:1px solid rgba(123,47,247,.4);color:rgba(255,255,255,.8)}
+.pp-hero.eee .pp-tool-badge{background:rgba(245,158,11,.2);border:1px solid rgba(245,158,11,.4);color:rgba(255,255,255,.8)}
+.pp-hero.ece .pp-tool-badge{background:rgba(14,165,233,.2);border:1px solid rgba(14,165,233,.4);color:rgba(255,255,255,.8)}
+.pp-hero.chem .pp-tool-badge{background:rgba(16,185,129,.2);border:1px solid rgba(16,185,129,.4);color:rgba(255,255,255,.8)}
+
+.tool-track.cse{background:rgba(123,47,247,.08);color:var(--cse)}
+.tool-track.eee{background:rgba(245,158,11,.08);color:var(--eee)}
+.tool-track.ece{background:rgba(14,165,233,.08);color:var(--ece)}
+.tool-track.chem{background:rgba(16,185,129,.08);color:var(--chem)}
 
 /* ===== PROGRAMS SECTION ===== */
 .programs-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:20px}
@@ -431,6 +498,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 /* ===== RESPONSIVE ===== */
 @media(max-width:1100px){
   .programs-grid{grid-template-columns:repeat(2,1fr)}
+  .tracks-intro{grid-template-columns:repeat(2,1fr)}
   .tools-grid{grid-template-columns:repeat(4,1fr)}
   .tools-grid .tool-cell:nth-child(4n){border-right:none}
   .outcomes-grid{grid-template-columns:repeat(2,1fr)}
@@ -482,7 +550,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
   <div class="loader-blueprint"></div>
   <div class="loader-ring"></div>
   <div class="loader-brand">Tech<span>M4</span>Engineering</div>
-  <div class="loader-sub">Civil · Mechanical · Infrastructure</div>
+  <div class="loader-sub">Civil · Mechanical · CSE · EEE · ECE · Chemical</div>
   <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
 
@@ -512,11 +580,11 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
   <div class="hero-glow1"></div>
   <div class="hero-glow2"></div>
   <div class="hero-inner">
-    <div class="hero-badge"><span class="dot"></span>TechM4Engineering — Civil & Mechanical Division</div>
+    <div class="hero-badge"><span class="dot"></span>TechM4Engineering — Advanced Engineering Programs</div>
     <div class="hero-split">
       <div class="hero-copy">
-        <h1>Engineering India's<br/><span class="accent-blue">Built Future.</span><br/>With <span class="accent">Industry Tools.</span></h1>
-        <p>India's most advanced Civil and Mechanical engineering training ecosystem. Master Revit, STAAD Pro, ANSYS, HyperMesh, ETABS and more — through real-world projects, structured mentorship, and institute-level lab programs.</p>
+        <h1>Engineering India's<br/><span class="accent-blue">Industrial Future.</span><br/>With <span class="accent">Industry Tools.</span></h1>
+        <p>India's most advanced multidisciplinary engineering training ecosystem. Master Revit, ANSYS, VLSI, EV Powertrain, Full-Stack DevOps, Aspen Plus and more — through real-world projects, structured mentorship, and institute-level lab programs.</p>
         <div class="hero-btns">
           <a href="#programs" class="btn-primary">Explore Programs →</a>
           <a href="#labs-vision" class="btn-ghost">Our Lab Vision</a>
@@ -628,40 +696,106 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
       <p class="sec-sub">Whether you're building structures that shape skylines or designing systems that power industries — TechM4Engineering has the program for you.</p>
     </div>
     <div class="tracks-intro">
-      <div class="track-hero civil reveal-l" onclick="filterPrograms('civil')">
+      <!-- Track 01: Civil -->
+      <div class="track-hero civil reveal" onclick="filterPrograms('civil')">
         <div class="track-bp"></div>
         <div class="track-hero-glow"></div>
         <div class="track-tag">🏗️ Track 01</div>
         <h2>Civil Engineering<br/>Specialization</h2>
-        <p>Master structural design, BIM modeling, and digital construction workflows used by India's top infrastructure firms and consultancies.</p>
+        <p>Master structural design, BIM modeling, and digital construction workflows used by India's top infrastructure firms.</p>
         <div class="track-tools">
           <span class="t-tool">Revit</span>
           <span class="t-tool">STAAD Pro</span>
           <span class="t-tool">ETABS</span>
           <span class="t-tool">AutoCAD</span>
-          <span class="t-tool">HAANS Civil</span>
           <span class="t-tool">Civil 3D</span>
         </div>
         <span class="track-cta">View Civil Programs →</span>
       </div>
-      <div class="track-hero mech reveal-r" onclick="filterPrograms('mech')">
+
+      <!-- Track 02: Mechanical -->
+      <div class="track-hero mech reveal" onclick="filterPrograms('mech')">
         <div class="track-bp"></div>
         <div class="track-hero-glow"></div>
         <div class="track-tag">⚙️ Track 02</div>
         <h2>Mechanical Engineering<br/>Specialization</h2>
-        <p>Dive deep into FEA, simulation, product design and manufacturing engineering tools used by aerospace, automotive, and manufacturing industries.</p>
+        <p>Dive deep into FEA, simulation, product design and manufacturing engineering tools used by aerospace and automotive industries.</p>
         <div class="track-tools">
           <span class="t-tool">ANSYS</span>
           <span class="t-tool">HyperMesh</span>
-          <span class="t-tool">HAANS Mech</span>
-          <span class="t-tool">Revit MEP</span>
-          <span class="t-tool">STAAD Pro</span>
           <span class="t-tool">SolidWorks</span>
+          <span class="t-tool">HAANS Mech</span>
         </div>
         <span class="track-cta">View Mechanical Programs →</span>
       </div>
-    </div>
-  </div>
+
+      <!-- Track 03: CSE -->
+      <div class="track-hero cse reveal" onclick="filterPrograms('cse')">
+        <div class="track-bp"></div>
+        <div class="track-hero-glow"></div>
+        <div class="track-tag">💻 Track 03</div>
+        <h2>Computer Science<br/>Specialization</h2>
+        <p>Master full-stack DevOps development, cloud architecture, and modern artificial intelligence/machine learning pipelines.</p>
+        <div class="track-tools">
+          <span class="t-tool">React</span>
+          <span class="t-tool">Node.js</span>
+          <span class="t-tool">AWS</span>
+          <span class="t-tool">Docker</span>
+          <span class="t-tool">Python</span>
+        </div>
+        <span class="track-cta">View CSE Programs →</span>
+      </div>
+
+      <!-- Track 04: EEE -->
+      <div class="track-hero eee reveal" onclick="filterPrograms('eee')">
+        <div class="track-bp"></div>
+        <div class="track-hero-glow"></div>
+        <div class="track-tag">⚡ Track 04</div>
+        <h2>Electrical & Electronics<br/>Specialization</h2>
+        <p>Design electric vehicle powertrains, model battery management systems, and analyze smart grid renewable systems.</p>
+        <div class="track-tools">
+          <span class="t-tool">MATLAB</span>
+          <span class="t-tool">Simulink</span>
+          <span class="t-tool">Ansys Maxwell</span>
+          <span class="t-tool">Altium</span>
+          <span class="t-tool">ETAP</span>
+        </div>
+        <span class="track-cta">View EEE Programs →</span>
+      </div>
+
+      <!-- Track 05: ECE -->
+      <div class="track-hero ece reveal" onclick="filterPrograms('ece')">
+        <div class="track-bp"></div>
+        <div class="track-hero-glow"></div>
+        <div class="track-tag">📡 Track 05</div>
+        <h2>Electronics & Comm.<br/>Specialization</h2>
+        <p>Master VLSI digital system design, FPGA architectures, and embedded firmware development for real-world IoT systems.</p>
+        <div class="track-tools">
+          <span class="t-tool">Verilog</span>
+          <span class="t-tool">Vivado</span>
+          <span class="t-tool">Cadence</span>
+          <span class="t-tool">C/C++</span>
+          <span class="t-tool">FreeRTOS</span>
+        </div>
+        <span class="track-cta">View ECE Programs →</span>
+      </div>
+
+      <!-- Track 06: Chemical -->
+      <div class="track-hero chem reveal" onclick="filterPrograms('chem')">
+        <div class="track-bp"></div>
+        <div class="track-hero-glow"></div>
+        <div class="track-tag">⚗️ Track 06</div>
+        <h2>Chemical Engineering<br/>Specialization</h2>
+        <p>Run process simulations with Aspen HYSYS, design piping layouts, and engineer industrial water treatment systems.</p>
+        <div class="track-tools">
+          <span class="t-tool">Aspen Plus</span>
+          <span class="t-tool">Aspen HYSYS</span>
+          <span class="t-tool">Plant 3D</span>
+          <span class="t-tool">GPS-X</span>
+        </div>
+        <span class="track-cta">View Chemical Programs →</span>
+      </div>
+div>
 </section>
 
 <!-- PROGRAMS -->
@@ -672,10 +806,14 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
         <div class="sec-eyebrow">All Programs</div>
         <h2 class="sec-title" style="margin-bottom:0">Industry-Grade Training Programs</h2>
       </div>
-      <div class="track-filter">
+      <div class="track-filter" style="display: flex; flex-wrap: wrap; gap: 8px;">
         <button class="tf-btn active-all" onclick="filterPrograms('all',this)">All</button>
         <button class="tf-btn civil-btn" onclick="filterPrograms('civil',this)">Civil</button>
         <button class="tf-btn mech-btn" onclick="filterPrograms('mech',this)">Mechanical</button>
+        <button class="tf-btn cse-btn" onclick="filterPrograms('cse',this)">CSE</button>
+        <button class="tf-btn eee-btn" onclick="filterPrograms('eee',this)">EEE</button>
+        <button class="tf-btn ece-btn" onclick="filterPrograms('ece',this)">ECE</button>
+        <button class="tf-btn chem-btn" onclick="filterPrograms('chem',this)">Chemical</button>
       </div>
     </div>
     <div class="programs-grid" id="programsGrid">
@@ -1002,6 +1140,518 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <script>
 // ===== PROGRAM DATA =====
 const programs = [
+  // ESE, CSE, EEE, Chemical programs additions
+  {
+    id: 'cse1',
+    track: 'cse',
+    title: 'Full-Stack Web Development & DevOps',
+    badge: 'Core Program',
+    desc: 'Become an industry-ready full-stack software engineer. Master Frontend (React, Next.js), Backend (Node.js, Express), Databases (PostgreSQL, MongoDB), and cloud deployment using AWS and Docker.',
+    tools: ['React','Node.js','AWS','Docker','Git'],
+    duration: '6 Months',
+    sessions: '72 Sessions',
+    credit: '6 Credits',
+    thumbBg: 'linear-gradient(135deg, #100925 0%, #3B006F 100%)',
+    formula: ['Design','Develop','Test','Deploy','Scale'],
+    formulaColors: ['#7B2FF7','#631BB7','#4F15B7','#3A0E93','#2D0A7F'],
+    phases: [
+      {
+        num: 'P1', color: '#7B2FF7',
+        label: 'Months 1–2 · Frontend',
+        name: 'Responsive Web UI with React',
+        topics: [
+          'HTML5 semantic markup, CSS3 layout (Flexbox/Grid)',
+          'JavaScript ES6+ fundamentals, DOM manipulation',
+          'React component model, state, and hooks',
+          'Tailwind CSS & modern design systems integration',
+          'API fetching, routing, and asynchronous state',
+          'Responsive design principles and mobile testing'
+        ],
+        projects: ['Fully responsive multi-page dashboard application', 'Real-time collaborative task manager']
+      },
+      {
+        num: 'P2', color: '#4F15B7',
+        label: 'Months 3–4 · Backend',
+        name: 'Secure API Engineering & DBs',
+        topics: [
+          'Node.js runtime environment and Express framework',
+          'Database design — PostgreSQL (SQL) & MongoDB (NoSQL)',
+          'RESTful API architecture and custom JSON endpoints',
+          'User authentication (JWT, OAuth) & security best practices',
+          'Redis caching layer and performance optimization',
+          'Unit testing with Jest and Supertest'
+        ],
+        projects: ['Secure REST API backend with user roles and payments', 'High-throughput chat server using WebSockets']
+      },
+      {
+        num: 'P3', color: '#2D0A7F',
+        label: 'Months 5–6 · DevOps & Cloud',
+        name: 'CI/CD Pipelines & Cloud Scale',
+        topics: [
+          'Docker containerization and compose setups',
+          'AWS core services — EC2, S3, RDS, IAM',
+          'Continuous Integration & Deployment (GitHub Actions)',
+          'Serverless deployment with Vercel & AWS Lambda',
+          'Nginx reverse proxy, SSL certification setup',
+          'System monitoring, logging, and load balancing'
+        ],
+        projects: ['Dockerized full-stack app deployed on AWS EC2 via CI/CD']
+      }
+    ],
+    outcomes: [
+      {icon: '💻', title: 'Full-Stack Proficiency', desc: 'Build and deploy fully functional web applications from database schemas to client-side UI.'},
+      {icon: '🛡️', title: 'DevOps & Scaling', desc: 'Package services inside Docker containers and configure automated cloud deployments on AWS.'},
+      {icon: '💾', title: 'Database Design', desc: 'Model structured and unstructured data using modern Postgres and MongoDB standards.'}
+    ],
+    careers: ['Full-Stack Developer','Backend Engineer','DevOps Engineer','Cloud Software Developer','React Developer']
+  },
+  {
+    id: 'cse2',
+    track: 'cse',
+    title: 'Artificial Intelligence & Data Engineering',
+    badge: 'Specialist Program',
+    desc: 'Master the state-of-the-art in AI and ML. Learn data preprocessing, statistical modeling, supervised/unsupervised machine learning, deep learning with TensorFlow, and modern generative AI/LLMs.',
+    tools: ['Python','TensorFlow','PyTorch','SQL','Pandas'],
+    duration: '4 Months',
+    sessions: '48 Sessions',
+    credit: '4 Credits',
+    thumbBg: 'linear-gradient(135deg, #0A1128 0%, #102B5C 100%)',
+    formula: ['Wrangle','Analyze','Model','Validate','Deploy'],
+    formulaColors: ['#7B2FF7','#631BB7','#4F15B7','#3A0E93','#2D0A7F'],
+    phases: [
+      {
+        num: 'P1', color: '#7B2FF7',
+        label: 'Month 1 · Foundations',
+        name: 'Python for Data Analysis',
+        topics: [
+          'Python programming basics, functions, and OOP',
+          'Data wrangling with NumPy and Pandas libraries',
+          'Data visualization with Matplotlib and Seaborn',
+          'Relational database querying and advanced SQL joins',
+          'Exploratory Data Analysis (EDA) methodologies',
+          'Statistical distributions and hypothesis testing'
+        ],
+        projects: ['Complete sales intelligence EDA dataset analysis', 'SQL database schema design and KPI extraction']
+      },
+      {
+        num: 'P2', color: '#4F15B7',
+        label: 'Months 2–3 · Modeling',
+        name: 'Machine Learning & Deep Learning',
+        topics: [
+          'Supervised learning — linear/logistic regression, trees',
+          'Unsupervised learning — clustering, dimensional reduction',
+          'Model evaluation metrics, cross-validation, hyperparameter tuning',
+          'Neural network architectures with Keras & TensorFlow',
+          'Convolutional Neural Networks (CNN) for computer vision',
+          'Recurrent Neural Networks (RNN) for sequence modeling'
+        ],
+        projects: ['Predictive customer churn model with scikit-learn', 'Chest X-ray disease classification model with CNNs']
+      },
+      {
+        num: 'P3', color: '#2D0A7F',
+        label: 'Month 4 · GenAI & MLOps',
+        name: 'Generative AI & LLMs in Production',
+        topics: [
+          'Transformer architectures and self-attention mechanisms',
+          'LLM prompt engineering and Retrieval-Augmented Generation (RAG)',
+          'LangChain framework and vector database indexing',
+          'HuggingFace spaces and API integrations',
+          'Model optimization, quantization, and edge deployment',
+          'MLOps pipelines for serving predictions'
+        ],
+        projects: ['Enterprise PDF document QA bot using LangChain & RAG']
+      }
+    ],
+    outcomes: [
+      {icon: '🧠', title: 'AI Engineering', desc: 'Train, evaluate, and fine-tune supervised, unsupervised, and deep learning neural models.'},
+      {icon: '📈', title: 'Data Analytics', desc: 'Clean, normalize, and query complex datasets to extract predictive insights.'},
+      {icon: '🤖', title: 'GenAI Integration', desc: 'Build intelligent chatbots and RAG agents leveraging large language models.'}
+    ],
+    careers: ['AI Engineer','Machine Learning Engineer','Data Scientist','NLP Specialist','Data Analyst']
+  },
+  {
+    id: 'ece1',
+    track: 'ece',
+    title: 'VLSI Design & Digital System Verification',
+    badge: 'Core Program',
+    desc: 'Deep dive into modern chip design, FPGA architecture, and digital system verification. Master Verilog/VHDL description, ASIC design flow, synthesis, and physical layout concepts.',
+    tools: ['Verilog','Vivado','Cadence','FPGA','ASIC'],
+    duration: '4 Months',
+    sessions: '48 Sessions',
+    credit: '4 Credits',
+    thumbBg: 'linear-gradient(135deg, #031720 0%, #084860 100%)',
+    formula: ['Design','Simulate','Verify','Synthesize','Implement'],
+    formulaColors: ['#0EA5E9','#0C93D0','#097EB2','#06638C','#044C6D'],
+    phases: [
+      {
+        num: 'P1', color: '#0EA5E9',
+        label: 'Months 1–2 · Digital & RTL',
+        name: 'Digital System & Verilog Design',
+        topics: [
+          'Boolean algebra, logic gates, and combinational circuits',
+          'Sequential circuits — flip-flops, registers, counters',
+          'Verilog HDL syntax — structural, dataflow, behavioral',
+          'Writing testbenches and simulation waveforms',
+          'Finite State Machine (FSM) design patterns',
+          'Memory architectures — RAM, ROM, FIFO buffers'
+        ],
+        projects: ['Verilog design of an 8-bit Arithmetic Logic Unit (ALU)', 'Synchronous FIFO memory controller with testbench']
+      },
+      {
+        num: 'P2', color: '#097EB2',
+        label: 'Month 3 · Synthesis & FPGA',
+        name: 'FPGA Prototyping & Vivado Flow',
+        topics: [
+          'FPGA architecture — LUTs, CLBs, interconnects, DSP blocks',
+          'Xilinx Vivado design suite workflow',
+          'Logic synthesis and physical placement constraints',
+          'Static Timing Analysis (STA) and clock domain crossings',
+          'Hardware validation on Xilinx Basys3/Nexys boards',
+          'debugging IP cores and logic analyzers'
+        ],
+        projects: ['FPGA implementation of a digital clock and frequency divider']
+      },
+      {
+        num: 'P3', color: '#044C6D',
+        label: 'Month 4 · Verification & ASIC',
+        name: 'SystemVerilog & Verification Basics',
+        topics: [
+          'Introduction to SystemVerilog verification constructs',
+          'ASIC design flow — RTL to GDSII layout steps',
+          'Timing optimization and power reduction techniques',
+          'DFT (Design for Test) concepts and boundary scans',
+          'Industry case study — RISC-V processor architecture',
+          'Physical design, routing, and DRC/LVS checks'
+        ],
+        projects: ['ASIC synthesis report and physical layout design of ALU']
+      }
+    ],
+    outcomes: [
+      {icon: '🔌', title: 'ASIC/FPGA Design', desc: 'Implement high-quality digital circuits in Verilog and synthesize them onto Xilinx FPGAs.'},
+      {icon: '⏱️', title: 'Timing & Constraints', desc: 'Resolve setup/hold violations and define timing constraints for complex clock domains.'},
+      {icon: '🔍', title: 'RTL Verification', desc: 'Construct rigorous testbenches to validate hardware components prior to manufacturing.'}
+    ],
+    careers: ['VLSI Design Engineer','RTL Design Engineer','FPGA Prototyping Engineer','ASIC Verification Engineer']
+  },
+  {
+    id: 'ece2',
+    track: 'ece',
+    title: 'Embedded Systems & IoT Solutions Architecture',
+    badge: 'Industry Program',
+    desc: 'Bridge the physical and digital worlds. Learn microcontroller architectures (ARM Cortex, ESP32), sensor interfacing, RTOS concepts, wireless protocols (BLE, Wi-Fi, LoRa), and cloud IoT integrations.',
+    tools: ['C/C++','ESP32','FreeRTOS','MQTT','Embedded C'],
+    duration: '3 Months',
+    sessions: '36 Sessions',
+    credit: '3 Credits',
+    thumbBg: 'linear-gradient(135deg, #052230 0%, #0B638A 100%)',
+    formula: ['Wire','Code','Interface','Connect','Deploy'],
+    formulaColors: ['#0EA5E9','#0C93D0','#097EB2','#06638C','#044C6D'],
+    phases: [
+      {
+        num: 'P1', color: '#0EA5E9',
+        label: 'Month 1 · Embedded Firmware',
+        name: 'Embedded C & Microcontrollers',
+        topics: [
+          'C/C++ for embedded applications, pointer arrays, bitwise',
+          'ESP32 microcontroller architecture and GPIO pinout',
+          'Serial communication protocols — I2C, SPI, UART',
+          'ADC/DAC configuration and analog sensor interfacing',
+          'Interrupt handling and hardware timers',
+          'Power management, sleep modes, and flash storage'
+        ],
+        projects: ['Multi-sensor data logger with ESP32 and microSD interface']
+      },
+      {
+        num: 'P2', color: '#097EB2',
+        label: 'Month 2 · RTOS & Protocols',
+        name: 'FreeRTOS & Wireless Systems',
+        topics: [
+          'Multitasking concepts and RTOS schedulers',
+          'FreeRTOS task creation, priority, and states',
+          'Task synchronization — semaphores, queues, and mutexes',
+          'Wi-Fi and BLE stack configuration on ESP32',
+          'MQTT protocol for secure, low-overhead IoT telemetry',
+          'HTTP REST endpoints integration for device firmware'
+        ],
+        projects: ['Real-time industrial sensor hub with FreeRTOS and MQTT']
+      },
+      {
+        num: 'P3', color: '#044C6D',
+        label: 'Month 3 · Cloud IoT Integration',
+        name: 'End-to-End IoT Solutions',
+        topics: [
+          'Connecting ESP32 to AWS IoT Core / ThingSpeak cloud',
+          'Secure TLS socket connection and certificate provisioning',
+          'Over-The-Air (OTA) firmware update architecture',
+          'IoT web/mobile dashboard design with Node-RED',
+          'Hardware-in-the-loop (HIL) testing workflows',
+          'Troubleshooting and power profiling IoT hardware'
+        ],
+        projects: ['Deployable IoT home automation hub with OTA and dashboard']
+      }
+    ],
+    outcomes: [
+      {icon: '📡', title: 'Firmware Engineering', desc: 'Write efficient, hardware-aware C/C++ drivers for sensors, displays, and communication chips.'},
+      {icon: '⚙️', title: 'RTOS Scheduling', desc: 'Deploy FreeRTOS to manage concurrent tasks, interrupt callbacks, and shared resources.'},
+      {icon: '☁️', title: 'IoT Integrations', desc: 'Connect embedded nodes to cloud servers via secure MQTT and design control panels.'}
+    ],
+    careers: ['Embedded Firmware Engineer','IoT Systems Architect','Microcontroller Programmer','Hardware Validation Specialist']
+  },
+  {
+    id: 'eee1',
+    track: 'eee',
+    title: 'Electric Vehicle Powertrain & BMS Engineering',
+    badge: 'Core Program',
+    desc: 'Master the engineering of modern electric mobility. Learn EV battery modeling, thermal management, cell balancing, motor control theory (FOC), and power electronic converter design.',
+    tools: ['MATLAB','Simulink','Ansys Maxwell','Altium Designer'],
+    duration: '4 Months',
+    sessions: '48 Sessions',
+    credit: '4 Credits',
+    thumbBg: 'linear-gradient(135deg, #2A1F02 0%, #705007 100%)',
+    formula: ['Model','Analyze','Design','Prototype','Validate'],
+    formulaColors: ['#EAB308','#D99E06','#C78B03','#A67302','#805801'],
+    phases: [
+      {
+        num: 'P1', color: '#EAB308',
+        label: 'Months 1–2 · Batteries & BMS',
+        name: 'EV Batteries & BMS Design',
+        topics: [
+          'Lithium-ion cell chemistry, specs, and charge/discharge curves',
+          'Battery pack assembly configuration (series/parallel matching)',
+          'BMS architectures — master/slave topologies',
+          'State of Charge (SoC) and State of Health (SoH) estimation',
+          'Passive and active cell balancing circuitry',
+          'Over-voltage, under-voltage, over-temperature protection'
+        ],
+        projects: ['Simulink model of a 10-cell series lithium-ion pack', 'Altium design of a 4S active cell balancer board']
+      },
+      {
+        num: 'P2', color: '#C78B03',
+        label: 'Month 3 · Motor & Power Electronics',
+        name: 'EV Powertrain & Motor Control',
+        topics: [
+          'EV powertrain configurations (HEV, PHEV, BEV)',
+          'Electric motors — BLDC, PMSM, Induction motor operations',
+          'Power electronic converters — buck, boost, bidir, inverter',
+          'Field Oriented Control (FOC) motor control theory',
+          'PWM generation and gate driver circuit layout',
+          'Thermal management systems for motors and packs'
+        ],
+        projects: ['Simulation of PMSM motor closed-loop FOC in Simulink']
+      },
+      {
+        num: 'P3', color: '#805801',
+        label: 'Month 4 · Systems Integration',
+        name: 'Simulation & Safety Compliance',
+        topics: [
+          'Hardware-in-the-loop (HIL) testing for EV systems',
+          'EV safety standards — ISO 26262 functional safety, ASIL ratings',
+          'Regenerative braking modeling and strategy optimization',
+          'Vehicle dynamics, traction force, and torque profiling',
+          'Design documentation, certification formats and test protocols'
+        ],
+        projects: ['Complete EV simulation package — pack model + motor controller + vehicle dynamics']
+      }
+    ],
+    outcomes: [
+      {icon: '🔋', title: 'BMS Architecture', desc: 'Design protective BMS firmware and balancing circuits to maximize battery life.'},
+      {icon: '🏎️', title: 'EV Dynamics Modeling', desc: 'Simulate full EV powertrain drivetrains under dynamic driving cycles in MATLAB.'},
+      {icon: '⚡', title: 'Power Electronics', desc: 'Model and design efficient DC-DC converters and 3-phase inverters for motor drives.'}
+    ],
+    careers: ['EV Systems Engineer','BMS Hardware Engineer','Power Electronics Engineer','Battery Analyst','Motor Control Engineer']
+  },
+  {
+    id: 'eee2',
+    track: 'eee',
+    title: 'Smart Grid & Renewable Energy Technology',
+    badge: 'Advanced Program',
+    desc: 'Learn to design and model modern power systems. Master solar PV system design, wind turbine integration, power quality management, grid-tie converters, and smart substation SCADA systems.',
+    tools: ['MATLAB','ETAP','PVSyst','SCADA'],
+    duration: '3 Months',
+    sessions: '36 Sessions',
+    credit: '3 Credits',
+    thumbBg: 'linear-gradient(135deg, #3A2E05 0%, #8C700D 100%)',
+    formula: ['Plan','Model','Connect','Control','Monitor'],
+    formulaColors: ['#EAB308','#D99E06','#C78B03','#A67302','#805801'],
+    phases: [
+      {
+        num: 'P1', color: '#EAB308',
+        label: 'Month 1 · Solar & Renewable Design',
+        name: 'Solar PV Systems & PVSyst Modeling',
+        topics: [
+          'Solar PV cell physics, parameters, and mismatch losses',
+          'Solar array sizing, string configuration, and inverter matching',
+          'Off-grid, on-grid, and hybrid solar PV system designs',
+          'PVSyst software interface, meteorological data import',
+          'System loss analysis — shading, IAM, wiring, temperature',
+          'Financial analysis, LCOE calculation and yield reports'
+        ],
+        projects: ['Feasibility study and PVSyst model of a 500kW rooftop PV array']
+      },
+      {
+        num: 'P2', color: '#C78B03',
+        label: 'Month 2 · Power Systems & Grid Link',
+        name: 'Grid Integration & Power Electronics',
+        topics: [
+          'Grid-tie inverter topologies and control loop designs',
+          'Synchronization techniques — Phase Locked Loops (PLL)',
+          'Power quality issues — harmonics, voltage sags, power factor',
+          'Active power filters and static compensators (STATCOM)',
+          'Microgrid control strategies and energy storage link',
+          'Net metering concepts and grid compliance standards'
+        ],
+        projects: ['Simulation of grid-tie solar inverter with active control in Simulink']
+      },
+      {
+        num: 'P3', color: '#805801',
+        label: 'Month 3 · Substation & Analysis',
+        name: 'ETAP Power System & Substation Design',
+        topics: [
+          'Introduction to ETAP — one line diagram construction',
+          'Load flow analysis and short circuit calculations',
+          'Protection coordination — relay settings, breaker sizing',
+          'Smart substation automation — SCADA systems, IEC 61850',
+          'Substation grounding grid designs (IEEE 80 standards)',
+          'Smart meter integration and advanced metering infrastructure'
+        ],
+        projects: ['Industrial distribution grid load flow & protection coordination in ETAP']
+      }
+    ],
+    outcomes: [
+      {icon: '☀️', title: 'PV Yield Analysis', desc: 'Design utility-scale PV systems and run detailed loss-yield reports using PVSyst.'},
+      {icon: '📈', title: 'Grid Control Loop', desc: 'Design synchronization PLL control loops for grid-tied power electronics.'},
+      {icon: '🏢', title: 'Power System Modeling', desc: 'Perform short-circuit, load-flow, and grounding grid designs using ETAP.'}
+    ],
+    careers: ['Smart Grid Engineer','Solar PV Designer','Substation Engineer','Power Systems Analyst','SCADA Integrator']
+  },
+  {
+    id: 'chem1',
+    track: 'chem',
+    title: 'Process Simulation & Piping Engineering',
+    badge: 'Core Program',
+    desc: 'Master process design and simulation using industry-standard Aspen Plus and HYSYS. Learn to model thermodynamic states, heat exchangers, distillation columns, piping layouts, and plant utilities.',
+    tools: ['Aspen Plus','Aspen HYSYS','AutoCAD Plant 3D','P&ID'],
+    duration: '4 Months',
+    sessions: '48 Sessions',
+    credit: '4 Credits',
+    thumbBg: 'linear-gradient(135deg, #052419 0%, #0F6344 100%)',
+    formula: ['Model','Simulate','Design','Draft','Verify'],
+    formulaColors: ['#10B981','#0E9E6D','#0B825A','#086546','#064E35'],
+    phases: [
+      {
+        num: 'P1', color: '#10B981',
+        label: 'Months 1–2 · Simulation',
+        name: 'Aspen Plus & HYSYS Modeling',
+        topics: [
+          'Thermodynamic property packages selection (Peng-Robinson, NRTL)',
+          'Pure component definition and hypothetical compounds',
+          'Material and energy balances in Aspen Plus',
+          'Modeling unit operations — mixers, splitters, flash drums',
+          'Distillation column modeling (DSTWU vs RadFrac)',
+          'Reactor modeling — stoichiometric, yield, equilibrium'
+        ],
+        projects: ['Thermodynamic phase envelope model for natural gas', 'RadFrac column simulation for ethanol-water separation']
+      },
+      {
+        num: 'P2', color: '#0B825A',
+        label: 'Month 3 · Heat Exchangers & Piping',
+        name: 'Heat Integration & Piping Design',
+        topics: [
+          'Shell and tube heat exchanger rating in Aspen EDR',
+          'Process flow diagram (PFD) and P&ID drafting standards',
+          'Control valve sizing and pressure drop calculations',
+          'Piping design fundamentals — ASME B31.3 codes',
+          'Pipe sizing, schedule calculation, and pressure drop',
+          'Piping materials spec sheet generation'
+        ],
+        projects: ['Thermal design of shell-and-tube heat exchanger in Aspen EDR']
+      },
+      {
+        num: 'P3', color: '#064E35',
+        label: 'Month 4 · Plant Layout & AutoCAD',
+        name: 'Plant 3D Drafting & Isometric Layouts',
+        topics: [
+          'AutoCAD Plant 3D workspace and project setup',
+          'Equipment modeling — pumps, vessels, structures in 3D',
+          'Routing pipes, inserting inline valves, fittings, instruments',
+          'Generating piping isometric drawings and BOMs',
+          'Clash check in 3D layouts, structural clearance checks',
+          'Technical project package formatting'
+        ],
+        projects: ['Complete 3D model of a distillation plant section with ISO drawings']
+      }
+    ],
+    outcomes: [
+      {icon: '⚗️', title: 'Process Engineering', desc: 'Simulate complex multi-stage distillation column systems and chemical reactors in Aspen.'},
+      {icon: '📐', title: 'Piping & Instrument Layout', desc: 'Draft comprehensive P&IDs and build 3D piping routing layouts in AutoCAD Plant 3D.'},
+      {icon: '🔥', title: 'Thermal Equipment Sizing', desc: 'Design and rate heat exchangers according to standard ASME codes and process specs.'}
+    ],
+    careers: ['Process Simulation Engineer','Chemical Design Engineer','Plant Piping Designer','ASME Sizing Analyst']
+  },
+  {
+    id: 'chem2',
+    track: 'chem',
+    title: 'Industrial Effluent Treatment & Green Process Design',
+    badge: 'Industry Program',
+    desc: 'Understand the design of industrial wastewater treatment plants, zero-liquid discharge (ZLD) systems, air pollution control, and sustainable green chemical processes that meet global environmental standards.',
+    tools: ['GPS-X','Aspen Plus','AutoCAD','EHS Compliance'],
+    duration: '3 Months',
+    sessions: '36 Sessions',
+    credit: '3 Credits',
+    thumbBg: 'linear-gradient(135deg, #093223 0%, #157E58 100%)',
+    formula: ['Analyze','Design','Model','Scale','Comply'],
+    formulaColors: ['#10B981','#0E9E6D','#0B825A','#086546','#064E35'],
+    phases: [
+      {
+        num: 'P1', color: '#10B981',
+        label: 'Month 1 · ETP Foundations',
+        name: 'Effluent Characterization & Physical Processes',
+        topics: [
+          'Industrial wastewater parameters — COD, BOD, TSS, TDS, pH',
+          'ETP process flowsheet design — physical & chemical steps',
+          'Design of screen chambers, grit channels, oil traps',
+          'Coagulation-flocculation reactions & clarifier sizing',
+          'Chemical dosing calculations, neutralisation tank design',
+          'Sludge thickener, filter press sizing calculations'
+        ],
+        projects: ['ETP process design report and mass balance for a textile mill']
+      },
+      {
+        num: 'P2', color: '#0B825A',
+        label: 'Month 2 · Biological Treatment & Modeling',
+        name: 'Biological Reactors & GPS-X Simulation',
+        topics: [
+          'Kinetics of biological growth — Monod equation parameters',
+          'Activated sludge process (ASP) reactor calculations',
+          'Moving Bed Bio-Reactor (MBBR) & SBR systems design',
+          'GPS-X software setup for wastewater simulation',
+          'Steady-state simulation of biological bioreactors',
+          'Aeration system requirements & dissolved oxygen calculations'
+        ],
+        projects: ['GPS-X biological simulator model of an ASP plant']
+      },
+      {
+        num: 'P3', color: '#064E35',
+        label: 'Month 3 · Advanced Treatment & Green Design',
+        name: 'Zero-Liquid Discharge & Green Processes',
+        topics: [
+          'Membrane filtration — Ultrafiltration, Reverse Roast sizing',
+          'Multi-Effect Evaporator (MEE) & ATFD sizing for ZLD',
+          'EHS compliance, environmental clearance documentation in India',
+          'Green chemical process principles — atom economy, life cycle',
+          'Carbon footprint calculation methodologies',
+          'Sustainable raw material substitution, process efficiency improvements'
+        ],
+        projects: ['Zero-Liquid Discharge (ZLD) design layout and mass balance report']
+      }
+    ],
+    outcomes: [
+      {icon: '💧', title: 'ETP Process Design', desc: 'Develop wastewater plant flowsheets and size physical, chemical, and biological reactors.'},
+      {icon: '🧬', title: 'Bio-Reactor Modeling', desc: 'Simulate activated sludge and MBBR bio-treatment efficiency in GPS-X.'},
+      {icon: '🍃', title: 'Environmental Compliance', desc: 'Model Zero-Liquid Discharge systems and compile EHS audit documentation.'}
+    ],
+    careers: ['Environmental Process Engineer','ETP Design Engineer','Water Treatment Consultant','EHS Compliance Specialist']
+  },
   {
     id: 'c1',
     track: 'civil',
@@ -1345,6 +1995,24 @@ const programs = [
 ];
 
 let activeTrack = 'all';
+const trackLabels = {
+  civil: '🏗️ Civil',
+  mech: '⚙️ Mechanical',
+  cse: '💻 CSE',
+  eee: '⚡ EEE',
+  ece: '📡 ECE',
+  chem: '⚗️ Chemical'
+};
+
+const fullTrackNames = {
+  civil: '🏗️ Civil Engineering',
+  mech: '⚙️ Mechanical Engineering',
+  cse: '💻 Computer Science Engineering (CSE)',
+  eee: '⚡ Electrical & Electronics Engineering (EEE)',
+  ece: '📡 Electronics & Communication Engineering (ECE)',
+  chem: '⚗️ Chemical Engineering'
+};
+
 
 function renderPrograms() {
   const grid = document.getElementById('programsGrid');
@@ -1354,7 +2022,7 @@ function renderPrograms() {
       <div class="prog-thumb" style="background:${p.thumbBg}">
         <div class="prog-thumb-overlay" style="background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 60%)"></div>
         <div class="prog-thumb-content">
-          <div class="prog-track-badge ${p.track}">${p.track === 'civil' ? '🏗️ Civil' : '⚙️ Mechanical'}</div>
+          <div class="prog-track-badge ${p.track}">${trackLabels[p.track] || p.track}</div>
           <div class="prog-title-overlay">${p.title}</div>
         </div>
       </div>
@@ -1376,11 +2044,15 @@ function renderPrograms() {
 
 function filterPrograms(track, btn) {
   activeTrack = track;
-  document.querySelectorAll('.tf-btn').forEach(b => b.classList.remove('active-all','active-civil','active-mech'));
+  document.querySelectorAll('.tf-btn').forEach(b => b.classList.remove('active-all','active-civil','active-mech','active-cse','active-eee','active-ece','active-chem'));
   if (btn) {
     if (track === 'all') btn.classList.add('active-all');
     if (track === 'civil') btn.classList.add('active-civil');
     if (track === 'mech') btn.classList.add('active-mech');
+    if (track === 'cse') btn.classList.add('active-cse');
+    if (track === 'eee') btn.classList.add('active-eee');
+    if (track === 'ece') btn.classList.add('active-ece');
+    if (track === 'chem') btn.classList.add('active-chem');
   }
   renderPrograms();
   document.getElementById('programs').scrollIntoView({behavior:'smooth'});
@@ -1431,7 +2103,7 @@ function openProgram(id) {
     <div class="pp-hero ${trackClass}">
       <div class="pp-hero-bp"></div>
       <div class="pp-hero-glow"></div>
-      <div class="pp-track-tag">${trackClass === 'civil' ? '🏗️ Civil Engineering' : '⚙️ Mechanical Engineering'} · ${p.badge}</div>
+      <div class="pp-track-tag">${fullTrackNames[trackClass] || 'Engineering'} · ${p.badge}</div>
       <h1>${p.title}</h1>
       <p>${p.desc}</p>
       <div class="pp-hero-stats">
