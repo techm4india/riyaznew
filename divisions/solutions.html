@@ -171,37 +171,31 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .prod-sect{padding:8rem 5%;background:#f8f6fc}
 .prod-inner{max-width:1300px;margin:0 auto}
 .prod-grid-custom{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
-.prod-card-custom{background:var(--surface);border:1.5px solid var(--border);border-radius:22px;padding:2.2rem;transition:border-color .3s,box-shadow .3s,transform .35s;position:relative;overflow:hidden}
-.prod-card-custom::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;opacity:0;transition:opacity .3s}
-.prod-card-custom:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(26,26,46,.08);border-color:rgba(255,107,53,.15)}
-.prod-card-custom:hover::before{opacity:1}
-.prod-card-custom.pc-or::before{background:var(--g-main)}
-.prod-card-custom.pc-co::before{background:var(--g-cool)}
-.prod-card-custom.pc-gr::before{background:var(--g-green)}
-.prod-card-custom.pc-pu::before{background:linear-gradient(135deg,#7B2FF7,#0EA5E9)}
-.prod-icon-custom{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.4rem;animation:floatIcon 3.5s ease-in-out infinite}
-.prod-card-custom:nth-child(2) .prod-icon-custom{animation-delay:-.7s}
-.prod-card-custom:nth-child(3) .prod-icon-custom{animation-delay:-1.4s}
-.prod-card-custom:nth-child(4) .prod-icon-custom{animation-delay:-2.1s}
-.prod-card-custom:nth-child(5) .prod-icon-custom{animation-delay:-2.8s}
-@keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.pi-or{background:rgba(255,107,53,.08)}
-.pi-co{background:rgba(14,165,233,.08)}
-.pi-gr{background:rgba(34,197,94,.08)}
-.pi-pu{background:rgba(123,47,247,.08)}
-.pi-ye{background:rgba(255,214,10,.08)}
-.prod-tag-custom{font-size:.63rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:.5rem}
-.pt-or{color:var(--orange)}
-.pt-co{color:var(--blue)}
-.pt-gr{color:var(--green)}
-.pt-pu{color:var(--purple)}
-.pt-ye{color:#92400E}
-.prod-name-custom{font-family:'Sora',sans-serif;font-size:1.2rem;font-weight:900;color:var(--ink);margin-bottom:.65rem}
-.prod-desc-custom{font-size:.86rem;color:var(--ink-l);line-height:1.7}
-.prod-features-custom{list-style:none;margin-top:1.2rem;display:flex;flex-direction:column;gap:0.5rem;border-top:1px solid var(--border);padding-top:1rem}
-.prod-feature-item{font-size:0.8rem;color:var(--ink-l);display:flex;align-items:center;gap:0.4rem}
-.prod-feature-item::before{content:'✓';color:var(--green);font-weight:bold}
 
+/* NEW card design v2 */
+.prod-card-v2{background:#fff;border:1.5px solid rgba(0,0,0,.07);border-radius:20px;padding:1.6rem 1.6rem 1.4rem;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:0.55rem}
+.prod-card-v2::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0;transition:opacity .3s;opacity:0}
+.pc2-pu::before{background:linear-gradient(90deg,#7B2FF7,#0EA5E9)}
+.pc2-co::before{background:linear-gradient(90deg,#0EA5E9,#06b6d4)}
+.pc2-gr::before{background:linear-gradient(90deg,#22c55e,#16a34a)}
+.pc2-or::before{background:linear-gradient(90deg,#FF6B35,#f97316)}
+.pc2-ye::before{background:linear-gradient(90deg,#eab308,#ca8a04)}
+.prod-card-v2:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(26,26,46,.1);border-color:transparent}
+.prod-card-v2:hover::before{opacity:1}
+.pc2-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.3rem}
+.pc2-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.pi2-pu{background:rgba(123,47,247,.1)}
+.pi2-co{background:rgba(14,165,233,.1)}
+.pi2-gr{background:rgba(34,197,94,.1)}
+.pi2-or{background:rgba(255,107,53,.1)}
+.pi2-ye{background:rgba(234,179,8,.1)}
+.pc2-price{font-size:.72rem;font-weight:800;padding:.3rem .75rem;border-radius:100px;background:#f4f4f8;color:#444;white-space:nowrap}
+.pc2-tag{font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.pc2-name{font-family:'Sora',sans-serif;font-size:1.05rem;font-weight:900;color:var(--ink);margin:0;line-height:1.3}
+.pc2-desc{font-size:.82rem;color:var(--ink-l);line-height:1.55;margin:0}
+.pc2-loss{font-size:.75rem;color:#555;background:#f7f7fb;border-radius:8px;padding:.35rem .7rem;margin-top:.2rem}
+.pc2-btn{display:inline-flex;align-items:center;margin-top:.5rem;font-size:.78rem;font-weight:700;color:var(--orange);text-decoration:none;transition:gap .2s;gap:.3rem}
+.pc2-btn:hover{gap:.6rem}
 /* ── RESEARCH & DEVELOPMENT ── */
 .research-sect{background:#060e1a;color:#fff;padding:8rem 5%;position:relative;overflow:hidden}
 .research-inner{max-width:1300px;margin:0 auto}
@@ -782,394 +776,393 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
   
   <div class="prod-grid-custom">
     <!-- Prod 1: AirGuard Pro -->
-    <div class="prod-card-custom pc-pu reveal">
-      <div class="prod-icon-custom pi-pu">💨</div>
-      <p class="prod-tag-custom pt-pu">Industrial IoT</p>
-      <h3 class="prod-name-custom">AirGuard Pro</h3>
-      <p class="prod-desc-custom">Ultrasonic SDR compressed air leak detector — 30–40% energy cost saving</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 30–40% energy loss from undetected air leaks (₹8–22L/year per plant)</li>
-        <li class="prod-feature-item">💰 ₹3,500/mo + ₹45,000 device</li>
-        <li class="prod-feature-item">🌍 Germany DIN EN ISO 11011, UK, USA, Australia (energy audit mandates)</li>
-        <li class="prod-feature-item">🔧 RTL-SDR v4 + ESP32 + ML leak classifier + TimescaleDB + React</li>
-      </ul>
+    <div class="prod-card-v2 pc2-pu reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-pu">💨</div>
+        <span class="pc2-price">₹3,500/mo</span>
+      </div>
+      <p class="pc2-tag">Energy Efficiency</p>
+      <h3 class="pc2-name">AirGuard Pro</h3>
+      <p class="pc2-desc">Ultrasonic SDR compressed air leak detector</p>
+      <div class="pc2-loss">📉 30–40% energy loss from undetected air leaks</div>
+      <a href="/products/airguard-pro" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 2: FlameSmart -->
-    <div class="prod-card-custom pc-co reveal">
-      <div class="prod-icon-custom pi-co">🔥</div>
-      <p class="prod-tag-custom pt-co">Industrial IoT</p>
-      <h3 class="prod-name-custom">FlameSmart</h3>
-      <p class="prod-desc-custom">AI boiler combustion controller — 15–22% fuel saving with NDIR + Zirconia O2</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 15–22% fuel waste (₹6–18L/year per boiler) from sub-optimal combustion</li>
-        <li class="prod-feature-item">💰 ₹4,000/mo + ₹80,000 hardware</li>
-        <li class="prod-feature-item">🌍 EU ETS carbon compliance Germany/Netherlands, UAE/Saudi Aramco audit</li>
-        <li class="prod-feature-item">🔧 Sensirion SCD41 NDIR + Zirconia O2 + RPi4 + PLC OPC-UA + FastAPI</li>
-      </ul>
+    <div class="prod-card-v2 pc2-co reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-co">🔥</div>
+        <span class="pc2-price">₹4,000/mo</span>
+      </div>
+      <p class="pc2-tag">Energy Efficiency</p>
+      <h3 class="pc2-name">FlameSmart</h3>
+      <p class="pc2-desc">AI boiler combustion controller</p>
+      <div class="pc2-loss">📉 15–22% fuel waste</div>
+      <a href="/products/flamesmart" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 3: ForgeSense -->
-    <div class="prod-card-custom pc-gr reveal">
-      <div class="prod-icon-custom pi-gr">⚒️</div>
-      <p class="prod-tag-custom pt-gr">Industrial IoT</p>
-      <h3 class="prod-name-custom">ForgeSense</h3>
-      <p class="prod-desc-custom">Real-time die face temperature + flash prediction AI for hot forging MSMEs</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 40–50% value lost to die overheating + defects (₹6–40L/year die cost overrun)</li>
-        <li class="prod-feature-item">💰 ₹4,800/mo + ₹3.2L hardware</li>
-        <li class="prod-feature-item">🌍 Germany/Italy IATF 16949 SPC, Japan JIS B 0409, USA FIA</li>
-        <li class="prod-feature-item">🔧 Micro-Epsilon pyrometer + HX711 strain gauge + XGBoost ONNX + IATF SPC</li>
-      </ul>
+    <div class="prod-card-v2 pc2-gr reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-gr">⚒️</div>
+        <span class="pc2-price">₹4,800/mo</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & 5.0</p>
+      <h3 class="pc2-name">ForgeSense</h3>
+      <p class="pc2-desc">Real-time die face temperature + flash prediction…</p>
+      <div class="pc2-loss">📉 40–50% value lost to die overheating + defects</div>
+      <a href="/products/forgesense" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 4: SinterSense AI -->
-    <div class="prod-card-custom pc-or reveal">
-      <div class="prod-icon-custom pi-or">🔬</div>
-      <p class="prod-tag-custom pt-or">Industrial IoT</p>
-      <h3 class="prod-name-custom">SinterSense AI</h3>
-      <p class="prod-desc-custom">In-situ eddy-current sintering density monitor — eliminates 14% PM rejection rate</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 35–45% value lost to under/over-sintering (12–18% rejection, ₹8–25L/year)</li>
-        <li class="prod-feature-item">💰 ₹8,000/mo + ₹2.8L hardware</li>
-        <li class="prod-feature-item">🌍 EU/Japan auto OEM Tier-1/2 IATF 16949 SPC traceability requirement</li>
-        <li class="prod-feature-item">🔧 eddyNCDT 3010 + ADS1262 + LSTM TFLite + OPC-UA PLC + IATF SPC report</li>
-      </ul>
+    <div class="prod-card-v2 pc2-or reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-or">🔬</div>
+        <span class="pc2-price">₹8,000/mo</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & 5.0</p>
+      <h3 class="pc2-name">SinterSense AI</h3>
+      <p class="pc2-desc">In-situ eddy-current sintering density monitor</p>
+      <div class="pc2-loss">📉 35–45% value lost to under/over-sintering</div>
+      <a href="/products/sintersense" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 5: PlatingThick AI -->
-    <div class="prod-card-custom pc-ye reveal">
-      <div class="prod-icon-custom pi-ye">🏭</div>
-      <p class="prod-tag-custom pt-ye">Industrial IoT</p>
-      <h3 class="prod-name-custom">PlatingThick AI</h3>
-      <p class="prod-desc-custom">Inline eddy-current coating thickness monitor — replaces ₹18–45L XRF instrument</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 30–45% over/under-plating losses (excess metal + customer returns, ₹4–20L/year)</li>
-        <li class="prod-feature-item">💰 ₹5,000/mo + ₹3.5L hardware</li>
-        <li class="prod-feature-item">🌍 UK ISO 1461, Germany HDG Qualitätszink, USA ASTM B633 compliance</li>
-        <li class="prod-feature-item">🔧 AD5933 multi-freq impedance + LSTM bath compensation + OPC-UA rectifier</li>
-      </ul>
+    <div class="prod-card-v2 pc2-ye reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-ye">🏭</div>
+        <span class="pc2-price">₹5,000/mo</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & 5.0</p>
+      <h3 class="pc2-name">PlatingThick AI</h3>
+      <p class="pc2-desc">Inline eddy-current coating thickness monitor</p>
+      <div class="pc2-loss">📉 30–45% over/under-plating losses</div>
+      <a href="/products/platingthick" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 6: TurbineCoat AI -->
-    <div class="prod-card-custom pc-pu reveal">
-      <div class="prod-icon-custom pi-pu">🌀</div>
-      <p class="prod-tag-custom pt-pu">Industrial IoT</p>
-      <h3 class="prod-name-custom">TurbineCoat AI</h3>
-      <p class="prod-desc-custom">Autonomous LWIR drone blade erosion inspection — 5.6× cheaper than rope-access</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 2–5% AEP loss/turbine/year + blade replacement risk (₹8–22L/turbine uninspected)</li>
-        <li class="prod-feature-item">💰 ₹18,000 per turbine</li>
-        <li class="prod-feature-item">🌍 Germany VDA WindEnergy, Denmark DWEA, USA AWEA, UAE Masdar, Saudi NEOM</li>
-        <li class="prod-feature-item">🔧 DJI Mini 4 Pro + FLIR Lepton 3.5 + YOLOv9 + ArduPilot + IEC 61400-5 report</li>
-      </ul>
+    <div class="prod-card-v2 pc2-pu reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-pu">🌀</div>
+        <span class="pc2-price">₹18,000 per turbine</span>
+      </div>
+      <p class="pc2-tag">Renewable Energy + Robotics</p>
+      <h3 class="pc2-name">TurbineCoat AI</h3>
+      <p class="pc2-desc">Autonomous LWIR drone blade erosion inspection</p>
+      <div class="pc2-loss">📉 2–5% AEP loss/turbine/year + blade replacement risk</div>
+      <a href="/products/turbinecoat" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 7: BeltWatch IoT -->
-    <div class="prod-card-custom pc-co reveal">
-      <div class="prod-icon-custom pi-co">⚙️</div>
-      <p class="prod-tag-custom pt-co">Industrial IoT</p>
-      <h3 class="prod-name-custom">BeltWatch IoT</h3>
-      <p class="prod-desc-custom">Wireless ADXL345 belt drive health monitor — catches misalignment before ₹3–8L burnout</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ Unexpected belt failure = 2–5 day halt (₹3–15L downtime per event)</li>
-        <li class="prod-feature-item">💰 ₹1,800/mo + ₹28,000 device</li>
-        <li class="prod-feature-item">🌍 EU CE-marked industrial IoT tool; Middle East MRO maintenance market</li>
-        <li class="prod-feature-item">🔧 ADXL345 + ESP32 + anomaly LSTM + InfluxDB + React dashboard</li>
-      </ul>
+    <div class="prod-card-v2 pc2-co reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-co">⚙️</div>
+        <span class="pc2-price">₹1,800/mo</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & 5.0</p>
+      <h3 class="pc2-name">BeltWatch IoT</h3>
+      <p class="pc2-desc">Wireless ADXL345 belt drive health monitor</p>
+      <div class="pc2-loss">📉 Unexpected belt failure = 2–5 day halt (₹3–15L downtime per </div>
+      <a href="/products/beltwatch" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 8: ToolSense AI -->
-    <div class="prod-card-custom pc-gr reveal">
-      <div class="prod-icon-custom pi-gr">🛠️</div>
-      <p class="prod-tag-custom pt-gr">Industrial IoT</p>
-      <h3 class="prod-name-custom">ToolSense AI</h3>
-      <p class="prod-desc-custom">MEMS mic + CT clamp CNC tool breakage predictor — 40% scrap reduction before it happens</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ Tool breakage after-the-fact destroys batch — 40% scrap reduction possible</li>
-        <li class="prod-feature-item">💰 ₹3,200/mo + ₹55,000 device</li>
-        <li class="prod-feature-item">🌍 Germany/Japan precision machining export; Taiwan/South Korea CNC subcontract</li>
-        <li class="prod-feature-item">🔧 Vesper VM1000 MEMS + ACS712 CT + 1D-CNN ROCKET + OPC-UA CNC interface</li>
-      </ul>
+    <div class="prod-card-v2 pc2-gr reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-gr">🛠️</div>
+        <span class="pc2-price">₹3,200/mo</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & 5.0</p>
+      <h3 class="pc2-name">ToolSense AI</h3>
+      <p class="pc2-desc">MEMS mic + CT clamp CNC tool breakage predictor</p>
+      <div class="pc2-loss">📉 40% scrap reduction possible</div>
+      <a href="/products/toolsense" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 9: AcoustiCast -->
-    <div class="prod-card-custom pc-or reveal">
-      <div class="prod-icon-custom pi-or">🔊</div>
-      <p class="prod-tag-custom pt-or">AI Quality Control</p>
-      <h3 class="prod-name-custom">AcoustiCast</h3>
-      <p class="prod-desc-custom">Acoustic emission in-mould solidification defect detector — 40% foundry scrap reduction</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 40% scrap from shrinkage defects caught only after machining (₹8–20L/year)</li>
-        <li class="prod-feature-item">💰 ₹5,500/mo + ₹1.2L hardware</li>
-        <li class="prod-feature-item">🌍 Germany VDG, Japan JFAS, USA AFS — IATF casting compliance for auto OEMs</li>
-        <li class="prod-feature-item">🔧 SM-24 geophones + STM32 + 1D-CNN + InfluxDB + IATF casting SPC report</li>
-      </ul>
+    <div class="prod-card-v2 pc2-or reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-or">🔊</div>
+        <span class="pc2-price">₹5,500/mo</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & 5.0</p>
+      <h3 class="pc2-name">AcoustiCast</h3>
+      <p class="pc2-desc">Acoustic emission in-mould solidification defect detector</p>
+      <div class="pc2-loss">📉 40% scrap from shrinkage defects caught only after machining</div>
+      <a href="/products/accusticast" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 10: GranuSense -->
-    <div class="prod-card-custom pc-ye reveal">
-      <div class="prod-icon-custom pi-ye">💊</div>
-      <p class="prod-tag-custom pt-ye">AI Quality Control</p>
-      <h3 class="prod-name-custom">GranuSense</h3>
-      <p class="prod-desc-custom">NIR in-process granulation endpoint detector — 70% pharma rejection reduction</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 70% of pharma batch rejections from over/under-granulation — 45% batch waste</li>
-        <li class="prod-feature-item">💰 ₹6,000/mo + ₹1.8L hardware</li>
-        <li class="prod-feature-item">🌍 WHO GMP export Africa/SE Asia; EU EMA PAT compliant; USFDA cGMP</li>
-        <li class="prod-feature-item">🔧 AS7265x NIR + PLS chemometrics + RPi4 + FastAPI + WHO PAT compliance report</li>
-      </ul>
+    <div class="prod-card-v2 pc2-ye reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-ye">💊</div>
+        <span class="pc2-price">₹6,000/mo</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">GranuSense</h3>
+      <p class="pc2-desc">NIR in-process granulation endpoint detector</p>
+      <div class="pc2-loss">📉 70% of pharma batch rejections from over/under-granulation — 45% batch waste</div>
+      <a href="/products/granusense" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 11: HideNest AI -->
-    <div class="prod-card-custom pc-pu reveal">
-      <div class="prod-icon-custom pi-pu">🧵</div>
-      <p class="prod-tag-custom pt-pu">AI Quality Control</p>
-      <h3 class="prod-name-custom">HideNest AI</h3>
-      <p class="prod-desc-custom">CV defect-aware leather hide nesting optimizer — 32% waste reduction in cutting</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 32% leather hide wastage from manual nesting (₹4–12L/year per tannery)</li>
-        <li class="prod-feature-item">💰 ₹4,500/mo + ₹2.2L hardware</li>
-        <li class="prod-feature-item">🌍 Italy Lineapelle, Germany, France, UK — global fashion brands sourcing from India</li>
-        <li class="prod-feature-item">🔧 UV-A fluorescence cam + MaskRCNN + CUDA nesting optimizer + React CAD UI</li>
-      </ul>
+    <div class="prod-card-v2 pc2-pu reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-pu">🧵</div>
+        <span class="pc2-price">₹4,500/mo</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & 5.0</p>
+      <h3 class="pc2-name">HideNest AI</h3>
+      <p class="pc2-desc">CV defect-aware leather hide nesting optimizer</p>
+      <div class="pc2-loss">📉 32% leather hide wastage from manual nesting</div>
+      <a href="/products/hidenest" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 12: SeedPurity AI -->
-    <div class="prod-card-custom pc-co reveal">
-      <div class="prod-icon-custom pi-co">🌱</div>
-      <p class="prod-tag-custom pt-co">AI Quality Control</p>
-      <h3 class="prod-name-custom">SeedPurity AI</h3>
-      <p class="prod-desc-custom">Hyperspectral seed purity + germination predictor — 7-day lab test in 45 minutes</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 35–45% lot value lost to SCA rejection + low-GP releases (₹3–18L/lot)</li>
-        <li class="prod-feature-item">💰 ₹3,500/mo + ₹6.5L system</li>
-        <li class="prod-feature-item">🌍 FAO Uganda/Kenya, ISTA exporters, USAID Feed the Future, ASEAN seed market</li>
-        <li class="prod-feature-item">🔧 Specim VNIR 400–1000nm + PLS-DA + 1D-CNN + NVIDIA Jetson Orin + air-jet sorter</li>
-      </ul>
+    <div class="prod-card-v2 pc2-co reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-co">🌱</div>
+        <span class="pc2-price">₹3,500/mo</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">SeedPurity AI</h3>
+      <p class="pc2-desc">Hyperspectral seed purity + germination predictor</p>
+      <div class="pc2-loss">📉 35–45% lot value lost to SCA rejection + low-GP releases</div>
+      <a href="/products/seedpurity" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 13: GreenCement Predict -->
-    <div class="prod-card-custom pc-gr reveal">
-      <div class="prod-icon-custom pi-gr">🧱</div>
-      <p class="prod-tag-custom pt-gr">AI Quality Control</p>
-      <h3 class="prod-name-custom">GreenCement Predict</h3>
-      <p class="prod-desc-custom">24-hour compressive strength predictor for fly ash/GGBS cement — replaces 28-day wait</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 30–42% production value lost in 28-day wait per mix iteration (₹2–15L delayed orders)</li>
-        <li class="prod-feature-item">💰 ₹3,500/mo + ₹2.2L hardware</li>
-        <li class="prod-feature-item">🌍 UAE/Dubai LEED Platinum, Qatar MMUP green cement, East Africa LEED-Africa</li>
-        <li class="prod-feature-item">🔧 AD5933 EIS probe + XGBoost + Gaussian Process + RPi4 + BIS IS:1489 cert</li>
-      </ul>
+    <div class="prod-card-v2 pc2-gr reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-gr">🧱</div>
+        <span class="pc2-price">₹3,500/mo</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">GreenCement Predict</h3>
+      <p class="pc2-desc">24-hour compressive strength predictor for fly ash/GGBS cement</p>
+      <div class="pc2-loss">📉 30–42% production value lost in 28-day wait per mix iteration</div>
+      <a href="/products/greencement" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 14: PrintWatch AI -->
-    <div class="prod-card-custom pc-or reveal">
-      <div class="prod-icon-custom pi-or">🏷️</div>
-      <p class="prod-tag-custom pt-or">AI Quality Control</p>
-      <h3 class="prod-name-custom">PrintWatch AI</h3>
-      <p class="prod-desc-custom">Inline print defect detection for packaging MSMEs — 0.2% defect rate vs 3.5% current</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 3–5% print defect rate leads to brand penalties and packaging recalls (₹3–10L/year)</li>
-        <li class="prod-feature-item">💰 ₹4,000/mo + ₹1.8L hardware</li>
-        <li class="prod-feature-item">🌍 EU GS1 print quality; USA Walmart/Amazon supplier quality mandates</li>
-        <li class="prod-feature-item">🔧 Basler acA2000 camera + YOLOv9 + RPi4 + TimescaleDB + defect heatmap dashboard</li>
-      </ul>
+    <div class="prod-card-v2 pc2-or reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-or">🏷️</div>
+        <span class="pc2-price">₹4,000/mo</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & 5.0</p>
+      <h3 class="pc2-name">PrintWatch AI</h3>
+      <p class="pc2-desc">Inline print defect detection for packaging MSMEs</p>
+      <div class="pc2-loss">📉 3–5% print defect rate leads to brand penalties and packaging recalls</div>
+      <a href="/products/printwatch" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 15: BackBead AI -->
-    <div class="prod-card-custom pc-ye reveal">
-      <div class="prod-icon-custom pi-ye">⚡</div>
-      <p class="prod-tag-custom pt-ye">AI Quality Control</p>
-      <h3 class="prod-name-custom">BackBead AI</h3>
-      <p class="prod-desc-custom">FLIR LWIR backside weld penetration estimator — blind-side quality for robotic welding</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 8% field weld failure rate (₹3–12L warranty returns/year per fabricator)</li>
-        <li class="prod-feature-item">💰 ₹4,500/mo + ₹1.5L hardware</li>
-        <li class="prod-feature-item">🌍 Germany DVS, Japan JIS Z 3121, USA AWS D1.1 structural welding code</li>
-        <li class="prod-feature-item">🔧 FLIR Lepton 3.5 + ResNet-50 + RPi + OPC-UA robot interface + AWS D1.1 report</li>
-      </ul>
+    <div class="prod-card-v2 pc2-ye reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-ye">⚡</div>
+        <span class="pc2-price">₹4,500/mo</span>
+      </div>
+      <p class="pc2-tag">Robotics & Automation</p>
+      <h3 class="pc2-name">BackBead AI</h3>
+      <p class="pc2-desc">FLIR LWIR backside weld penetration estimator</p>
+      <div class="pc2-loss">📉 8% field weld failure rate</div>
+      <a href="/products/backbead" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 16: BiogasOptim -->
-    <div class="prod-card-custom pc-pu reveal">
-      <div class="prod-icon-custom pi-pu">🍃</div>
-      <p class="prod-tag-custom pt-pu">GreenTech SaaS</p>
-      <h3 class="prod-name-custom">BiogasOptim</h3>
-      <p class="prod-desc-custom">Adaptive biogas digester health monitor with automated H2S desulfurization</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 35–50% biogas output lost + digester crashes (₹3–8L/event); genset damage ₹1.5–4L each</li>
-        <li class="prod-feature-item">💰 ₹2,500/mo + ₹1.8L hardware</li>
-        <li class="prod-feature-item">🌍 GIZ Kenya/Ethiopia, World Bank ESMAP, SNV Netherlands, Thailand TGO carbon</li>
-        <li class="prod-feature-item">🔧 Dynament NDIR + Alphasense H2S + ESP32-S3 + RF VFA predictor + Bhashini voice</li>
-      </ul>
+    <div class="prod-card-v2 pc2-pu reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-pu">🍃</div>
+        <span class="pc2-price">₹2,500/mo</span>
+      </div>
+      <p class="pc2-tag">Renewable Energy</p>
+      <h3 class="pc2-name">BiogasOptim</h3>
+      <p class="pc2-desc">Adaptive biogas digester health monitor with…</p>
+      <div class="pc2-loss">📉 35–50% biogas output lost + digester crashes</div>
+      <a href="/products/biogasoptim" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 17: GramShakti Grid -->
-    <div class="prod-card-custom pc-co reveal">
-      <div class="prod-icon-custom pi-co">☀️</div>
-      <p class="prod-tag-custom pt-co">GreenTech SaaS</p>
-      <h3 class="prod-name-custom">GramShakti Grid</h3>
-      <p class="prod-desc-custom">RL-optimised solar microgrid OS for rural MSME clusters and co-operatives</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ Rural MSMEs run solar at 55–65% efficiency vs 85%+ possible with ML control</li>
-        <li class="prod-feature-item">💰 ₹3,000/mo + ₹2.4L hardware</li>
-        <li class="prod-feature-item">🌍 World Bank rural electrification, USAID Power Africa, GIZ Solar Off-Grid Africa</li>
-        <li class="prod-feature-item">🔧 Stable-Baselines3 PPO RL + ESP32-MESH + MPPT + LoRaWAN + BEE energy cert</li>
-      </ul>
+    <div class="prod-card-v2 pc2-co reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-co">☀️</div>
+        <span class="pc2-price">₹3,000/mo</span>
+      </div>
+      <p class="pc2-tag">Renewable Energy</p>
+      <h3 class="pc2-name">GramShakti Grid</h3>
+      <p class="pc2-desc">RL-optimised solar microgrid OS for rural MSME…</p>
+      <div class="pc2-loss">📉 55–65% efficiency vs 85%+ possible with ML control</div>
+      <a href="/products/gramshakti" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 18: WasteHeat ORC -->
-    <div class="prod-card-custom pc-gr reveal">
-      <div class="prod-icon-custom pi-gr">♨️</div>
-      <p class="prod-tag-custom pt-gr">GreenTech SaaS</p>
-      <h3 class="prod-name-custom">WasteHeat ORC</h3>
-      <p class="prod-desc-custom">IoT-monitored micro-ORC (5–15 kW) waste heat recovery for foundry &amp; kiln MSMEs</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 35–48% input energy wasted as flue gas heat (₹16–48L/year uncaptured per unit)</li>
-        <li class="prod-feature-item">💰 ₹1,500/mo + ₹8.5–11.5L hardware</li>
-        <li class="prod-feature-item">🌍 Germany VDG EU ETS, Thailand/Vietnam BOI, UNIDO Africa efficiency programmes</li>
-        <li class="prod-feature-item">🔧 Scroll ORC + PMSM + adaptive MPPT control + RPi4 + grid-tie inverter + BEE PAT cert</li>
-      </ul>
+    <div class="prod-card-v2 pc2-gr reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-gr">♨️</div>
+        <span class="pc2-price">₹1,500/mo</span>
+      </div>
+      <p class="pc2-tag">Energy Efficiency</p>
+      <h3 class="pc2-name">WasteHeat ORC</h3>
+      <p class="pc2-desc">IoT-monitored micro-ORC (5–15 kW) waste heat…</p>
+      <div class="pc2-loss">📉 35–48% input energy wasted as flue gas heat</div>
+      <a href="/products/wasteheat-orc" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 19: ElectroCoag Solar -->
-    <div class="prod-card-custom pc-or reveal">
-      <div class="prod-icon-custom pi-or">💧</div>
-      <p class="prod-tag-custom pt-or">GreenTech SaaS</p>
-      <h3 class="prod-name-custom">ElectroCoag Solar</h3>
-      <p class="prod-desc-custom">Solar-MPPT electrocoagulation for textile effluent treatment — zero chemical cost</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ CPCB non-compliance fines ₹50,000–5L/month + production shutdowns</li>
-        <li class="prod-feature-item">💰 ₹2,800/mo + ₹3.5L hardware</li>
-        <li class="prod-feature-item">🌍 EU REACH compliance for textile exporters; Bangladesh EPZ certification</li>
-        <li class="prod-feature-item">🔧 BDD electrodes + MPPT solar controller + ESP32 + CPCB auto-report generator</li>
-      </ul>
+    <div class="prod-card-v2 pc2-or reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-or">💧</div>
+        <span class="pc2-price">₹2,800/mo</span>
+      </div>
+      <p class="pc2-tag">Renewable Energy</p>
+      <h3 class="pc2-name">ElectroCoag Solar</h3>
+      <p class="pc2-desc">Solar-MPPT electrocoagulation for textile effluent treatment</p>
+      <div class="pc2-loss">📉 CPCB non-compliance fines ₹50,000–5L/month + production shut</div>
+      <a href="/products/electrocoag" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 20: CellShield -->
-    <div class="prod-card-custom pc-ye reveal">
-      <div class="prod-icon-custom pi-ye">🔋</div>
-      <p class="prod-tag-custom pt-ye">GreenTech SaaS</p>
-      <h3 class="prod-name-custom">CellShield</h3>
-      <p class="prod-desc-custom">Li-ion battery thermal runaway ML early warning — 72-hour alert before catastrophic failure</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ Battery MSME thermal runaway = total asset loss (₹30L–2Cr) + fire liability</li>
-        <li class="prod-feature-item">💰 ₹4,000/mo + ₹1.2L hardware</li>
-        <li class="prod-feature-item">🌍 EU Battery Regulation 2023, UL 9540A fire compliance, ARAMCO battery storage</li>
-        <li class="prod-feature-item">🔧 INA3221 cell voltage + MAX31855 thermocouple + LSTM early warning + PESO safety</li>
-      </ul>
+    <div class="prod-card-v2 pc2-ye reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-ye">🔋</div>
+        <span class="pc2-price">₹4,000/mo</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">CellShield</h3>
+      <p class="pc2-desc">Li-ion battery thermal runaway ML early warning</p>
+      <div class="pc2-loss">📉 Battery MSME thermal runaway = total asset loss (₹30L–2Cr) +</div>
+      <a href="/products/cellshield" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 21: ITCMax -->
-    <div class="prod-card-custom pc-pu reveal">
-      <div class="prod-icon-custom pi-pu">📊</div>
-      <p class="prod-tag-custom pt-pu">FinTech &amp; SaaS</p>
-      <h3 class="prod-name-custom">ITCMax</h3>
-      <p class="prod-desc-custom">AI GST Input Tax Credit reconciliation — recovers avg ₹2.5L per MSME per year</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ ₹2.5L+ average GST ITC unclaimed per MSME per year — mismatch and missed deadlines</li>
-        <li class="prod-feature-item">💰 ₹4,500/mo pure SaaS</li>
-        <li class="prod-feature-item">🌍 NRI-owned Indian businesses (UK, USA, UAE, Singapore) — GST compliance for India</li>
-        <li class="prod-feature-item">🔧 GSTN GSP API + XGBoost mismatch classifier + PostgreSQL + React + WhatsApp alerts</li>
-      </ul>
+    <div class="prod-card-v2 pc2-pu reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-pu">📊</div>
+        <span class="pc2-price">₹4,500/mo pure SaaS</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">ITCMax</h3>
+      <p class="pc2-desc">AI GST Input Tax Credit reconciliation</p>
+      <div class="pc2-loss">📉 ₹2.5L+ average GST ITC unclaimed per MSME per year — mismatc</div>
+      <a href="/products/itcmax" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 22: FreightAudit AI -->
-    <div class="prod-card-custom pc-co reveal">
-      <div class="prod-icon-custom pi-co">🚢</div>
-      <p class="prod-tag-custom pt-co">FinTech &amp; SaaS</p>
-      <h3 class="prod-name-custom">FreightAudit AI</h3>
-      <p class="prod-desc-custom">ML freight invoice anomaly detector — catches 8–15% overbilling across vendors</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 8–15% of freight invoices overcharged (₹3–12L/year per export-focused MSME)</li>
-        <li class="prod-feature-item">💰 ₹3,000/mo pure SaaS</li>
-        <li class="prod-feature-item">🌍 UAE/Gulf logistics hubs; Bangladesh/Vietnam garment freight; EU logistics audit</li>
-        <li class="prod-feature-item">🔧 LightGBM anomaly detection + TrOCR PDF OCR + OR-Tools + FastAPI + React dashboard</li>
-      </ul>
+    <div class="prod-card-v2 pc2-co reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-co">🚢</div>
+        <span class="pc2-price">₹3,000/mo pure SaaS</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">FreightAudit AI</h3>
+      <p class="pc2-desc">ML freight invoice anomaly detector</p>
+      <div class="pc2-loss">📉 8–15% of freight invoices overcharged</div>
+      <a href="/products/freightaudit" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 23: ComplianceRadar -->
-    <div class="prod-card-custom pc-gr reveal">
-      <div class="prod-icon-custom pi-gr">🚨</div>
-      <p class="prod-tag-custom pt-gr">FinTech &amp; SaaS</p>
-      <h3 class="prod-name-custom">ComplianceRadar</h3>
-      <p class="prod-desc-custom">AI govt circular digest on WhatsApp — never miss an MSME compliance deadline again</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ MSME compliance penalties avg ₹1.5–8L/year from missed circulars and GST changes</li>
-        <li class="prod-feature-item">💰 ₹1,500/mo pure SaaS</li>
-        <li class="prod-feature-item">🌍 Indian diaspora businesses (UK, USA, Canada, Singapore) tracking India regulations</li>
-        <li class="prod-feature-item">🔧 Bhashini NLP + MuRIL classifier + WhatsApp Business API + FastAPI + PostgreSQL</li>
-      </ul>
+    <div class="prod-card-v2 pc2-gr reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-gr">🚨</div>
+        <span class="pc2-price">₹1,500/mo pure SaaS</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">ComplianceRadar</h3>
+      <p class="pc2-desc">AI govt circular digest on WhatsApp</p>
+      <div class="pc2-loss">📉 MSME compliance penalties avg ₹1.5–8L/year from missed circu</div>
+      <a href="/products/complianceradar" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 24: SupplyPredict -->
-    <div class="prod-card-custom pc-or reveal">
-      <div class="prod-icon-custom pi-or">📈</div>
-      <p class="prod-tag-custom pt-or">FinTech &amp; SaaS</p>
-      <h3 class="prod-name-custom">SupplyPredict</h3>
-      <p class="prod-desc-custom">ML raw material procurement timing advisor — buys at the right price, every time</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ MSMEs overpay 8–18% on raw materials by buying at wrong time (₹4–20L/year)</li>
-        <li class="prod-feature-item">💰 ₹2,500/mo pure SaaS</li>
-        <li class="prod-feature-item">🌍 Indian importers tracking LME/COMEX commodity prices; Gulf/Africa commodity hedge</li>
-        <li class="prod-feature-item">🔧 LSTM commodity predictor + GSTN purchase history + WhatsApp advisory + FastAPI</li>
-      </ul>
+    <div class="prod-card-v2 pc2-or reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-or">📈</div>
+        <span class="pc2-price">₹2,500/mo pure SaaS</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & 5.0</p>
+      <h3 class="pc2-name">SupplyPredict</h3>
+      <p class="pc2-desc">ML raw material procurement timing advisor</p>
+      <div class="pc2-loss">📉 8–18% on raw materials by buying at wrong time</div>
+      <a href="/products/supplypredict" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 25: TruckNiti -->
-    <div class="prod-card-custom pc-ye reveal">
-      <div class="prod-icon-custom pi-ye">🚛</div>
-      <p class="prod-tag-custom pt-ye">FinTech &amp; SaaS</p>
-      <h3 class="prod-name-custom">TruckNiti</h3>
-      <p class="prod-desc-custom">WhatsApp VRP route optimizer — saves 22–30% freight cost for fleet managers</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 22–30% freight cost overrun from unoptimised routes (₹5–18L/year per logistics MSME)</li>
-        <li class="prod-feature-item">💰 ₹2,000/mo pure SaaS</li>
-        <li class="prod-feature-item">🌍 Bangladesh/Myanmar/Nepal cross-border; Sri Lanka MSME freight optimization</li>
-        <li class="prod-feature-item">🔧 OR-Tools CVRPTW + WhatsApp Business API + HERE Maps API + Bhashini Hindi voice</li>
-      </ul>
+    <div class="prod-card-v2 pc2-ye reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-ye">🚛</div>
+        <span class="pc2-price">₹2,000/mo pure SaaS</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">TruckNiti</h3>
+      <p class="pc2-desc">WhatsApp VRP route optimizer</p>
+      <div class="pc2-loss">📉 22–30% freight cost overrun from unoptimised routes</div>
+      <a href="/products/truckniti" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 26: MSME Pulse API -->
-    <div class="prod-card-custom pc-pu reveal">
-      <div class="prod-icon-custom pi-pu">🌐</div>
-      <p class="prod-tag-custom pt-pu">FinTech &amp; SaaS</p>
-      <h3 class="prod-name-custom">MSME Pulse API</h3>
-      <p class="prod-desc-custom">Real-time MSME operational benchmark API — compare your plant vs 10,000 peers</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ MSMEs operate blind vs industry benchmarks — 20–35% efficiency gap from no visibility</li>
-        <li class="prod-feature-item">💰 ₹5,000/mo API SaaS</li>
-        <li class="prod-feature-item">🌍 World Bank IFC, ADB, GIZ benchmark programme, EU COSME, OECD MSME data</li>
-        <li class="prod-feature-item">🔧 TimescaleDB + FastAPI REST/GraphQL + PostgreSQL + Razorpay subscription + SDK</li>
-      </ul>
+    <div class="prod-card-v2 pc2-pu reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-pu">🌐</div>
+        <span class="pc2-price">₹5,000/mo API SaaS</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & 5.0</p>
+      <h3 class="pc2-name">MSME Pulse API</h3>
+      <p class="pc2-desc">Real-time MSME operational benchmark API</p>
+      <div class="pc2-loss">📉 20–35% efficiency gap from no visibility</div>
+      <a href="/products/msme-pulse-api" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 27: FoodSpectra -->
-    <div class="prod-card-custom pc-co reveal">
-      <div class="prod-icon-custom pi-co">🍎</div>
-      <p class="prod-tag-custom pt-co">AgriTech SaaS</p>
-      <h3 class="prod-name-custom">FoodSpectra</h3>
-      <p class="prod-desc-custom">Handheld NIR food adulteration detector — 45-second on-site test vs 3-day lab</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ Food adulteration costs MSME processors ₹2–10L/year in FSSAI fines and recalls</li>
-        <li class="prod-feature-item">💰 ₹2,000/mo + ₹35,000 device</li>
-        <li class="prod-feature-item">🌍 UAE ESMA food safety, EU FBO import inspections, Kenya KEBS food standards</li>
-        <li class="prod-feature-item">🔧 AS7265x 18-ch spectral + PLS-DA + MobileNetV3 + Android app + FSSAI cert export</li>
-      </ul>
+    <div class="prod-card-v2 pc2-co reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-co">🍎</div>
+        <span class="pc2-price">₹2,000/mo</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">FoodSpectra</h3>
+      <p class="pc2-desc">Handheld NIR food adulteration detector</p>
+      <div class="pc2-loss">📉 Food adulteration costs MSME processors ₹2–10L/year in FSSAI</div>
+      <a href="/products/foodspectra" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 28: DairyLedger -->
-    <div class="prod-card-custom pc-gr reveal">
-      <div class="prod-icon-custom pi-gr">💨</div>
-      <p class="prod-tag-custom pt-gr">Industrial IoT</p>
-      <h3 class="prod-name-custom">DairyLedger</h3>
-      <p class="prod-desc-custom">WhatsApp voice milk procurement + instant UPI payment for dairy co-op MSMEs</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ Manual procurement = ₹30,000–2L/month in payment delays, disputes, and leakage</li>
-        <li class="prod-feature-item">💰 ₹800/mo SaaS</li>
-        <li class="prod-feature-item">🌍 Kenya Dairy Board co-ops, Ethiopia dairy MSMEs (GIZ AgriFinance), Sri Lanka FairFirst</li>
-        <li class="prod-feature-item">🔧 Bhashini ASR+TTS + WhatsApp Business API + UPI Razorpay + CouchDB offline-first</li>
-      </ul>
+    <div class="prod-card-v2 pc2-gr reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-gr">💨</div>
+        <span class="pc2-price">₹800/mo SaaS</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">DairyLedger</h3>
+      <p class="pc2-desc">WhatsApp voice milk procurement + instant UPI…</p>
+      <div class="pc2-loss">📉 Manual procurement = ₹30,000–2L/month in payment delays, dis</div>
+      <a href="/products/dairyledger" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 29: ColdChainEye -->
-    <div class="prod-card-custom pc-or reveal">
-      <div class="prod-icon-custom pi-or">❄️</div>
-      <p class="prod-tag-custom pt-or">HealthTech SaaS</p>
-      <h3 class="prod-name-custom">ColdChainEye</h3>
-      <p class="prod-desc-custom">Reusable pharma cold chain tag: PCI indicator + BLE + Blockchain at Rs 950/unit</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 25% of vaccines arrive degraded globally; India Rs 1,900 Cr cold-chain rejections (2023)</li>
-        <li class="prod-feature-item">💰 ₹1,200/mo + ₹950/tag</li>
-        <li class="prod-feature-item">🌍 WHO/UNICEF PQS E006, African CDC PACES, Gavi Alliance, EU GDP compliance</li>
-        <li class="prod-feature-item">🔧 nRF52840 BLE + DS18B20 + PCI microfluidic + MobileNetV3 Android + Polygon blockchain</li>
-      </ul>
+    <div class="prod-card-v2 pc2-or reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-or">❄️</div>
+        <span class="pc2-price">₹1,200/mo</span>
+      </div>
+      <p class="pc2-tag">Other Frontier Tech</p>
+      <h3 class="pc2-name">ColdChainEye</h3>
+      <p class="pc2-desc">Reusable pharma cold chain tag: PCI indicator + BLE…</p>
+      <div class="pc2-loss">📉 25% of vaccines arrive degraded globally; India Rs 1,900 Cr cold-chain rejections</div>
+      <a href="/products/coldchaineye" class="pc2-btn">Explore →</a>
     </div>
+
     <!-- Prod 30: ArcFlash Guard -->
-    <div class="prod-card-custom pc-ye reveal">
-      <div class="prod-icon-custom pi-ye">⚡</div>
-      <p class="prod-tag-custom pt-ye">Safety SaaS</p>
-      <h3 class="prod-name-custom">ArcFlash Guard</h3>
-      <p class="prod-desc-custom">Wireless IoT arc flash monitor + IEEE 1584-2018 calculator at Rs 65,000/panel</p>
-      <ul class="prod-features-custom">
-        <li class="prod-feature-item">⚠ 35–45% export revenue lost (no arc flash compliance); Rs 15–50L liability per incident</li>
-        <li class="prod-feature-item">💰 ₹8,500/panel/year + ₹65,000 hardware</li>
-        <li class="prod-feature-item">🌍 USA NFPA 70E + NEC 110.16, EU IEC 62271-200, Saudi ARAMCO SAES-P-100, Australia</li>
-        <li class="prod-feature-item">🔧 Osram SFH 2701 optical + ACS758 CT + STM32F4 <1ms trip + IEEE 1584 engine + NFPA label</li>
-      </ul>
+    <div class="prod-card-v2 pc2-ye reveal">
+      <div class="pc2-top">
+        <div class="pc2-icon pi2-ye">⚡</div>
+        <span class="pc2-price">₹8,500/panel/year</span>
+      </div>
+      <p class="pc2-tag">Industry 4.0 & Safety</p>
+      <h3 class="pc2-name">ArcFlash Guard</h3>
+      <p class="pc2-desc">Wireless IoT arc flash monitor + IEEE 1584-2018…</p>
+      <div class="pc2-loss">📉 35–45% export revenue lost</div>
+      <a href="/products/arcflash-guard" class="pc2-btn">Explore →</a>
     </div>
   </div>
 </div>
