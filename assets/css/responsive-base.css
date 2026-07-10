@@ -49,6 +49,12 @@ section,
 .btn-glow,
 .btn-outline,
 .btn-ghost-sol,
+.btn-ghost,
+.btn-fire,
+.btn-ghost-sp,
+.btn-hero-primary,
+.btn-hero-ghost,
+.btn-hero,
 .nav-cta,
 .form-submit {
   min-height: 48px;
@@ -64,14 +70,31 @@ section,
 .cta-btns .btn-primary,
 .cta-btns .btn-outline,
 .cta-btns .btn-main,
+.cta-btns .btn-glow,
+.cta-btns .btn-ghost-sol,
+.cta-btns .btn-ghost,
+.cta-btns .btn-fire,
+.cta-btns .btn-ghost-sp,
+.cta-btns .btn-hero-primary,
+.cta-btns .btn-hero-ghost,
+.cta-btns .btn-hero,
 .hero-btns .btn-primary,
 .hero-btns .btn-main,
 .hero-btns .btn-outline,
 .hero-btns .btn-glow,
-.hero-btns .btn-ghost-sol {
-  width: 100%;
-  justify-content: center;
-  text-align: center;
+.hero-btns .btn-ghost-sol,
+.hero-btns .btn-ghost,
+.hero-btns .btn-fire,
+.hero-btns .btn-ghost-sp,
+.hero-btns .btn-hero-primary,
+.hero-btns .btn-hero-ghost,
+.hero-btns .btn-hero {
+  width: 100% !important;
+  justify-content: center !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 /* Footer mobile */
@@ -301,7 +324,7 @@ body.nav-open nav {
 
 @media (max-width: 767px) {
   .hero {
-    padding-top: calc(var(--nav-height) + 32px) !important;
+    padding-top: calc(var(--nav-height) + 60px) !important;
   }
 
   .hero-stats {
@@ -324,3 +347,12 @@ body.nav-open nav {
     padding: 24px !important;
   }
 }
+
+/* Hero Text Shadow for Better Contrast against lighter backgrounds */
+.hero h1, 
+.hero .hero-sub, 
+.hero p, 
+.hero-eyebrow {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45) !important;
+}
+
