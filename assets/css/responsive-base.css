@@ -15,6 +15,19 @@ body {
   opacity: 1 !important;
 }
 
+/* Enforce 100vh height for all heroes on desktop views */
+.hero {
+  height: 100vh;
+  min-height: auto;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 90px !important; /* Clears fixed navbar */
+  padding-bottom: 40px !important;
+  overflow: hidden !important;
+}
+
 img,
 video,
 svg {
