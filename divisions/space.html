@@ -356,58 +356,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
   .reveal,.reveal-l,.reveal-r{opacity:1;transform:none}
 }
 
-
-/* Hero Background Carousel Styles */
-.hero-carousel {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  z-index: 1;
-  transition: opacity 1.0s ease-in-out;
-}
-.hero-slide.last-active {
-  opacity: 1;
-  z-index: 2;
-}
-.hero-slide.active {
-  opacity: 1;
-  z-index: 3;
-}
-.hero-carousel-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 26, 46, 0.70) 0%,
-    rgba(26, 26, 46, 0.35) 50%,
-    rgba(26, 26, 46, 0.70) 100%
-  );
-  z-index: 4;
-}
-@media (max-width: 800px) {
-  .hero-carousel-overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(26, 26, 46, 0.45) 0%,
-      rgba(26, 26, 46, 0.45) 50%,
-      rgba(26, 26, 46, 0.45) 100%
-    );
-  }
-}
-/* Ensure content sits above the carousel and overlay */
-.hero-inner, .hero-content, .hero-container {
-  position: relative;
-  z-index: 5 !important;
-}
-\n</style>
+</style>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Sora:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -450,19 +399,6 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
      HERO
 ══════════════════════════════════════════════ -->
 <section class="hero">
-<div class="hero-carousel">
-  <div class="hero-slide active" style="background-image: url('../assets/images/about_carousel_1.jpeg');"></div>
-  <div class="hero-slide" style="background-image: url('../assets/images/about_carousel_2.jpeg');"></div>
-  <div class="hero-slide" style="background-image: url('../assets/images/about_carousel_3.jpeg');"></div>
-  <div class="hero-slide" style="background-image: url('../assets/images/about_carousel_4.jpeg');"></div>
-  <div class="hero-slide" style="background-image: url('../assets/images/about_carousel_5.jpeg');"></div>
-  <div class="hero-slide" style="background-image: url('../assets/images/about_carousel_6.jpeg');"></div>
-  <div class="hero-slide" style="background-image: url('../assets/images/about_carousel_7.jpeg');"></div>
-  <div class="hero-slide" style="background-image: url('../assets/images/about_carousel_8.jpeg');"></div>
-  <div class="hero-slide" style="background-image: url('../assets/images/about_carousel_9.jpeg');"></div>
-  <div class="hero-carousel-overlay"></div>
-</div>
-
 <div class="nebula n1"></div>
 <div class="nebula n2"></div>
 <div class="nebula n3"></div>
@@ -1043,29 +979,5 @@ resize();createStars();drawStars(0);
 window.addEventListener('resize',()=>{resize();createStars()});
 </script>
 <script src="../assets/js/site-init.js"></script>
-
-<script>
-// Background Carousel Controller
-(function() {
-  var slides = document.querySelectorAll('.hero-slide');
-  if (slides.length > 0) {
-    var currentSlide = 0;
-    setInterval(function() {
-      // Remove last-active class from all slides to ensure none are stuck visible
-      slides.forEach(function(slide) {
-        slide.classList.remove('last-active');
-      });
-      
-      // The current slide now becomes the last-active slide
-      slides[currentSlide].classList.remove('active');
-      slides[currentSlide].classList.add('last-active');
-      
-      // Move to the next slide and make it active
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }, 3000);
-  }
-})();
-</script>
-\n</body>
+</body>
 </html>
