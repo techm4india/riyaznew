@@ -55,6 +55,9 @@ section,
 .btn-hero-primary,
 .btn-hero-ghost,
 .btn-hero,
+.btn-p,
+.btn-g,
+.btn-submit,
 .nav-cta,
 .form-submit {
   min-height: 48px;
@@ -78,6 +81,9 @@ section,
 .cta-btns .btn-hero-primary,
 .cta-btns .btn-hero-ghost,
 .cta-btns .btn-hero,
+.cta-btns .btn-p,
+.cta-btns .btn-g,
+.cta-btns .btn-submit,
 .hero-btns .btn-primary,
 .hero-btns .btn-main,
 .hero-btns .btn-outline,
@@ -88,7 +94,10 @@ section,
 .hero-btns .btn-ghost-sp,
 .hero-btns .btn-hero-primary,
 .hero-btns .btn-hero-ghost,
-.hero-btns .btn-hero {
+.hero-btns .btn-hero,
+.hero-btns .btn-p,
+.hero-btns .btn-g,
+.hero-btns .btn-submit {
   width: 100% !important;
   justify-content: center !important;
   text-align: center !important;
@@ -324,7 +333,29 @@ body.nav-open nav {
 
 @media (max-width: 767px) {
   .hero {
-    padding-top: calc(var(--nav-height) + 60px) !important;
+    height: calc(100vh - var(--nav-height, 70px)) !important;
+    min-height: 520px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    padding-top: calc(var(--nav-height, 70px) + 20px) !important;
+    padding-bottom: 20px !important;
+  }
+
+  .hero-visual {
+    display: none !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+  }
+
+  .hero-sub, 
+  .hero p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.2rem !important;
   }
 
   .hero-stats {
