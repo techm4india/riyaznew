@@ -177,8 +177,8 @@ nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .ticker-wrap{background:rgba(30,111,217,.03);border-top:1px solid rgba(30,111,217,.08);border-bottom:1px solid rgba(30,111,217,.08);padding:18px 0;overflow:hidden}
 .ticker-inner{display:flex;animation:tickScroll 30s linear infinite;width:max-content}
 .ticker-logo{padding:0 40px;display:flex;align-items:center;justify-content:center}
-.ticker-logo img{height:28px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%) opacity(0.55);transition:all 0.3s ease}
-.ticker-logo img:hover{filter:none;opacity:1;transform:scale(1.08)}
+.ticker-logo img{height:28px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%) contrast(1.2) brightness(0.85);transition:all 0.35s ease}
+.ticker-logo img:hover{filter:grayscale(0%) contrast(1) brightness(1);transform:scale(1.1)}
 @keyframes tickScroll{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 
 /* ===== SECTION BASE ===== */
