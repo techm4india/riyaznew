@@ -1034,9 +1034,69 @@ var contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    contactForm.style.display = 'none';
-    var formSuccess = document.getElementById('formSuccess');
-    if (formSuccess) formSuccess.style.display = 'block';
+    
+    const firstName = contactForm.querySelector('[placeholder="Ravi"]').value;
+    const lastName = contactForm.querySelector('[placeholder="Kumar"]').value;
+    const email = contactForm.querySelector('[type="email"]').value;
+    const org = contactForm.querySelector('[placeholder*="XYZ Engineering"]').value;
+    const division = contactForm.querySelector('select').value;
+    const message = contactForm.querySelector('textarea').value;
+    
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Format WhatsApp message
+    const whatsappMsg = `*New Form Submission (About Page)*\n\n` +
+                        `*Name:* ${firstName} ${lastName}\n` +
+                        `*Email:* ${email}\n` +
+                        `*Organisation:* ${org}\n` +
+                        `*Division:* ${division}\n` +
+                        `*Message:* ${message}`;
+    
+    const whatsappUrl = `https://wa.me/916301814246?text=${encodeURIComponent(whatsappMsg)}`;
+
+    const SUPABASE_URL = window.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+
+    const proceedSuccess = () => {
+      contactForm.style.display = 'none';
+      var formSuccess = document.getElementById('formSuccess');
+      if (formSuccess) formSuccess.style.display = 'block';
+      window.open(whatsappUrl, '_blank');
+    };
+
+    if (SUPABASE_URL !== 'YOUR_SUPABASE_URL' && SUPABASE_ANON_KEY !== 'YOUR_SUPABASE_ANON_KEY') {
+      fetch(`${SUPABASE_URL}/rest/v1/contact_submissions`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          first_name: firstName,
+          last_name: lastName,
+          email: email,
+          organisation: org,
+          role: division,
+          message: message
+        })
+      })
+      .then(() => {
+        proceedSuccess();
+      })
+      .catch(err => {
+        console.error('Supabase submission failed:', err);
+        proceedSuccess();
+      });
+    } else {
+      proceedSuccess();
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
   });
 }
 
