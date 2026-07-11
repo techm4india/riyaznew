@@ -137,9 +137,9 @@ nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .hero-badge .dot{width:6px;height:6px;background:var(--orange);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
 .hero-split{display:grid;grid-template-columns:1.1fr 0.9fr;gap:80px;align-items:end;padding-bottom:0}
-.hero-copy h1{font-size:clamp(2.6rem,5vw,4.2rem);color:#fff;line-height:1.05;letter-spacing:-2px;margin-bottom:20px}
-.hero-copy h1 .accent{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-copy h1 .accent-blue{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-copy h1{font-size:clamp(1.8rem,3.6vw,2.8rem);color:#fff;line-height:1.15;letter-spacing:-1.2px;margin-bottom:20px}
+.hero-copy h1 .accent{background:none;-webkit-text-fill-color:#fff;color:#fff}
+.hero-copy h1 .accent-blue{background:none;-webkit-text-fill-color:#fff;color:#fff}
 .hero-copy p{font-size:1.02rem;color:rgba(255,255,255,.5);line-height:1.85;max-width:500px;margin-bottom:36px;font-weight:400}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
 .btn-primary{background:var(--g-brand);color:#fff;padding:14px 30px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:8px;transition:all .25s;border:none;cursor:pointer;font-family:'Inter',sans-serif}
@@ -174,11 +174,12 @@ nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .hstat .l{font-size:.72rem;color:rgba(255,255,255,.3);font-weight:500;text-transform:uppercase;letter-spacing:1px;margin-top:5px}
 
 /* ===== TICKER ===== */
-.ticker-wrap{background:rgba(30,111,217,.05);border-top:1px solid rgba(30,111,217,.1);border-bottom:1px solid rgba(30,111,217,.1);padding:14px 0;overflow:hidden}
-.ticker-inner{display:flex;animation:tickScroll 35s linear infinite;width:max-content}
-.ticker-item{padding:0 32px;font-size:.78rem;font-weight:700;color:var(--blue);white-space:nowrap;display:flex;align-items:center;gap:10px;letter-spacing:.5px;text-transform:uppercase}
-.ticker-item .sep{color:var(--grey);opacity:.5}
-@keyframes tickScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-wrap{background:rgba(30,111,217,.03);border-top:1px solid rgba(30,111,217,.08);border-bottom:1px solid rgba(30,111,217,.08);padding:18px 0;overflow:hidden}
+.ticker-inner{display:flex;animation:tickScroll 30s linear infinite;width:max-content}
+.ticker-logo{padding:0 40px;display:flex;align-items:center;justify-content:center}
+.ticker-logo img{height:28px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%) opacity(0.55);transition:all 0.3s ease}
+.ticker-logo img:hover{filter:none;opacity:1;transform:scale(1.08)}
+@keyframes tickScroll{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 
 /* ===== SECTION BASE ===== */
 section{padding:96px 40px}
@@ -190,6 +191,174 @@ section{padding:96px 40px}
 .sec-title .t-blue{color:var(--blue)}
 .sec-title .t-red{color:var(--red)}
 .sec-title .t-orange{color:var(--orange)}
+
+/* ===== PROGRAMS SECTION & GEONIXA CARD STYLING ===== */
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 36px;
+}
+.prog-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.015);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+.prog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(11, 31, 58, 0.07);
+  border-color: rgba(30, 111, 217, 0.12);
+}
+.prog-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #f4f4f5;
+}
+.prog-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.prog-card:hover .prog-img-wrap img {
+  transform: scale(1.05);
+}
+.prog-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(11, 31, 58, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.prog-badge .badge-dot {
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  animation: badgePulse 2s infinite;
+}
+@keyframes badgePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+.prog-eyebrow {
+  font-size: 0.72rem;
+  color: #71717a;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.prog-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #09090b;
+  line-height: 1.35;
+  margin-bottom: 8px;
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -0.5px;
+}
+.prog-sub {
+  font-size: 0.88rem;
+  color: #52525b;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+.prog-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid #f4f4f5;
+  margin-bottom: 20px;
+}
+.prog-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #71717a;
+  font-weight: 600;
+}
+.prog-meta-item.cert {
+  color: #ea580c;
+}
+.prog-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-align: center;
+  border: 1.5px solid #e4e4e7;
+  background: #ffffff;
+  color: #18181b;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+.prog-card:hover .prog-btn {
+  background: #ff5722;
+  border-color: #ff5722;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(255, 87, 34, 0.3);
+}
+
+/* ===== FILTER BUTTONS STYLING ===== */
+.tf-btn {
+  background: transparent;
+  border: 1.5px solid rgba(11, 31, 58, 0.1);
+  color: #52525b;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: 'Inter', sans-serif;
+}
+.tf-btn:hover {
+  background: rgba(30, 111, 217, 0.05);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+.tf-btn.active-all, .tf-btn.active-civil, .tf-btn.active-mech, .tf-btn.active-cse, .tf-btn.active-eee, .tf-btn.active-ece, .tf-btn.active-comm, .tf-btn.active-chem {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #ffffff;
+}
+.tf-btn.active-civil { background: var(--blue); border-color: var(--blue); }
+.tf-btn.active-mech { background: var(--red); border-color: var(--red); }
+.tf-btn.active-cse { background: var(--cse); border-color: var(--cse); }
+.tf-btn.active-eee { background: var(--eee); border-color: var(--eee); }
+.tf-btn.active-ece { background: var(--ece); border-color: var(--ece); }
+.tf-btn.active-comm { background: #14b8a6; border-color: #14b8a6; }
+.tf-btn.active-chem { background: var(--chem); border-color: var(--chem); }
 
 /* ===== PROCESS STEPS ===== */
 .process-wrap{margin-top:64px}
@@ -204,8 +373,8 @@ section{padding:96px 40px}
 .p-step.red:hover .p-step-num{background:var(--red);border-color:var(--red)}
 
 /* ===== TRACKS ===== */
-.tracks-intro{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
-.track-hero{border-radius:20px;padding:48px 40px;position:relative;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.tracks-intro{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:56px}
+.track-hero{flex:1 1 calc(33.333% - 24px);min-width:320px;max-width:390px;border-radius:20px;padding:48px 40px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
 .track-hero:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 .track-hero.civil{background:var(--navy);border:1px solid rgba(30,111,217,.3)}
 .track-hero.mech{background:#1A0205;border:1px solid rgba(215,38,56,.3)}
@@ -230,14 +399,17 @@ section{padding:96px 40px}
 .track-hero.cse{background:#100925;border:1px solid rgba(123,47,247,.3)}
 .track-hero.eee{background:#1A1201;border:1px solid rgba(245,158,11,.3)}
 .track-hero.ece{background:#031720;border:1px solid rgba(14,165,233,.3)}
+.track-hero.comm{background:#021B1B;border:1px solid rgba(20,184,166,.3)}
 .track-hero.chem{background:#041A12;border:1px solid rgba(16,185,129,.3)}
 .cse .track-hero-glow{background:rgba(123,47,247,.2)}
 .eee .track-hero-glow{background:rgba(245,158,11,.2)}
 .ece .track-hero-glow{background:rgba(14,165,233,.2)}
+.comm .track-hero-glow{background:rgba(20,184,166,.2)}
 .chem .track-hero-glow{background:rgba(16,185,129,.2)}
 .cse .t-tool{background:rgba(123,47,247,.2);border:1px solid rgba(123,47,247,.4);color:rgba(255,255,255,.75)}
 .eee .t-tool{background:rgba(245,158,11,.2);border:1px solid rgba(245,158,11,.4);color:rgba(255,255,255,.75)}
 .ece .t-tool{background:rgba(14,165,233,.2);border:1px solid rgba(14,165,233,.4);color:rgba(255,255,255,.75)}
+.comm .t-tool{background:rgba(20,184,166,.2);border:1px solid rgba(20,184,166,.4);color:rgba(255,255,255,.75)}
 .chem .t-tool{background:rgba(16,185,129,.2);border:1px solid rgba(16,185,129,.4);color:rgba(255,255,255,.75)}
 .cse .track-cta{background:rgba(123,47,247,.25);border:1px solid rgba(123,47,247,.4)}
 .cse .track-cta:hover{background:var(--cse);border-color:var(--cse)}
@@ -584,7 +756,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
     <div class="hero-badge"><span class="dot"></span>TechM4Engineering — Advanced Engineering Programs</div>
     <div class="hero-split">
       <div class="hero-copy">
-        <h1>Engineering India's<br/><span class="accent-blue">Industrial Future.</span><br/>With <span class="accent">Industry Tools.</span></h1>
+        <h1>Engineering India's<br/><span class="accent-blue">Industrial Future</span><br/>Through <span class="accent">Hands-On Innovation.</span></h1>
         <p>India's most advanced multidisciplinary engineering training ecosystem. Master Revit, ANSYS, VLSI, EV Powertrain, Full-Stack DevOps, Aspen Plus and more — through real-world projects, structured mentorship, and institute-level lab programs.</p>
         <div class="hero-btns">
           <a href="#programs" class="btn-primary">Explore Programs →</a>
@@ -627,24 +799,31 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-inner">
-    <div class="ticker-item">Revit Architecture <span class="sep">·</span></div>
-    <div class="ticker-item">STAAD Pro <span class="sep">·</span></div>
-    <div class="ticker-item">ETABS <span class="sep">·</span></div>
-    <div class="ticker-item">ANSYS Simulation <span class="sep">·</span></div>
-    <div class="ticker-item">HyperMesh FEA <span class="sep">·</span></div>
-    <div class="ticker-item">AutoCAD Civil 3D <span class="sep">·</span></div>
-    <div class="ticker-item">BIM Modeling <span class="sep">·</span></div>
-    <div class="ticker-item">Structural Analysis <span class="sep">·</span></div>
-    <div class="ticker-item">Product Design <span class="sep">·</span></div>
-    <div class="ticker-item">HAANS Software <span class="sep">·</span></div>
-    <div class="ticker-item">Revit Architecture <span class="sep">·</span></div>
-    <div class="ticker-item">STAAD Pro <span class="sep">·</span></div>
-    <div class="ticker-item">ETABS <span class="sep">·</span></div>
-    <div class="ticker-item">ANSYS Simulation <span class="sep">·</span></div>
-    <div class="ticker-item">HyperMesh FEA <span class="sep">·</span></div>
-    <div class="ticker-item">AutoCAD Civil 3D <span class="sep">·</span></div>
-    <div class="ticker-item">BIM Modeling <span class="sep">·</span></div>
-    <div class="ticker-item">Structural Analysis <span class="sep">·</span></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Autodesk_AutoCAD_logo.svg" alt="AutoCAD"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Autodesk_Revit_logo.svg" alt="Revit"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Ansys_logo_%282019%29.svg" alt="ANSYS"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/1/15/SOLIDWORKS_Logo.svg" alt="SolidWorks"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="MATLAB"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Dassault_Systemes_logo.svg" alt="CATIA"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Bentley_Systems_logo.svg" alt="STAAD Pro"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Java_programming_language_logo.svg" alt="Java"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" alt="Arduino"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Raspberry_Pi_Logo.svg" alt="Raspberry Pi"></div>
+    <!-- Duplicate set for infinite scroll -->
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Autodesk_AutoCAD_logo.svg" alt="AutoCAD"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Autodesk_Revit_logo.svg" alt="Revit"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Ansys_logo_%282019%29.svg" alt="ANSYS"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/1/15/SOLIDWORKS_Logo.svg" alt="SolidWorks"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="MATLAB"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Dassault_Systemes_logo.svg" alt="CATIA"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Bentley_Systems_logo.svg" alt="STAAD Pro"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Java_programming_language_logo.svg" alt="Java"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" alt="Arduino"></div>
+    <div class="ticker-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Raspberry_Pi_Logo.svg" alt="Raspberry Pi"></div>
   </div>
 </div>
 
@@ -694,11 +873,11 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
     <div class="reveal">
       <div class="sec-eyebrow">Two Specializations. One Mission.</div>
       <h2 class="sec-title">Choose Your <span class="t-blue">Engineering</span> Path</h2>
-      <p class="sec-sub">Whether you're building structures that shape skylines or designing systems that power industries — TechM4Engineering has the program for you.</p>
+      <p class="sec-sub">Whether you're building structures that shape skylines or designing systems that power industries —</p>
     </div>
     <div class="tracks-intro">
       <!-- Track 01: Civil -->
-      <div class="track-hero civil reveal" onclick="filterPrograms('civil')">
+      <div class="track-hero civil reveal">
         <div class="track-bp"></div>
         <div class="track-hero-glow"></div>
         <div class="track-tag">🏗️ Track 01</div>
@@ -711,11 +890,10 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">AutoCAD</span>
           <span class="t-tool">Civil 3D</span>
         </div>
-        <span class="track-cta">View Civil Programs →</span>
       </div>
 
       <!-- Track 02: Mechanical -->
-      <div class="track-hero mech reveal" onclick="filterPrograms('mech')">
+      <div class="track-hero mech reveal">
         <div class="track-bp"></div>
         <div class="track-hero-glow"></div>
         <div class="track-tag">⚙️ Track 02</div>
@@ -727,11 +905,10 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">SolidWorks</span>
           <span class="t-tool">HAANS Mech</span>
         </div>
-        <span class="track-cta">View Mechanical Programs →</span>
       </div>
 
       <!-- Track 03: CSE -->
-      <div class="track-hero cse reveal" onclick="filterPrograms('cse')">
+      <div class="track-hero cse reveal">
         <div class="track-bp"></div>
         <div class="track-hero-glow"></div>
         <div class="track-tag">💻 Track 03</div>
@@ -744,48 +921,58 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">Docker</span>
           <span class="t-tool">Python</span>
         </div>
-        <span class="track-cta">View CSE Programs →</span>
       </div>
 
-      <!-- Track 04: EEE -->
-      <div class="track-hero eee reveal" onclick="filterPrograms('eee')">
+      <!-- Track 04: Electrical -->
+      <div class="track-hero eee reveal">
         <div class="track-bp"></div>
         <div class="track-hero-glow"></div>
         <div class="track-tag">⚡ Track 04</div>
-        <h2>Electrical & Electronics<br/>Specialization</h2>
+        <h2>Electrical Engineering<br/>Specialization</h2>
         <p>Design electric vehicle powertrains, model battery management systems, and analyze smart grid renewable systems.</p>
         <div class="track-tools">
           <span class="t-tool">MATLAB</span>
           <span class="t-tool">Simulink</span>
           <span class="t-tool">Ansys Maxwell</span>
-          <span class="t-tool">Altium</span>
           <span class="t-tool">ETAP</span>
         </div>
-        <span class="track-cta">View EEE Programs →</span>
       </div>
 
-      <!-- Track 05: ECE -->
-      <div class="track-hero ece reveal" onclick="filterPrograms('ece')">
+      <!-- Track 05: Electronics -->
+      <div class="track-hero ece reveal">
         <div class="track-bp"></div>
         <div class="track-hero-glow"></div>
-        <div class="track-tag">📡 Track 05</div>
-        <h2>Electronics & Comm.<br/>Specialization</h2>
-        <p>Master VLSI digital system design, FPGA architectures, and embedded firmware development for real-world IoT systems.</p>
+        <div class="track-tag">🔌 Track 05</div>
+        <h2>Electronics Engineering<br/>Specialization</h2>
+        <p>Master VLSI digital system design, FPGA architectures, and microelectronic circuit modeling.</p>
         <div class="track-tools">
           <span class="t-tool">Verilog</span>
           <span class="t-tool">Vivado</span>
           <span class="t-tool">Cadence</span>
-          <span class="t-tool">C/C++</span>
-          <span class="t-tool">FreeRTOS</span>
+          <span class="t-tool">Altium</span>
         </div>
-        <span class="track-cta">View ECE Programs →</span>
       </div>
 
-      <!-- Track 06: Chemical -->
-      <div class="track-hero chem reveal" onclick="filterPrograms('chem')">
+      <!-- Track 06: Communication -->
+      <div class="track-hero comm reveal">
         <div class="track-bp"></div>
         <div class="track-hero-glow"></div>
-        <div class="track-tag">⚗️ Track 06</div>
+        <div class="track-tag">📡 Track 06</div>
+        <h2>Communication Engineering<br/>Specialization</h2>
+        <p>Develop embedded firmware, program IoT networks, and design real-time communication systems.</p>
+        <div class="track-tools">
+          <span class="t-tool">C/C++</span>
+          <span class="t-tool">FreeRTOS</span>
+          <span class="t-tool">RTOS</span>
+          <span class="t-tool">IoT Protocols</span>
+        </div>
+      </div>
+
+      <!-- Track 07: Chemical -->
+      <div class="track-hero chem reveal">
+        <div class="track-bp"></div>
+        <div class="track-hero-glow"></div>
+        <div class="track-tag">⚗️ Track 07</div>
         <h2>Chemical Engineering<br/>Specialization</h2>
         <p>Run process simulations with Aspen HYSYS, design piping layouts, and engineer industrial water treatment systems.</p>
         <div class="track-tools">
@@ -794,36 +981,35 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">Plant 3D</span>
           <span class="t-tool">GPS-X</span>
         </div>
-        <span class="track-cta">View Chemical Programs →</span>
       </div>
-div>
+    </div>
+  </div>
 </section>
 
 <!-- PROGRAMS -->
 <section id="programs" style="background:var(--offwhite)">
   <div class="sec-inner">
-    <div class="programs-header reveal">
-      <div>
-        <div class="sec-eyebrow">All Programs</div>
-        <h2 class="sec-title" style="margin-bottom:0">Industry-Grade Training Programs</h2>
-      </div>
-      <div class="track-filter" style="display: flex; flex-wrap: wrap; gap: 8px;">
-        <button class="tf-btn active-all" onclick="filterPrograms('all',this)">All</button>
-        <button class="tf-btn civil-btn" onclick="filterPrograms('civil',this)">Civil</button>
-        <button class="tf-btn mech-btn" onclick="filterPrograms('mech',this)">Mechanical</button>
-        <button class="tf-btn cse-btn" onclick="filterPrograms('cse',this)">CSE</button>
-        <button class="tf-btn eee-btn" onclick="filterPrograms('eee',this)">EEE</button>
-        <button class="tf-btn ece-btn" onclick="filterPrograms('ece',this)">ECE</button>
-        <button class="tf-btn chem-btn" onclick="filterPrograms('chem',this)">Chemical</button>
-      </div>
+    <div style="text-align:center;margin-bottom:48px;" class="reveal">
+      <div class="sec-eyebrow" style="justify-content:center">Explore Our Programs</div>
+      <h2 class="sec-title" style="text-align:center">Skill Up with <span class="t-blue">Global Mentors</span> & Hands-On Projects</h2>
     </div>
+    
+    <div class="track-filter" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 40px;">
+      <button class="tf-btn active-all" onclick="filterPrograms('all',this)">All Tracks</button>
+      <button class="tf-btn civil-btn" onclick="filterPrograms('civil',this)">Civil</button>
+      <button class="tf-btn mech-btn" onclick="filterPrograms('mech',this)">Mechanical</button>
+      <button class="tf-btn cse-btn" onclick="filterPrograms('cse',this)">Computer Science</button>
+      <button class="tf-btn eee-btn" onclick="filterPrograms('eee',this)">Electrical</button>
+      <button class="tf-btn ece-btn" onclick="filterPrograms('ece',this)">Electronics</button>
+      <button class="tf-btn comm-btn" onclick="filterPrograms('comm',this)">Communication</button>
+      <button class="tf-btn chem-btn" onclick="filterPrograms('chem',this)">Chemical</button>
+    </div>
+
     <div class="programs-grid" id="programsGrid">
       <!-- Populated by JS -->
     </div>
   </div>
-</section>
-
-<!-- TOOLS ECOSYSTEM -->
+</section><!-- TOOLS ECOSYSTEM -->
 <section>
   <div class="sec-inner">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:0" class="reveal">
@@ -2018,7 +2204,7 @@ const programs = [
   },
   {
     id: 'ece2',
-    track: 'ece',
+    track: 'comm',
     title: 'Embedded Systems & IoT Solutions Architecture',
     badge: 'Industry Program',
     desc: 'Bridge the physical and digital worlds. Learn microcontroller architectures (ARM Cortex, ESP32), sensor interfacing, RTOS concepts, wireless protocols (BLE, Wi-Fi, LoRa), and cloud IoT integrations.',
@@ -2097,7 +2283,7 @@ const programs = [
   },
   {
     id: 'ece4',
-    track: 'ece',
+    track: 'comm',
     title: 'Wireless Communication & 5G Network Technology',
     badge: 'Specialist Program',
     desc: 'Study wireless propagation, MIMO systems, beamforming, OFDMA modulation, 5G NR physical layer, and network architecture.',
@@ -2368,60 +2554,69 @@ const trackLabels = {
   civil: '🏗️ Civil',
   mech: '⚙️ Mechanical',
   cse: '💻 CSE',
-  eee: '⚡ EEE',
-  ece: '📡 ECE',
+  eee: '⚡ Electrical',
+  ece: '🔌 Electronics',
+  comm: '📡 Comm.',
   chem: '⚗️ Chemical'
 };
 
 const fullTrackNames = {
   civil: '🏗️ Civil Engineering',
   mech: '⚙️ Mechanical Engineering',
-  cse: '💻 Computer Science Engineering (CSE)',
-  eee: '⚡ Electrical & Electronics Engineering (EEE)',
-  ece: '📡 Electronics & Communication Engineering (ECE)',
+  cse: '💻 Computer Science Engineering',
+  eee: '⚡ Electrical Engineering',
+  ece: '🔌 Electronics Engineering',
+  comm: '📡 Communication Engineering',
   chem: '⚗️ Chemical Engineering'
 };
 
+const trackImages = {
+  civil: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80',
+  mech: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80',
+  cse: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80',
+  eee: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80',
+  ece: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80',
+  comm: 'https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=600&q=80',
+  chem: 'https://images.unsplash.com/photo-1513828742140-ccaa34f3be09?auto=format&fit=crop&w=600&q=80'
+};
 
 function renderPrograms() {
   const grid = document.getElementById('programsGrid');
+  if (!grid) return;
   const filtered = activeTrack === 'all' ? programs : programs.filter(p => p.track === activeTrack);
-  grid.innerHTML = filtered.map(p => `
-    <div class="prog-card revealed" onclick="openProgram('${p.id}')">
-      <div class="prog-thumb" style="background:${p.thumbBg}">
-        <div class="prog-thumb-overlay" style="background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 60%)"></div>
-        <div class="prog-thumb-content">
-          <div class="prog-track-badge ${p.track}">${trackLabels[p.track] || p.track}</div>
-          <div class="prog-title-overlay">${p.title}</div>
+  grid.innerHTML = filtered.map(p => {
+    const imageUrl = trackImages[p.track] || trackImages.civil;
+    return `
+      <div class="prog-card" onclick="openProgram('${p.id}')">
+        <div class="prog-img-wrap">
+          <img src="${imageUrl}" alt="${p.title}">
+          <div class="prog-badge">
+            <span class="badge-dot"></span>
+            Limited seats
+          </div>
         </div>
+        <div class="prog-eyebrow">Explore Program</div>
+        <div class="prog-title">${p.title}</div>
+        <div class="prog-sub">${p.desc.substring(0, 90)}...</div>
+        <div class="prog-meta-row">
+          <div class="prog-meta-item cert">
+            <span class="cert-check">✓</span> Certification
+          </div>
+          <div class="prog-meta-item">
+            <span>🕒 ${p.duration || '2-3 Months'}</span>
+          </div>
+        </div>
+        <button class="prog-btn">View Program</button>
       </div>
-      <div class="prog-body">
-        <p class="prog-desc">${p.desc.substring(0, 110)}…</p>
-        <div class="prog-tags">${p.tools.map(t => `<span class="prog-tag">${t}</span>`).join('')}</div>
-        <div class="prog-meta">
-          <span>⏱ ${p.duration}</span>
-          <span>📅 ${p.sessions}</span>
-        </div>
-        <div class="prog-footer">
-          <div class="prog-credit">🎓 ${p.credit}</div>
-          <button class="prog-view-btn ${p.track}" onclick="event.stopPropagation();openProgram('${p.id}')">View Program →</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 function filterPrograms(track, btn) {
   activeTrack = track;
-  document.querySelectorAll('.tf-btn').forEach(b => b.classList.remove('active-all','active-civil','active-mech','active-cse','active-eee','active-ece','active-chem'));
+  document.querySelectorAll('.tf-btn').forEach(b => b.classList.remove('active-all','active-civil','active-mech','active-cse','active-eee','active-ece','active-comm','active-chem'));
   if (btn) {
-    if (track === 'all') btn.classList.add('active-all');
-    if (track === 'civil') btn.classList.add('active-civil');
-    if (track === 'mech') btn.classList.add('active-mech');
-    if (track === 'cse') btn.classList.add('active-cse');
-    if (track === 'eee') btn.classList.add('active-eee');
-    if (track === 'ece') btn.classList.add('active-ece');
-    if (track === 'chem') btn.classList.add('active-chem');
+    btn.classList.add('active-' + track);
   }
   renderPrograms();
   document.getElementById('programs').scrollIntoView({behavior:'smooth'});
