@@ -389,7 +389,7 @@ section{padding:96px 40px}
 .t-tool{padding:5px 12px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
 .civil .t-tool{background:rgba(30,111,217,.2);border:1px solid rgba(30,111,217,.4);color:rgba(255,255,255,.75)}
 .mech .t-tool{background:rgba(215,38,56,.2);border:1px solid rgba(215,38,56,.4);color:rgba(255,255,255,.75)}
-.track-cta{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:.88rem;position:relative;z-index:1;text-decoration:none;padding:12px 24px;border-radius:8px;transition:all .25s}
+.track-cta{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:.88rem;position:relative;z-index:1;text-decoration:none;padding:12px 24px;border-radius:8px;transition:all .25s;cursor:pointer;border:none;outline:none}
 .civil .track-cta{background:rgba(30,111,217,.25);border:1px solid rgba(30,111,217,.4)}
 .civil .track-cta:hover{background:var(--blue);border-color:var(--blue)}
 .mech .track-cta{background:rgba(215,38,56,.25);border:1px solid rgba(215,38,56,.4)}
@@ -890,6 +890,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">AutoCAD</span>
           <span class="t-tool">Civil 3D</span>
         </div>
+        <button class="track-cta" onclick="filterPrograms('civil', document.querySelector('.civil-btn'))">Explore Specialization →</button>
       </div>
 
       <!-- Track 02: Mechanical -->
@@ -905,6 +906,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">SolidWorks</span>
           <span class="t-tool">HAANS Mech</span>
         </div>
+        <button class="track-cta" onclick="filterPrograms('mech', document.querySelector('.mech-btn'))">Explore Specialization →</button>
       </div>
 
       <!-- Track 03: CSE -->
@@ -921,6 +923,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">Docker</span>
           <span class="t-tool">Python</span>
         </div>
+        <button class="track-cta" onclick="filterPrograms('cse', document.querySelector('.cse-btn'))">Explore Specialization →</button>
       </div>
 
       <!-- Track 04: Electrical -->
@@ -936,6 +939,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">Ansys Maxwell</span>
           <span class="t-tool">ETAP</span>
         </div>
+        <button class="track-cta" onclick="filterPrograms('eee', document.querySelector('.eee-btn'))">Explore Specialization →</button>
       </div>
 
       <!-- Track 05: Electronics -->
@@ -951,6 +955,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">Cadence</span>
           <span class="t-tool">Altium</span>
         </div>
+        <button class="track-cta" onclick="filterPrograms('ece', document.querySelector('.ece-btn'))">Explore Specialization →</button>
       </div>
 
       <!-- Track 06: Communication -->
@@ -966,6 +971,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">RTOS</span>
           <span class="t-tool">IoT Protocols</span>
         </div>
+        <button class="track-cta" onclick="filterPrograms('comm', document.querySelector('.comm-btn'))">Explore Specialization →</button>
       </div>
 
       <!-- Track 07: Chemical -->
@@ -981,6 +987,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
           <span class="t-tool">Plant 3D</span>
           <span class="t-tool">GPS-X</span>
         </div>
+        <button class="track-cta" onclick="filterPrograms('chem', document.querySelector('.chem-btn'))">Explore Specialization →</button>
       </div>
     </div>
   </div>
