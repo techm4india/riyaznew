@@ -38,7 +38,8 @@ h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:900}
 @keyframes bDrift{from{transform:scale(1)}to{transform:scale(1.2) translate(20px,30px)}}
 
 .left-
-.logo{font-family:'Sora',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;text-decoration:none}
+.logo{font-family:'Sora',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+.logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .logo span{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .back-link{font-size:.82rem;color:rgba(255,255,255,.4);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
 .back-link:hover{color:rgba(255,255,255,.8)}
@@ -172,7 +173,8 @@ h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:900}
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -240,7 +242,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
       <div class="fi">🤖</div>
     </div>
     <div class="left-nav">
-      <a href="/" class="logo">Tech<span>M4</span>India</a>
+      <a href="/" class="logo"><img src="../logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
       <a href="/" class="back-link">← Back to Home</a>
     </div>
     <div class="left-content">

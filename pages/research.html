@@ -114,7 +114,7 @@ h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:900}
 .hero-inner{position:relative;z-index:2;max-width:840px;margin:0 auto}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,233,.15);border:1px solid rgba(14,165,233,.3);border-radius:99px;padding:7px 18px;font-size:.75rem;font-weight:700;color:var(--blue);letter-spacing:.5px;text-transform:uppercase;margin-bottom:28px}
 .hero h1{font-size:clamp(2.6rem,6vw,5rem);color:#fff;line-height:1.08;margin-bottom:20px;letter-spacing:-2px}
-.hero h1 .g{background:var(--g-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .g{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:600px;margin:0 auto 40px}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn-p{background:var(--g-cool);color:#fff;padding:12px 30px;border-radius:99px;font-family:'Sora',sans-serif;font-weight:800;font-size:.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 6px 24px rgba(14,165,233,.35);transition:.2s}
@@ -242,7 +242,8 @@ section{padding:96px 32px}
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -290,7 +291,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div id="loader">
 <div class="loader-blueprint"></div>
 <div class="loader-ring"></div>
-<div class="loader-brand">Tech<span>M4</span>India</div>
+<div class="loader-brand">Tech <span>M4</span> India</div>
 <div class="loader-sub">Research &amp; Applied Labs</div>
 <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -298,7 +299,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="/">Tech<span>M4</span>India</a>
+<a class="nav-logo" href="/"><img src="../logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a href="/">Home</a></li>
@@ -338,7 +339,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <span class="lab-icon">🤖</span>
 <div class="lab-tag lt-1">AI &amp; ML Lab</div>
 <h3>Artificial Intelligence &amp; Machine Learning</h3>
-<p>The flagship lab. GPU-equipped workstations running real model training. Students build on TechM4Solutions' deployed AI products — EAMCET Predictor, AutoHire.AI, and CareerBuddy. Research focus: recommendation systems, NLP for Indian languages, and computer vision for agriculture.</p>
+<p>The flagship lab. GPU-equipped workstations running real model training. Students build on TechM4Solutions' deployed AI products — AirGuard Pro, FoodSpectra, and ColdChainEye. Research focus: recommendation systems, NLP for Indian languages, and computer vision for agriculture.</p>
 <div class="lab-techs"><span class="lt-chip">PyTorch</span><span class="lt-chip">TensorFlow</span><span class="lt-chip">CUDA</span><span class="lt-chip">Hugging Face</span><span class="lt-chip">MLflow</span><span class="lt-chip">LangChain</span></div>
 </div>
 <div class="lab-card lc-2 reveal">
@@ -386,9 +387,9 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <h2 class="sec-title reveal">What We're Working On <span class="g">Right Now</span></h2>
 <p class="sec-sub reveal">Ongoing research projects across labs, with real milestones and publication targets. Every project has a student researcher as primary investigator.</p>
 <div class="research-areas">
-<div class="ra-card reveal"><div class="ra-icon">🌾</div><div class="ra-content"><h4>AI for Smart Agriculture</h4><p>NLP-based advisory systems for Telangana farmers, integrated with RythuSeva. Real-time soil moisture prediction using IoT sensors and satellite imagery. Target: 10,000 farmers by 2026.</p></div></div>
+<div class="ra-card reveal"><div class="ra-icon">🌾</div><div class="ra-content"><h4>AI for Smart Agriculture</h4><p>NLP-based advisory systems for Telangana farmers, integrated with FoodSpectra. Real-time soil moisture prediction using IoT sensors and satellite imagery. Target: 10,000 farmers by 2026.</p></div></div>
 <div class="ra-card reveal"><div class="ra-icon">🏙️</div><div class="ra-content"><h4>Smart Campus Systems</h4><p>Automated attendance, energy monitoring, predictive maintenance, and student safety systems. Deployed across partner institutions. SchoolOS is built on this research foundation.</p></div></div>
-<div class="ra-card reveal"><div class="ra-icon">🔐</div><div class="ra-content"><h4>Cybersecurity for SMEs</h4><p>StaySecure product research — affordable threat detection for small and medium enterprises in India who cannot afford enterprise SOC solutions. Anomaly detection using federated learning.</p></div></div>
+<div class="ra-card reveal"><div class="ra-icon">⚡</div><div class="ra-content"><h4>Energy Efficiency IoT</h4><p>AirGuard Pro product research — affordable signal and leak detection for manufacturing plants in India who seek to minimize energy waste. Anomaly detection using edge AI classifiers.</p></div></div>
 <div class="ra-card reveal"><div class="ra-icon">🏥</div><div class="ra-content"><h4>Rural Health Diagnostics AI</h4><p>Computer vision models for low-cost diagnostic imaging, trained on Indian patient data. Designed for ASHA workers and primary health centres in Telangana's rural districts.</p></div></div>
 <div class="ra-card reveal"><div class="ra-icon">🚗</div><div class="ra-content"><h4>Future Mobility &amp; EV Tech</h4><p>Battery management system optimisation, EV charging network planning for Tier-2 Indian cities, and smart traffic AI. Collaboration with Tech Mahindra's automotive division.</p></div></div>
 <div class="ra-card reveal"><div class="ra-icon">🌐</div><div class="ra-content"><h4>NLP for Indian Languages</h4><p>Telugu, Hindi, and Tamil language models for educational content generation, voice interfaces, and accessibility. Training on curated regional datasets. Open-source first approach.</p></div></div>

@@ -103,8 +103,8 @@
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:99px;padding:8px 20px;font-size:.75rem;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:32px}
 .he-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .hero h1{font-size:clamp(3rem,7vw,6.5rem);line-height:1.02;margin-bottom:28px;letter-spacing:-3px}
-.hero h1 .g-main{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero h1 .g-cool{background:var(--g-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .g-main{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .g-cool{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:1.2rem;color:rgba(255,255,255,.6);line-height:1.85;max-width:680px;margin:0 auto 48px}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn-hero{background:var(--g-main);color:#fff;padding:14px 36px;border-radius:99px;font-family:'Sora',sans-serif;font-weight:900;font-size:1rem;text-decoration:none;box-shadow:0 8px 32px rgba(255,107,53,.4);transition:.2s}.btn-hero:hover{transform:translateY(-3px);box-shadow:0 14px 48px rgba(255,107,53,.55)}
@@ -204,7 +204,8 @@ section{padding:96px 32px}.sec-inner{max-width:1280px;margin:0 auto}
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -252,7 +253,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div id="loader">
 <div class="loader-blueprint"></div>
 <div class="loader-ring"></div>
-<div class="loader-brand">Tech<span>M4</span>India</div>
+<div class="loader-brand">Tech <span>M4</span> India</div>
 <div class="loader-sub">Vision &amp; Mission</div>
 <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -260,7 +261,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="/">Tech<span>M4</span>India</a>
+<a class="nav-logo" href="/"><img src="../logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a href="/">Home</a></li>

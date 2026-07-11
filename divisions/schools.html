@@ -113,7 +113,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
 .hero-eyebrow-pulse{width:22px;height:22px;border-radius:50%;background:var(--g-main);display:flex;align-items:center;justify-content:center;font-size:.75rem;animation:spin 4s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .hero h1{font-family:'Sora',sans-serif;font-weight:900;font-size:clamp(2.8rem,5.5vw,5.2rem);line-height:1.06;color:#fff;margin-bottom:1.5rem;animation:fadeUp .7s .35s both}
-.h1-grad{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.h1-grad{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .h1-yellow{color:var(--yellow)}
 .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.65);line-height:1.85;max-width:490px;margin-bottom:2.4rem;animation:fadeUp .7s .5s both}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .7s .65s both;margin-bottom:2.5rem}
@@ -392,7 +392,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -444,7 +445,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
 <div id="loader">
 <div class="loader-blueprint"></div>
 <div class="loader-ring"></div>
-<div class="loader-brand">Tech<span>M4</span>Schools</div>
+<div class="loader-brand">Tech <span>M4</span> Schools</div>
 <div class="loader-sub">K-12 Innovation Curriculum</div>
 <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -454,7 +455,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="/">Tech<span>M4</span>Schools</a>
+<a class="nav-logo" href="/"><img src="../logo.png" alt="TechM4Schools Logo">Tech <span>M4</span> Schools</a>
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a href="/">Home</a></li>
@@ -572,7 +573,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
 <section class="section" id="about" style="background:var(--surface); border-bottom:1px solid var(--border)">
   <div class="about-grid">
     <div class="reveal-l">
-      <p class="sec-label">// About TechM4Schools</p>
+      <p class="sec-label">About TechM4Schools</p>
       <h2 class="sec-title">Transforming Traditional Schools into <span class="grad">Innovation Ecosystems</span></h2>
       <p style="font-size:1.05rem; color:var(--ink-l); line-height:1.85; margin-bottom:1.5rem">
         TechM4Schools is an initiative of TechM4India, dedicated to transforming traditional education into a future-ready innovation ecosystem. We empower students through experiential learning, enabling them to develop critical thinking, creativity, and problem-solving skills through hands-on exposure to emerging technologies.
@@ -589,7 +590,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
       </div>
     </div>
     <div class="reveal-r" style="background:linear-gradient(135deg,rgba(123,47,247,.04),rgba(255,77,141,.04)); border:1.5px solid var(--border); border-radius:24px; padding:2.5rem; box-shadow:0 12px 40px rgba(0,0,0,.03)">
-      <p class="sec-label" style="color:var(--purple)">// Our Vision &amp; The Challenge</p>
+      <p class="sec-label" style="color:var(--purple)">Our Vision &amp; The Challenge</p>
       <h3 style="font-family:'Sora',sans-serif; font-weight:900; font-size:1.5rem; margin-bottom:1.5rem">From Exploration to Leadership</h3>
       
       <div style="display:flex; flex-direction:column; gap:1.5rem">
@@ -627,7 +628,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
 <section class="why-sect" id="why">
 <div class="why-inner">
 <div class="why-left reveal-l">
-<p class="sec-label">// Why Choose TechM4Schools</p>
+<p class="sec-label">Why Choose TechM4Schools</p>
 <h2>Four Pillars of <em>Real</em><br/>Campus Transformation.</h2>
 <p>TechM4Schools addresses the gap between theoretical education and real-world application by bringing structured innovation ecosystems, experiential learning environments, and career-oriented technology programs directly into schools.</p>
 <div class="why-list">
@@ -691,7 +692,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <section class="experts-sect" id="experts">
 <div class="experts-inner">
-<p class="sec-label reveal">// Meet the Experts Behind TechM4Schools</p>
+<p class="sec-label reveal">Meet the Experts Behind TechM4Schools</p>
 <h2 class="sec-title reveal">Meet the Visionaries Driving <em>Educational</em> Innovation</h2>
 <p class="sec-sub reveal">The experienced professionals behind TechM4Schools are committed to transforming traditional education through experiential learning, emerging technologies, and student-centric innovation.</p>
 <div class="experts-carousel-wrap">
@@ -743,7 +744,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
      ══════════════════════════════════════════════ -->
 <section class="section" id="partners" style="background:var(--surface); border-top:1px solid var(--border); text-align:center">
   <div style="max-width:1200px; margin:0 auto">
-    <p class="sec-label reveal">// Partners &amp; Recognition</p>
+    <p class="sec-label reveal">Partners &amp; Recognition</p>
     <h2 class="sec-title reveal">Approved &amp; Supported <span class="grad">By Leading Entities</span></h2>
     <p class="sec-sub reveal" style="margin:0 auto 3rem">Empowered by higher education partnerships and aligned with national development initiatives.</p>
     
@@ -773,7 +774,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <div class="transform-sect">
 <div class="transform-sect-inner">
-<p class="reveal" style="color:var(--orange)">// The TechM4 Effect</p>
+<p class="reveal" style="color:var(--orange)">The TechM4 Effect</p>
 <h2 class="reveal" style="color:#fff;max-width:600px">
       Watch Your Child <span style="background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Transform</span> in 4 Steps
     </h2>
@@ -814,7 +815,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
      TECHNOLOGY LABS
 ══════════════════════════════════════════════ -->
 <section class="section" id="labs">
-<p class="sec-label reveal">// Innovation Infrastructure</p>
+<p class="sec-label reveal">Innovation Infrastructure</p>
 <h2 class="sec-title reveal">Our Innovation <em>Ecosystem</em>.<br/>5 Labs. Real Technology.</h2>
 <p class="sec-sub reveal">Each lab is a dedicated experiential learning environment where students gain practical exposure to emerging technologies through structured, hands-on programs and real-world projects.</p>
 <div class="labs-grid">
@@ -897,7 +898,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <section class="programs-sect" id="programs">
 <div class="programs-inner">
-<p class="sec-label reveal">// Student Development Programs</p>
+<p class="sec-label reveal">Student Development Programs</p>
 <h2 class="sec-title reveal">Student Development <em>Programs</em></h2>
 <p class="sec-sub reveal">Innovation workshops, competitions, exhibitions, and technology events designed to strengthen creativity, collaboration, and critical thinking in every student.</p>
 <div class="prog-grid">
@@ -957,7 +958,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <section class="platforms-sect" id="platforms">
 <div class="platforms-inner">
-<p class="sec-label reveal" style="color:var(--orange)">// School Innovation Products</p>
+<p class="sec-label reveal" style="color:var(--orange)">School Innovation Products</p>
 <h2 class="sec-title reveal" style="color:#fff;max-width:700px">Our <span class="grad">Products</span> Powering School Innovation</h2>
 <p class="sec-sub reveal" style="color:rgba(255,255,255,.55)">Digital platforms and physical lab environments that serve as the backbone for managing, monitoring, and delivering innovation initiatives across educational institutions.</p>
 <div class="plat-grid">
@@ -1008,7 +1009,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <section class="kits-sect" id="kits">
 <div class="kits-inner">
-<p class="sec-label reveal">// Hands-On Learning Kits</p>
+<p class="sec-label reveal">Hands-On Learning Kits</p>
 <h2 class="sec-title reveal">Real Technology.<br/><em>Real</em> Hands. Real Learning.</h2>
 <p class="sec-sub reveal">Students receive access to practical learning resources — robotics kits, coding kits, electronics modules, and drone technology kits — enabling real-world experimentation directly in the classroom.</p>
 <div class="kits-grid">
@@ -1085,7 +1086,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
      ══════════════════════════════════════════════ -->
 <section class="section" id="transformation-model" style="background:linear-gradient(135deg,#FFF0FA,#F8F0FF)">
   <div style="max-width:1200px; margin:0 auto; text-align:center">
-    <p class="sec-label reveal">// Campus Transformation Model</p>
+    <p class="sec-label reveal">Campus Transformation Model</p>
     <h2 class="sec-title reveal">Our 5-Layer <span class="grad">Transformation Framework</span></h2>
     <p class="sec-sub reveal" style="margin:0 auto 3.5rem">A comprehensive multidisciplinary model to integrate emerging technology education directly into school campuses.</p>
     
@@ -1161,7 +1162,7 @@ footer{background:#060E1A;padding:48px 16px 24px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <section class="section contact-sect" id="contact" style="background:var(--surface); border-top:1px solid var(--border)">
   <div class="contact-inner" style="max-width:1200px; margin:0 auto">
-    <p class="sec-label reveal">// Contact Us</p>
+    <p class="sec-label reveal">Contact Us</p>
     <h2 class="sec-title reveal">Ready to Partner? <span class="grad">Let's Connect</span></h2>
     <p class="sec-sub reveal" style="margin-bottom:3.5rem">Get in touch with our team to set up an innovation ecosystem in your school.</p>
     

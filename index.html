@@ -388,17 +388,30 @@ body .hero{height:calc(100vh - 52px) !important;box-sizing:border-box;background
 /* ── FEATURED PROJECTS ── */
 .projects-sect{padding:8rem 5%}
 .projects-inner{max-width:1300px;margin:0 auto}
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3.5rem}
-.proj-card{border-radius:22px;padding:2rem;border:1.5px solid var(--border);background:var(--surface);transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
+.proj-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:0.75rem;margin-top:2.2rem;margin-bottom:2.8rem}
+.filter-btn{background:var(--surface);border:1.5px solid var(--border);color:var(--ink-l);padding:0.6rem 1.4rem;border-radius:100px;font-family:'Sora',sans-serif;font-size:0.8rem;font-weight:800;cursor:pointer;transition:all 0.25s ease}
+.filter-btn:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-1px)}
+.filter-btn.active{background:var(--orange);border-color:var(--orange);color:#fff;box-shadow:0 4px 14px rgba(255,107,53,0.3)}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;transition:opacity 0.3s ease}
+.proj-card{display:block;text-decoration:none;color:inherit;border-radius:22px;padding:2rem;border:1.5px solid var(--border);background:var(--surface);transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;overflow:hidden;animation:cardFadeIn 0.4s ease forwards}
+@keyframes cardFadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
 .proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;opacity:0;transition:opacity .3s}
 .proj-card:hover{transform:translateY(-7px);box-shadow:0 24px 56px rgba(26,26,46,.1)}
 .proj-card:hover::before{opacity:1}
-.pc-a::before{background:var(--g-main)}.pc-a:hover{border-color:rgba(255,107,53,.15)}
-.pc-b::before{background:var(--g-cool)}.pc-b:hover{border-color:rgba(14,165,233,.15)}
-.pc-c::before{background:linear-gradient(135deg,#22C55E,#0EA5E9)}.pc-c:hover{border-color:rgba(34,197,94,.15)}
-.pc-d::before{background:var(--g-warm)}.pc-d:hover{border-color:rgba(255,214,10,.2)}
-.pc-e::before{background:var(--g-cool)}.pc-e:hover{border-color:rgba(123,47,247,.15)}
-.pc-f::before{background:var(--g-main)}.pc-f:hover{border-color:rgba(255,107,53,.15)}
+
+.proj-card.color-A::before { background: var(--g-main); }
+.proj-card.color-A:hover { border-color: rgba(255,107,53,0.2); }
+.proj-card.color-B::before { background: var(--g-cool); }
+.proj-card.color-B:hover { border-color: rgba(14,165,233,0.2); }
+.proj-card.color-C::before { background: var(--g-green); }
+.proj-card.color-C:hover { border-color: rgba(34,197,94,0.2); }
+.proj-card.color-D::before { background: linear-gradient(135deg, var(--purple), var(--pink)); }
+.proj-card.color-D:hover { border-color: rgba(123,47,247,0.2); }
+.proj-card.color-E::before { background: linear-gradient(135deg, var(--yellow), var(--orange)); }
+.proj-card.color-E:hover { border-color: rgba(255,214,10,0.3); }
+.proj-card.color-F::before { background: linear-gradient(135deg, #ef4444, var(--pink)); }
+.proj-card.color-F:hover { border-color: rgba(239,68,68,0.2); }
+
 .pj-icon{font-size:2rem;display:block;margin-bottom:1rem}
 .pj-div{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.4rem}
 .div-col-sol{color:var(--purple)}.div-col-sch{color:var(--green)}.div-col-eng{color:var(--blue)}
@@ -422,8 +435,8 @@ body .hero{height:calc(100vh - 52px) !important;box-sizing:border-box;background
 .mission-inner h2 .grad{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .mission-inner p{font-size:1.05rem;color:rgba(255,255,255,.58);line-height:1.9;max-width:700px;margin:0 auto 2.5rem}
 .mission-divs{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem}
-.md-pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.55rem 1.4rem;font-size:.82rem;font-weight:700;color:rgba(255,255,255,.7);transition:border-color .2s,color .2s,background .2s}
-.md-pill:hover{border-color:var(--orange);color:#fff;background:rgba(255,107,53,.1)}
+.md-pill{display:inline-flex;align-items:center;gap:6px;text-decoration:none;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.55rem 1.4rem;font-size:.82rem;font-weight:700;color:rgba(255,255,255,.7);transition:all .2s;cursor:pointer}
+.md-pill:hover{border-color:var(--orange);color:#fff;background:rgba(255,107,53,.1);transform:translateY(-1px)}
 
 /* ── LEADERSHIP / EXPERTS ── */
 .experts-sect{padding:8rem 5%;background:linear-gradient(135deg,#EDE9FE 0%,#F3E8FF 30%,#FFF0FA 65%,#F8F0FF 100%);position:relative;overflow:hidden}
@@ -480,9 +493,17 @@ body .hero{height:calc(100vh - 52px) !important;box-sizing:border-box;background
 /* ── PARTNERS ── */
 .partners-sect{padding:6rem 5%;background:var(--offwhite, #F7F9FC);border-top:1px solid var(--border)}
 .partners-inner{max-width:1300px;margin:0 auto;text-align:center}
-.partners-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2.5rem}
-.p-chip{background:var(--surface);border:1.5px solid var(--border);border-radius:100px;padding:.6rem 1.4rem;font-size:.85rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:.5rem;transition:border-color .2s,box-shadow .2s}
-.p-chip:hover{border-color:var(--orange);box-shadow:0 4px 16px rgba(255,107,53,.12)}
+.partners-logos{display:grid;grid-template-columns:repeat(6,1fr);gap:2rem;margin-top:3.5rem;align-items:center;justify-items:center}
+.logo-item{display:flex;flex-direction:column;align-items:center;gap:0.8rem;transition:transform 0.3s ease}
+.logo-item:hover{transform:translateY(-5px)}
+.logo-item img{height:55px;max-width:140px;object-fit:contain;filter:grayscale(100%) brightness(0.85);opacity:0.55;transition:all 0.3s ease}
+[data-theme="dark"] .logo-item img{filter:grayscale(100%) invert(0.8) brightness(1.2);opacity:0.55}
+.logo-item:hover img{filter:none !important;opacity:1}
+.logo-item span{font-size:0.7rem;font-weight:800;color:var(--ink-l);text-transform:uppercase;letter-spacing:0.08em;transition:color 0.3s ease}
+.logo-item:hover span{color:var(--orange)}
+
+@media(max-width:992px){.partners-logos{grid-template-columns:repeat(3,1fr);gap:3rem 2rem}}
+@media(max-width:576px){.partners-logos{grid-template-columns:repeat(2,1fr)}}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
@@ -597,7 +618,8 @@ body .hero{height:calc(100vh - 52px) !important;box-sizing:border-box;background
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -647,7 +669,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div id="loader">
 <div class="loader-blueprint"></div>
 <div class="loader-ring"></div>
-<div class="loader-brand">Tech<span>M4</span>India</div>
+<div class="loader-brand">Tech <span>M4</span> India</div>
 <div class="loader-sub">Building India's Innovation Ecosystem</div>
 <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -657,7 +679,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="/">Tech<span>M4</span>India</a>
+<a class="nav-logo" href="/"><img src="logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a class="active" href="/">Home</a></li>
@@ -753,7 +775,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ DIVISIONS ══════ -->
 <section class="divs-sect" id="divisions">
 <div class="divs-inner">
-<p class="sec-label reveal">// Core Verticals</p>
+<p class="sec-label reveal">Core Verticals</p>
 <h2 class="sec-title reveal">Our Ecosystem</h2>
 <p class="sec-sub reveal">TechM4India operates across four distinct divisions to drive digital transformation, experiential K-12 learning, next-generation engineering, and space technology education across India.</p>
 <div class="div-grid">
@@ -797,7 +819,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="stats-blob sb1"></div><div class="stats-blob sb2"></div>
 <div class="stats-inner">
 <div class="stats-left reveal-l">
-<p class="sec-label" style="color:var(--orange)">// Impact at Scale</p>
+<p class="sec-label" style="color:var(--orange)">Impact at Scale</p>
 <h2>Empowering India's <em>Innovation</em> Generation</h2>
 <p>TechM4India is not a startup. It is a movement — a technology ecosystem that connects students, institutions, researchers, and innovators across India under one unified mission: making India the world's next great innovation superpower.</p>
 <p style="margin-top:1rem">From Hyderabad to Himachal Pradesh, from rural schools to IIT-adjacent research labs, TechM4India is building the infrastructure that India's innovation future runs on.</p>
@@ -816,52 +838,20 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ PROJECTS ══════ -->
 <section class="projects-sect">
 <div class="projects-inner">
-<p class="sec-label reveal">// Innovation Portfolio</p>
+<p class="sec-label reveal">Innovation Portfolio</p>
 <h2 class="sec-title reveal">Real Products.<br/><span class="grad">Real Impact.</span> Real India.</h2>
 <p class="sec-sub reveal">Every project we build solves a real problem that millions of Indians face. From farmers to job seekers to engineering students — TechM4Solutions is building the digital infrastructure of India's future.</p>
-<div class="proj-grid">
-<div class="proj-card pc-a reveal">
-<span class="pj-icon">🎓</span>
-<p class="pj-div div-col-sol">TechM4Solutions</p>
-<h3 class="pj-title">EAMCET College Predictor</h3>
-<p class="pj-desc">AI-powered platform that analyzes historical counseling data to help engineering aspirants identify realistic college options based on rank, category, gender, and preferred branch.</p>
-<span class="pj-chip chip-orange">AI · Data Analysis</span>
+<div class="proj-filters reveal">
+  <button class="filter-btn active" data-filter="all">All Products</button>
+  <button class="filter-btn" data-filter="Industrial IoT">Industrial IoT</button>
+  <button class="filter-btn" data-filter="AI Quality Control">AI Quality Control</button>
+  <button class="filter-btn" data-filter="GreenTech SaaS">Green Energy</button>
+  <button class="filter-btn" data-filter="FinTech &amp; SaaS">FinTech &amp; Software</button>
+  <button class="filter-btn" data-filter="AgriTech/HealthTech">Agri &amp; Health</button>
+  <button class="filter-btn" data-filter="Safety SaaS">Safety &amp; Compliance</button>
 </div>
-<div class="proj-card pc-b reveal" style="transition-delay:.1s">
-<span class="pj-icon">🔒</span>
-<p class="pj-div div-col-sol">TechM4Solutions</p>
-<h3 class="pj-title">StaySecure</h3>
-<p class="pj-desc">Digital hostel management and security platform with Aadhaar-based authentication, resident management, visitor tracking, and secure digital record-keeping for educational institutions.</p>
-<span class="pj-chip chip-blue">Security · Digital ID</span>
-</div>
-<div class="proj-card pc-c reveal" style="transition-delay:.2s">
-<span class="pj-icon">🌾</span>
-<p class="pj-div div-col-sol">TechM4Solutions</p>
-<h3 class="pj-title">RythuSeva</h3>
-<p class="pj-desc">AI-powered agriculture support platform providing crop advisory, plant disease detection, GPS-based farm insights, and digital marketplace access to empower India's farming communities.</p>
-<span class="pj-chip chip-green">AgriTech · AI</span>
-</div>
-<div class="proj-card pc-d reveal" style="transition-delay:.3s">
-<span class="pj-icon">💼</span>
-<p class="pj-div div-col-sol">TechM4Solutions</p>
-<h3 class="pj-title">AutoHire.AI</h3>
-<p class="pj-desc">Intelligent job application automation platform that detects relevant openings, customizes resumes, submits applications, and prepares candidates for interviews — transforming how India finds work.</p>
-<span class="pj-chip chip-purple">AI · Automation</span>
-</div>
-<div class="proj-card pc-e reveal" style="transition-delay:.4s">
-<span class="pj-icon">🌿</span>
-<p class="pj-div div-col-sol">TechM4Solutions</p>
-<h3 class="pj-title">Medicinal Plant Detector</h3>
-<p class="pj-desc">Research-grade computer vision system identifying medicinal plant species from images using explainable AI — supporting researchers, students, and agricultural experts across India.</p>
-<span class="pj-chip chip-green">Computer Vision · XAI</span>
-</div>
-<div class="proj-card pc-f reveal" style="transition-delay:.5s">
-<span class="pj-icon">🎯</span>
-<p class="pj-div div-col-sch">TechM4 Schools</p>
-<h3 class="pj-title">CareerBuddy</h3>
-<p class="pj-desc">AI-powered career discovery platform helping school students identify their strengths, interests, and ideal career pathways with personalized roadmaps and industry mentor connections.</p>
-<span class="pj-chip chip-yellow">Career Tech · AI</span>
-</div>
+<div class="proj-grid" id="homepage-products-grid">
+  <!-- JavaScript will inject all 30 products here dynamically -->
 </div>
 </div>
 </section>
@@ -873,12 +863,12 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <h2 class="reveal">Our Mission Is Not Small.<br/><span class="grad">Neither Should India's Future Be.</span></h2>
 <p class="reveal">TechM4India was built on a single belief: that India has the talent, the hunger, and the intelligence to lead the world in technology — it just needs the ecosystem to unleash it. We are that ecosystem.</p>
 <div class="mission-divs reveal">
-<span class="md-pill">⚙️ Engineering Education</span>
-<span class="md-pill">🤖 AI Product Platforms</span>
-<span class="md-pill">🚀 Aerospace Innovation</span>
-<span class="md-pill">🏫 School Innovation</span>
-<span class="md-pill">🌾 AgriTech</span>
-<span class="md-pill">💼 Employment Tech</span>
+<a href="/engineering" class="md-pill">⚙️ Engineering Education</a>
+<a href="/solutions" class="md-pill">🤖 AI Product Platforms</a>
+<a href="/space" class="md-pill">🚀 Aerospace Innovation</a>
+<a href="/schools" class="md-pill">🏫 School Innovation</a>
+<a href="/solutions#product-27" class="md-pill">🌾 AgriTech</a>
+<a href="/careers" class="md-pill">💼 Employment Tech</a>
 </div>
 <a class="btn-hero-primary" href="/about" style="display:inline-flex">Discover Our Full Vision →</a>
 </div>
@@ -886,7 +876,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ LEADERSHIP TEAM ══════ -->
 <section class="experts-sect" id="experts">
 <div class="experts-inner">
-<p class="sec-label reveal">// Meet the Leaders Behind TechM4India</p>
+<p class="sec-label reveal">Meet the Leaders Behind TechM4India</p>
 <h2 class="sec-title reveal">Meet the Visionaries Driving <em>Innovation</em></h2>
 <p class="sec-sub reveal" style="margin-bottom:0">The experienced academic and technology professionals leading TechM4India's mission to transform education through experiential learning, emerging technologies, and student-centric innovation.</p>
 <div class="experts-grid">
@@ -938,7 +928,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ WHY TECHM4INDIA ══════ -->
 <section class="why-sect">
 <div class="why-inner">
-<p class="sec-label reveal">// Why Leading Institutions Choose Us</p>
+<p class="sec-label reveal">Why Leading Institutions Choose Us</p>
 <h2 class="sec-title reveal">Built Different.<br/><span class="grad">Proven Results.</span></h2>
 <p class="sec-sub reveal">TechM4India doesn't just deliver programs — we build complete innovation ecosystems. Here's why 500+ institutions trust us.</p>
 <div class="why-grid">
@@ -969,15 +959,33 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ PARTNERS ══════ -->
 <section class="partners-sect">
 <div class="partners-inner">
-<p class="sec-label reveal">// Trusted Partners &amp; Recognition</p>
+<p class="sec-label reveal">Trusted Partners &amp; Recognition</p>
 <h2 class="sec-title reveal">Backed by <span class="grad">Leading Institutions</span></h2>
-<div class="partners-chips reveal">
-<div class="p-chip">🎓 Anurag University</div>
-<div class="p-chip">🏛️ NEP 2020 Aligned</div>
-<div class="p-chip">✅ AICTE Framework</div>
-<div class="p-chip">🛰️ ISRO-Inspired Curriculum</div>
-<div class="p-chip">🛡️ DRDO-Aligned Programs</div>
-<div class="p-chip">🌍 Government Initiative Partnerships</div>
+<div class="partners-logos reveal">
+  <div class="logo-item" title="Anurag University">
+    <img src="assets/images/logo_anurag.png" alt="Anurag University Logo">
+    <span>Anurag University</span>
+  </div>
+  <div class="logo-item" title="NEP 2020 Aligned">
+    <img src="assets/images/logo_nep.png" alt="NEP 2020 Aligned Badge">
+    <span>NEP 2020 Aligned</span>
+  </div>
+  <div class="logo-item" title="AICTE Framework">
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/eb/All_India_Council_for_Technical_Education_logo.png" alt="AICTE Logo">
+    <span>AICTE Framework</span>
+  </div>
+  <div class="logo-item" title="ISRO-Inspired Curriculum">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg" alt="ISRO Logo">
+    <span>ISRO-Inspired</span>
+  </div>
+  <div class="logo-item" title="DRDO-Aligned Programs">
+    <img src="assets/images/logo_drdo.png" alt="DRDO Logo">
+    <span>DRDO-Aligned</span>
+  </div>
+  <div class="logo-item" title="Government Initiative Partnerships">
+    <img src="assets/images/logo_govt.png" alt="Government Initiatives Logo">
+    <span>Govt Initiatives</span>
+  </div>
 </div>
 </div>
 </section>
@@ -1087,6 +1095,324 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
     }, 3000);
   }
 })();
+</script>
+
+<script>
+const productsData = [
+  {
+    "num": 1,
+    "id": "B7",
+    "name": "AirGuard Pro",
+    "category": "Industrial IoT",
+    "tagline": "Ultrasonic SDR compressed air leak detector — 30–40% energy cost saving",
+    "emoji": "💨"
+  },
+  {
+    "num": 2,
+    "id": "B11",
+    "name": "FlameSmart",
+    "category": "Industrial IoT",
+    "tagline": "AI boiler combustion controller — 15–22% fuel saving with NDIR + Zirconia O2",
+    "emoji": "🔥"
+  },
+  {
+    "num": 3,
+    "id": "C8",
+    "name": "ForgeSense",
+    "category": "Industrial IoT",
+    "tagline": "Real-time die face temperature + flash prediction AI for hot forging MSMEs",
+    "emoji": "⚒️"
+  },
+  {
+    "num": 4,
+    "id": "C1",
+    "name": "SinterSense AI",
+    "category": "Industrial IoT",
+    "tagline": "In-situ eddy-current sintering density monitor — eliminates 14% PM rejection rate",
+    "emoji": "🔬"
+  },
+  {
+    "num": 5,
+    "id": "C4",
+    "name": "PlatingThick AI",
+    "category": "Industrial IoT",
+    "tagline": "Inline eddy-current coating thickness monitor — replaces ₹18–45L XRF instrument",
+    "emoji": "💿"
+  },
+  {
+    "num": 6,
+    "id": "C5",
+    "name": "TurbineCoat AI",
+    "category": "Industrial IoT",
+    "tagline": "Autonomous LWIR drone blade erosion inspection — 5.6× cheaper than rope-access",
+    "emoji": "🪽"
+  },
+  {
+    "num": 7,
+    "id": "B23",
+    "name": "BeltWatch IoT",
+    "category": "Industrial IoT",
+    "tagline": "Wireless ADXL345 belt drive health monitor — catches misalignment before ₹3–8L burnout",
+    "emoji": "⚙️"
+  },
+  {
+    "num": 8,
+    "id": "B3",
+    "name": "ToolSense AI",
+    "category": "Industrial IoT",
+    "tagline": "MEMS mic + CT clamp CNC tool breakage predictor — 40% scrap reduction before it happens",
+    "emoji": "🛠️"
+  },
+  {
+    "num": 9,
+    "id": "B1",
+    "name": "AcoustiCast",
+    "category": "AI Quality Control",
+    "tagline": "Acoustic emission in-mould solidification defect detector — 40% foundry scrap reduction",
+    "emoji": "🔊"
+  },
+  {
+    "num": 10,
+    "id": "B5",
+    "name": "GranuSense",
+    "category": "AI Quality Control",
+    "tagline": "NIR in-process granulation endpoint detector — 70% pharma rejection reduction",
+    "emoji": "💊"
+  },
+  {
+    "num": 11,
+    "id": "B6",
+    "name": "HideNest AI",
+    "category": "AI Quality Control",
+    "tagline": "CV defect-aware leather hide nesting optimizer — 32% waste reduction in cutting",
+    "emoji": "🦅"
+  },
+  {
+    "num": 12,
+    "id": "C9",
+    "name": "SeedPurity AI",
+    "category": "AI Quality Control",
+    "tagline": "Hyperspectral seed purity + germination predictor — 7-day lab test in 45 minutes",
+    "emoji": "🌱"
+  },
+  {
+    "num": 13,
+    "id": "C6",
+    "name": "GreenCement Predict",
+    "category": "AI Quality Control",
+    "tagline": "24-hour compressive strength predictor for fly ash/GGBS cement — replaces 28-day wait",
+    "emoji": "🧱"
+  },
+  {
+    "num": 14,
+    "id": "N18",
+    "name": "PrintWatch AI",
+    "category": "AI Quality Control",
+    "tagline": "Inline print defect detection for packaging MSMEs — 0.2% defect rate vs 3.5% current",
+    "emoji": "🏷️"
+  },
+  {
+    "num": 15,
+    "id": "B20",
+    "name": "BackBead AI",
+    "category": "AI Quality Control",
+    "tagline": "FLIR LWIR backside weld penetration estimator — blind-side quality for robotic welding",
+    "emoji": "⚡"
+  },
+  {
+    "num": 16,
+    "id": "C2",
+    "name": "BiogasOptim",
+    "category": "GreenTech SaaS",
+    "tagline": "Adaptive biogas digester health monitor with automated H2S desulfurization",
+    "emoji": "🍃"
+  },
+  {
+    "num": 17,
+    "id": "N14",
+    "name": "GramShakti Grid",
+    "category": "GreenTech SaaS",
+    "tagline": "RL-optimised solar microgrid OS for rural MSME clusters and co-operatives",
+    "emoji": "☀️"
+  },
+  {
+    "num": 18,
+    "id": "C10",
+    "name": "WasteHeat ORC",
+    "category": "GreenTech SaaS",
+    "tagline": "IoT-monitored micro-ORC (5–15 kW) waste heat recovery for foundry & kiln MSMEs",
+    "emoji": "🌀"
+  },
+  {
+    "num": 19,
+    "id": "B22",
+    "name": "ElectroCoag Solar",
+    "category": "GreenTech SaaS",
+    "tagline": "Solar-MPPT electrocoagulation for textile effluent treatment — zero chemical cost",
+    "emoji": "☀️"
+  },
+  {
+    "num": 20,
+    "id": "B18",
+    "name": "CellShield",
+    "category": "GreenTech SaaS",
+    "tagline": "Li-ion battery thermal runaway ML early warning — 72-hour alert before catastrophic failure",
+    "emoji": "🔋"
+  },
+  {
+    "num": 21,
+    "id": "B17",
+    "name": "ITCMax",
+    "category": "FinTech & SaaS",
+    "tagline": "AI GST Input Tax Credit reconciliation — recovers avg ₹2.5L per MSME per year",
+    "emoji": "📊"
+  },
+  {
+    "num": 22,
+    "id": "B25",
+    "name": "FreightAudit AI",
+    "category": "FinTech & SaaS",
+    "tagline": "ML freight invoice anomaly detector — catches 8–15% overbilling across vendors",
+    "emoji": "🚢"
+  },
+  {
+    "num": 23,
+    "id": "N7",
+    "name": "ComplianceRadar",
+    "category": "FinTech & SaaS",
+    "tagline": "AI govt circular digest on WhatsApp — never miss an MSME compliance deadline again",
+    "emoji": "🚨"
+  },
+  {
+    "num": 24,
+    "id": "N9",
+    "name": "SupplyPredict",
+    "category": "FinTech & SaaS",
+    "tagline": "ML raw material procurement timing advisor — buys at the right price, every time",
+    "emoji": "📈"
+  },
+  {
+    "num": 25,
+    "id": "N21",
+    "name": "TruckNiti",
+    "category": "FinTech & SaaS",
+    "tagline": "WhatsApp VRP route optimizer — saves 22–30% freight cost for fleet managers",
+    "emoji": "🚛"
+  },
+  {
+    "num": 26,
+    "id": "N6",
+    "name": "MSME Pulse API",
+    "category": "FinTech & SaaS",
+    "tagline": "Real-time MSME operational benchmark API — compare your plant vs 10,000 peers",
+    "emoji": "🌐"
+  },
+  {
+    "num": 27,
+    "id": "B13",
+    "name": "FoodSpectra",
+    "category": "AgriTech SaaS",
+    "tagline": "Handheld NIR food adulteration detector — 45-second on-site test vs 3-day lab",
+    "emoji": "🍎"
+  },
+  {
+    "num": 28,
+    "id": "N13",
+    "name": "DairyLedger",
+    "category": "Industrial IoT",
+    "tagline": "WhatsApp voice milk procurement + instant UPI payment for dairy co-op MSMEs",
+    "emoji": "💨"
+  },
+  {
+    "num": 29,
+    "id": "C3",
+    "name": "ColdChainEye",
+    "category": "HealthTech SaaS",
+    "tagline": "Reusable pharma cold chain tag: PCI indicator + BLE + Blockchain at Rs 950/unit",
+    "emoji": "❄️"
+  },
+  {
+    "num": 30,
+    "id": "C7",
+    "name": "ArcFlash Guard",
+    "category": "Safety SaaS",
+    "tagline": "Wireless IoT arc flash monitor + IEEE 1584-2018 calculator at Rs 65,000/panel",
+    "emoji": "⚡"
+  }
+];
+
+function renderHomepageProducts(filter = 'all') {
+  const grid = document.getElementById('homepage-products-grid');
+  if (!grid) return;
+  
+  // Apply a quick fade transition
+  grid.style.opacity = '0';
+  
+  setTimeout(() => {
+    grid.innerHTML = '';
+    
+    // Filter logic
+    let filtered = productsData;
+    if (filter !== 'all') {
+      if (filter === 'AgriTech/HealthTech') {
+        filtered = productsData.filter(p => p.category === 'AgriTech SaaS' || p.category === 'HealthTech SaaS');
+      } else {
+        filtered = productsData.filter(p => p.category === filter);
+      }
+    }
+    
+    filtered.forEach((p, idx) => {
+      // Map category to color variants color-A through color-F
+      let colorClass = 'color-A';
+      if (p.category === 'Industrial IoT') colorClass = 'color-A';
+      else if (p.category === 'AI Quality Control') colorClass = 'color-B';
+      else if (p.category === 'GreenTech SaaS') colorClass = 'color-C';
+      else if (p.category === 'FinTech & SaaS') colorClass = 'color-D';
+      else if (p.category === 'AgriTech SaaS' || p.category === 'HealthTech SaaS') colorClass = 'color-E';
+      else if (p.category === 'Safety SaaS') colorClass = 'color-F';
+      
+      const card = document.createElement('a');
+      card.href = `/solutions#product-${p.num}`;
+      card.className = `proj-card ${colorClass}`;
+      // Set transition delay for cascade fade-in effect
+      card.style.animationDelay = `${(idx % 6) * 0.04}s`;
+      
+      card.innerHTML = `
+        <span class="pj-icon">${p.emoji}</span>
+        <p class="pj-div div-col-sol">TechM4Solutions</p>
+        <h3 class="pj-title">${p.name}</h3>
+        <p class="pj-desc">${p.tagline}</p>
+        <span class="pj-chip chip-${getChipColor(p.category)}">${p.category}</span>
+      `;
+      grid.appendChild(card);
+    });
+    
+    grid.style.opacity = '1';
+  }, 150);
+}
+
+function getChipColor(cat) {
+  if (cat === 'Industrial IoT') return 'orange';
+  if (cat === 'AI Quality Control') return 'blue';
+  if (cat === 'GreenTech SaaS') return 'green';
+  if (cat === 'FinTech & SaaS') return 'purple';
+  if (cat === 'AgriTech SaaS' || cat === 'HealthTech SaaS') return 'green';
+  return 'purple';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderHomepageProducts('all');
+  
+  // Add tab filtering event listeners
+  const buttons = document.querySelectorAll('.proj-filters .filter-btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      buttons.forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      renderHomepageProducts(e.target.getAttribute('data-filter'));
+    });
+  });
+});
 </script>
 <script src="assets/js/site-init.js"></script>
 </body>

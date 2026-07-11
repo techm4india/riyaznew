@@ -115,7 +115,8 @@ h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;font-weight:700}
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -137,8 +138,8 @@ nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
 .hero-split{display:grid;grid-template-columns:1.1fr 0.9fr;gap:80px;align-items:end;padding-bottom:0}
 .hero-copy h1{font-size:clamp(2.6rem,5vw,4.2rem);color:#fff;line-height:1.05;letter-spacing:-2px;margin-bottom:20px}
-.hero-copy h1 .accent{background:var(--g-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-copy h1 .accent-blue{background:linear-gradient(135deg,#4FA3FF,#1E6FD9);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-copy h1 .accent{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-copy h1 .accent-blue{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-copy p{font-size:1.02rem;color:rgba(255,255,255,.5);line-height:1.85;max-width:500px;margin-bottom:36px;font-weight:400}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
 .btn-primary{background:var(--g-brand);color:#fff;padding:14px 30px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:8px;transition:all .25s;border:none;cursor:pointer;font-family:'Inter',sans-serif}
@@ -549,7 +550,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div id="loader">
   <div class="loader-blueprint"></div>
   <div class="loader-ring"></div>
-  <div class="loader-brand">Tech<span>M4</span>Engineering</div>
+  <div class="loader-brand">Tech <span>M4</span> Engineering</div>
   <div class="loader-sub">Civil · Mechanical · CSE · EEE · ECE · Chemical</div>
   <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -558,7 +559,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">Tech<span>M4</span>India</a>
+    <a href="/" class="nav-logo"><img src="../logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
     <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
       <li><a href="/">Home</a></li>

@@ -318,7 +318,8 @@ body{font-family:'Inter',sans-serif;background:var(--ink);color:#E8F4FD;overflow
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -372,7 +373,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div id="loader">
 <div class="loader-blueprint"></div>
 <div class="loader-ring"></div>
-<div class="loader-brand">Tech<span>M4</span>Space</div>
+<div class="loader-brand">Tech <span>M4</span> Space</div>
 <div class="loader-sub">Aerospace &amp; Space Technology</div>
 <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -380,7 +381,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="/">Tech<span>M4</span>India</a>
+<a class="nav-logo" href="/"><img src="../logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a href="/">Home</a></li>
@@ -463,7 +464,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <section class="about-sp" id="about">
 <div class="about-sp-inner">
 <div class="about-sp-text reveal-l">
-<p class="sec-label-sp">// About TechM4Space</p>
+<p class="sec-label-sp">About TechM4Space</p>
 <h2 class="sec-title-sp" style="margin-bottom:1.2rem">An Initiative of <span class="grad-fire">TechM4India</span></h2>
 <p>TechM4Space Technology is dedicated to transforming education into a dynamic innovation ecosystem — empowering students with hands-on exposure to aerospace engineering, drone technology, satellite systems, robotics, and design thinking.</p>
 <p>Our mission is to bridge the critical gap between theoretical learning and real-world application. Across India, millions of students graduate without practical exposure to technology. TechM4Space addresses this by integrating permanent innovation labs, structured programs, hands-on kits, and digital platforms directly into campuses.</p>
@@ -504,7 +505,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
      AEROSPACE LABS
 ══════════════════════════════════════════════ -->
 <section class="section" id="labs">
-<p class="sec-label-sp reveal">// Space Technology Infrastructure</p>
+<p class="sec-label-sp reveal">Space Technology Infrastructure</p>
 <h2 class="sec-title-sp reveal">Six Labs. One Mission:<br/><span class="grad-fire">Build the Engineers</span> India Needs.</h2>
 <p class="sec-desc-sp reveal">Every TechM4Space lab is engineered to replicate the real-world aerospace development environment — because students who work in mission-grade facilities become engineers who think in mission-grade terms.</p>
 <div class="labs-grid-sp">
@@ -571,7 +572,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="curri-sect" id="curriculum">
 <div class="curri-inner">
 <div class="reveal-l">
-<p class="sec-label-sp">// Academic Integration</p>
+<p class="sec-label-sp">Academic Integration</p>
 <h2 style="font-family:'Sora',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;color:#E8F4FD;margin-bottom:1.2rem">Curriculum-Integrated.<br/><span style="background:var(--g-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Credit-Bearing.</span><br/>Career-Changing.</h2>
 <p style="font-size:.95rem;color:rgba(232,244,253,.55);line-height:1.85;margin-bottom:1rem">TechM4Space doesn't compete with your academic curriculum — it supercharges it. Every lab, every program, every kit is designed to align with engineering and science education frameworks so students earn academic credit while doing the most exciting work of their lives.</p>
 <p style="font-size:.95rem;color:rgba(232,244,253,.55);line-height:1.85">When students submit satellite telemetry data as coursework, they're not just passing a subject — they're building the portfolio that gets them into ISRO, DRDO, or their own aerospace startup.</p>
@@ -623,7 +624,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <div class="kits-band" id="kits">
 <div class="kits-inner">
-<p class="sec-label-sp reveal">// Student Development Kits</p>
+<p class="sec-label-sp reveal">Student Development Kits</p>
 <h2 class="sec-title-sp reveal">Real Hardware.<br/><span class="grad-cool">Real Engineering.</span> Real Missions.</h2>
 <p class="sec-desc-sp reveal">Every kit is engineered to replicate professional aerospace development hardware at a scale students can actually build and understand. These aren't toys — they're the first steps to building a career in space.</p>
 <div class="kits-grid-sp">
@@ -660,7 +661,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <section class="layers-sect" id="layers">
 <div class="layers-inner">
-<p class="sec-label-sp reveal" style="text-align:center">// How We Transform Campuses</p>
+<p class="sec-label-sp reveal" style="text-align:center">How We Transform Campuses</p>
 <h2 class="sec-title-sp reveal" style="text-align:center;margin-bottom:.5rem">Five Layers of <span class="grad-cool">Innovation</span></h2>
 <p class="sec-desc-sp reveal" style="text-align:center;margin:0 auto 1rem;max-width:640px">TechM4Space deploys a proven five-layer model — from physical labs to digital platforms — creating a complete aerospace and technology innovation ecosystem on your campus.</p>
 <div class="layers-grid">
@@ -702,7 +703,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <section class="gain-sect" id="gain">
 <div class="gain-inner">
-<p class="sec-label-sp reveal">// Student Learning Experience</p>
+<p class="sec-label-sp reveal">Student Learning Experience</p>
 <h2 class="sec-title-sp reveal">What Every Student <span class="grad-fire">Gains</span> From TechM4Space.</h2>
 <p class="sec-desc-sp reveal">Six months in a TechM4Space lab changes how a student thinks, builds, and sees their own future. Here's exactly what they walk away with.</p>
 <div class="gain-grid">
@@ -751,7 +752,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="why-sect-sp" id="why">
 <div class="why-inner-sp">
 <div class="why-head">
-<p class="sec-label-sp reveal">// Why Universities Partner With Us</p>
+<p class="sec-label-sp reveal">Why Universities Partner With Us</p>
 <h2 class="sec-title-sp reveal" style="text-align:center;max-width:800px;margin:0 auto 1rem">Why Universities Should Establish a<br/><span class="grad-cool">Space Technology Lab</span> with TechM4Space</h2>
 <p class="reveal" style="color:rgba(232,244,253,.5);max-width:620px;margin:0 auto;line-height:1.8;font-size:.95rem">The global space economy is projected to reach $1.8 trillion by 2035. Indian universities that prepare students for this economy today will define India's aerospace future tomorrow. Here's why TechM4Space is the partner you need.</p>
 </div>
@@ -805,7 +806,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <section class="experts-sp" id="experts">
 <div class="experts-sp-inner">
-<p class="sec-label-sp reveal">// Meet the Experts Behind TechM4Space</p>
+<p class="sec-label-sp reveal">Meet the Experts Behind TechM4Space</p>
 <h2 class="sec-title-sp reveal">The Team Driving <span class="grad-fire">Aerospace Innovation</span></h2>
 <p class="sec-desc-sp reveal">Experienced professionals from academia and industry guiding TechM4India's space technology and innovation initiatives across India.</p>
 <div aria-label="Leadership team" class="experts-grid-sp" id="expertsCarousel" role="region">
@@ -849,7 +850,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 ══════════════════════════════════════════════ -->
 <section class="partners-sp" id="partners">
 <div class="partners-sp-inner">
-<p class="sec-label-sp reveal">// Partners &amp; Recognition</p>
+<p class="sec-label-sp reveal">Partners &amp; Recognition</p>
 <h2 class="sec-title-sp reveal">Approved &amp; Supported <span class="grad-fire">By Leading Entities</span></h2>
 <p class="sec-desc-sp reveal" style="margin:0 auto;text-align:center">Empowered by higher education partnerships and aligned with national development initiatives.</p>
 <div class="partners-uni reveal">

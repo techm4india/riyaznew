@@ -101,7 +101,7 @@
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);border-radius:99px;padding:7px 18px;font-size:.75rem;font-weight:700;color:var(--green);letter-spacing:.5px;text-transform:uppercase;margin-bottom:28px}
 .badge-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
 .hero h1{font-size:clamp(2.6rem,6vw,5rem);color:#fff;line-height:1.08;margin-bottom:20px;letter-spacing:-2px}
-.hero h1 .g{background:var(--g-green);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .g{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:600px;margin:0 auto 40px}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn-p{background:var(--g-main);color:#fff;padding:12px 30px;border-radius:99px;font-family:'Sora',sans-serif;font-weight:800;font-size:.9rem;text-decoration:none;box-shadow:0 6px 24px rgba(255,107,53,.35);transition:.2s}.btn-p:hover{transform:translateY(-2px)}
@@ -201,7 +201,8 @@ section{padding:96px 32px}.sec-inner{max-width:1280px;margin:0 auto}
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -249,7 +250,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div id="loader">
 <div class="loader-blueprint"></div>
 <div class="loader-ring"></div>
-<div class="loader-brand">Tech<span>M4</span>India</div>
+<div class="loader-brand">Tech <span>M4</span> India</div>
 <div class="loader-sub">Join Our Mission</div>
 <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -257,7 +258,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="/">Tech<span>M4</span>India</a>
+<a class="nav-logo" href="/"><img src="../logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a href="/">Home</a></li>
@@ -306,7 +307,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="role-card rc-1 reveal">
 <div class="role-header"><span class="role-icon">🤖</span><span class="role-type rt-intern">Internship</span></div>
 <h3>AI/ML Engineer Intern</h3>
-<p>Work directly on TechM4Solutions' deployed AI products — EAMCET Predictor, AutoHire.AI, and CareerBuddy. Write production Python, ship model updates, and measure real-world performance. 6-month LSEP track.</p>
+<p>Work directly on TechM4Solutions' deployed AI products — AirGuard Pro, FoodSpectra, and ColdChainEye. Write production Python, ship model updates, and measure real-world performance. 6-month LSEP track.</p>
 <div class="role-skills"><span class="rskill">Python</span><span class="rskill">PyTorch</span><span class="rskill">FastAPI</span><span class="rskill">MLflow</span><span class="rskill">SQL</span></div>
 <div class="role-footer"><span class="role-meta">📍 Hyderabad · 6 Months</span><a class="btn-apply" href="/contact">Apply Now</a></div>
 </div>
@@ -320,7 +321,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="role-card rc-3 reveal">
 <div class="role-header"><span class="role-icon">📡</span><span class="role-type rt-intern">Internship</span></div>
 <h3>IoT &amp; Hardware Engineer Intern</h3>
-<p>Build sensor networks for smart agriculture. Program microcontrollers. Deploy edge AI on Raspberry Pi. Work directly with our RythuSeva agri-tech product team and Telangana farmers using your technology.</p>
+<p>Build sensor networks for smart agriculture. Program microcontrollers. Deploy edge AI on Raspberry Pi. Work directly with our FoodSpectra agri-tech product team and Telangana farmers using your technology.</p>
 <div class="role-skills"><span class="rskill">Arduino</span><span class="rskill">Raspberry Pi</span><span class="rskill">MQTT</span><span class="rskill">Edge AI</span><span class="rskill">PCB Design</span></div>
 <div class="role-footer"><span class="role-meta">📍 Hyderabad · 4 Months</span><a class="btn-apply" href="/contact">Apply Now</a></div>
 </div>
@@ -341,7 +342,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="role-card rc-6 reveal">
 <div class="role-header"><span class="role-icon">🔐</span><span class="role-type rt-rd">R&amp;D</span></div>
 <h3>Cybersecurity Researcher</h3>
-<p>Build the threat intelligence models behind StaySecure — our affordable cybersecurity product for Indian SMEs. This is a research role that ships to production. Anomaly detection, federated learning, and real-world attack patterns from Indian networks.</p>
+<p>Build the telemetry intelligence models behind AirGuard Pro — our affordable energy efficiency IoT product for Indian SMEs. This is a research role that ships to production. Anomaly detection, federated learning, and real-world signal patterns from Indian networks.</p>
 <div class="role-skills"><span class="rskill">Security Research</span><span class="rskill">Python</span><span class="rskill">Network Analysis</span><span class="rskill">Federated ML</span></div>
 <div class="role-footer"><span class="role-meta">📍 Hyderabad · Full-Time</span><a class="btn-apply" href="/contact">Apply Now</a></div>
 </div>

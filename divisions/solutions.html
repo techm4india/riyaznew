@@ -88,8 +88,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .hb-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:dotBlink 2s infinite}
 @keyframes dotBlink{0%,100%{opacity:1}50%{opacity:.2}}
 .hero h1{font-family:'Sora',sans-serif;font-weight:900;font-size:clamp(2.4rem,4.5vw,4.2rem);line-height:1.1;color:#fff;margin-bottom:1.6rem;animation:fadeUp .8s .5s both}
-.h1g{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.h1c{background:var(--g-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.h1g{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.h1c{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.68);line-height:1.8;margin-bottom:2.8rem;animation:fadeUp .8s .65s both}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .8s .8s both;margin-bottom:2rem}
 
@@ -398,8 +398,11 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .case-sect{padding:8rem 5%;background:var(--bg)}
 .case-inner{max-width:1300px;margin:0 auto}
 .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
-.case-card{background:var(--surface);border:1.5px solid var(--border);border-radius:24px;padding:2.5rem;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;justify-content:space-between}
+.case-card{background:var(--surface);border:1.5px solid var(--border);border-radius:24px;padding:1.6rem 1.6rem 2.2rem;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;justify-content:space-between}
 .case-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.04);border-color:rgba(123,47,247,0.15)}
+.case-img-wrap{width:100%;height:190px;border-radius:16px;overflow:hidden;margin-bottom:1.5rem;border:1px solid rgba(26,26,46,0.06);background:rgba(26,26,46,0.02)}
+.case-img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease}
+.case-card:hover .case-img{transform:scale(1.04)}
 .case-meta{font-size:0.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:0.8rem}
 .case-title{font-family:'Sora',sans-serif;font-size:1.25rem;font-weight:800;color:var(--ink);margin-bottom:1rem}
 .case-desc{font-size:0.9rem;color:var(--ink-l);line-height:1.6;margin-bottom:1.5rem}
@@ -532,7 +535,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(26,26,46,.06);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 30px rgba(26,26,46,.06)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem;color:var(--ink);text-decoration:none;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem;color:var(--ink);text-decoration:none;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:0.75rem;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink);text-decoration:none;padding:6px 8px;border-radius:6px;transition:all .2s;white-space:nowrap}
@@ -626,7 +630,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="/">Tech<span>M4</span>India</a>
+<a class="nav-logo" href="/"><img src="../logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a href="/">Home</a></li>
@@ -726,7 +730,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <section class="about-sect" id="about">
 <div class="about-inner">
   <div class="about-left reveal-l">
-    <p class="sec-label">// Who We Are</p>
+    <p class="sec-label">Who We Are</p>
     <h3>Accelerating Growth Through Technology &amp; Engineering Execution</h3>
     <div class="about-highlight">
       <p>"We are a technology execution partner that transforms ideas into scalable products, AI systems, enterprise software, and digital infrastructure."</p>
@@ -742,7 +746,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ SERVICES SECTION ══════ -->
 <section class="services-sect" id="services">
 <div class="services-inner">
-  <p class="sec-label reveal">// Core Services</p>
+  <p class="sec-label reveal">Core Services</p>
   <h2 class="sec-title reveal">Enterprise-Grade <span class="g">Digital Solutions</span></h2>
   <p class="sec-sub reveal">Our technical capabilities span advanced intelligence systems, enterprise systems, custom applications, and global infrastructure engineering.</p>
   
@@ -841,7 +845,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ INDUSTRIES WE SERVE SECTION ══════ -->
 <section class="ind-sect" id="industries">
 <div class="ind-inner">
-  <p class="sec-label reveal">// Targeted Sectors</p>
+  <p class="sec-label reveal">Targeted Sectors</p>
   <h2 class="sec-title reveal">Industries We <span class="g">Serve</span></h2>
   <p class="sec-sub reveal">We engineer custom platforms tailored to the regulatory, technological, and scale demands of key industries.</p>
   
@@ -951,7 +955,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ PRODUCTS SECTION ══════ -->
 <section class="prod-sect" id="products">
 <div class="prod-inner">
-  <p class="sec-label reveal">// Proprietary Solutions</p>
+  <p class="sec-label reveal">Proprietary Solutions</p>
   <h2 class="sec-title reveal">Featured <span class="g">Products</span></h2>
   <p class="sec-sub reveal">Our active IP portfolio includes scalable platforms deployed to solve real-world problems.</p>
   
@@ -1232,7 +1236,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ RESEARCH & DEVELOPMENT SECTION ══════ -->
 <section class="research-sect" id="research-labs">
 <div class="research-inner">
-  <p class="sec-label reveal">// Research Division</p>
+  <p class="sec-label reveal">Research Division</p>
   <h2 class="sec-title reveal">TechM4Solutions <span class="g">Research Labs</span></h2>
   <p class="sec-sub reveal">R&amp;D is our engine. We invest in long-term technology development to fuel solutions that transform client operations.</p>
   
@@ -1302,13 +1306,16 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ CASE STUDIES SECTION ══════ -->
 <section class="case-sect" id="case-studies">
 <div class="case-inner">
-  <p class="sec-label reveal">// Proven Execution</p>
+  <p class="sec-label reveal">Proven Execution</p>
   <h2 class="sec-title reveal">Case <span class="g">Studies</span></h2>
   <p class="sec-sub reveal">Real-world results achieved through engineering execution, custom architecture, and technology-driven operations.</p>
   
   <div class="case-grid">
     <!-- Case 1 -->
     <div class="case-card reveal">
+      <div class="case-img-wrap">
+        <img src="../assets/images/client_product_lms.png" alt="VIT Vellore and JNTU Student LMS Platform Dashboard" class="case-img" loading="lazy">
+      </div>
       <div>
         <p class="case-meta">Education Transformation</p>
         <h3 class="case-title">Learning Management Platform</h3>
@@ -1319,6 +1326,9 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
     
     <!-- Case 2 -->
     <div class="case-card reveal">
+      <div class="case-img-wrap">
+        <img src="../assets/images/client_product_erp.png" alt="Apex Solutions Enterprise Resource Planning ERP Dashboard" class="case-img" loading="lazy">
+      </div>
       <div>
         <p class="case-meta">Manufacturing</p>
         <h3 class="case-title">Enterprise Resource Planning (ERP)</h3>
@@ -1329,6 +1339,9 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
     
     <!-- Case 3 -->
     <div class="case-card reveal">
+      <div class="case-img-wrap">
+        <img src="../assets/images/client_product_ai_support.png" alt="MedCare Systems AI Customer Support Dashboard" class="case-img" loading="lazy">
+      </div>
       <div>
         <p class="case-meta">Artificial Intelligence</p>
         <h3 class="case-title">AI Customer Support System</h3>
@@ -1339,6 +1352,9 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
     
     <!-- Case 4 -->
     <div class="case-card reveal">
+      <div class="case-img-wrap">
+        <img src="../assets/images/client_product_agri.png" alt="AgriCorp Smart Farming Advisory Mobile App" class="case-img" loading="lazy">
+      </div>
       <div>
         <p class="case-meta">Agriculture</p>
         <h3 class="case-title">Smart Farming Ecosystem</h3>
@@ -1349,6 +1365,9 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
     
     <!-- Case 5 -->
     <div class="case-card reveal">
+      <div class="case-img-wrap">
+        <img src="../assets/images/client_product_workflow.png" alt="Apex Solutions Enterprise Workflow Invoice OCR Dashboard" class="case-img" loading="lazy">
+      </div>
       <div>
         <p class="case-meta">Workflow Automation</p>
         <h3 class="case-title">Enterprise Workflow Automation</h3>
@@ -1363,7 +1382,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ CLIENT SUCCESS SECTION ══════ -->
 <section class="client-sect" id="clients">
 <div class="client-inner">
-  <p class="sec-label reveal">// Partnership Success</p>
+  <p class="sec-label reveal">Partnership Success</p>
   <h2 class="sec-title reveal">Organizations We Have <span class="g">Worked With</span></h2>
   <p class="sec-sub reveal">Providing technology execution and strategic scaling for universities, corporate clients, and public sector organizations.</p>
   
@@ -1391,7 +1410,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
   <!-- LEADERSHIP TEAM -->
   <div class="experts-lead">
     <div class="experts-lead-head reveal">
-      <p class="sec-label">// Meet the Experts Behind TechM4Solutions</p>
+      <p class="sec-label">Meet the Experts Behind TechM4Solutions</p>
       <h2 class="sec-title" style="margin-bottom:1rem">The Team Driving <span class="g">Digital Transformation</span></h2>
       <p class="sec-sub">The technical leaders behind TechM4Solutions bring deep expertise in AI, enterprise software, cloud architecture, and digital engineering — delivering scalable solutions for institutions and organizations worldwide.</p>
     </div>
@@ -1467,7 +1486,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ WHY CHOOSE US SECTION ══════ -->
 <section class="why-us-sect" id="why-us">
 <div class="why-us-inner">
-  <p class="sec-label reveal" style="text-align: center;">// The TechM4Solutions Edge</p>
+  <p class="sec-label reveal" style="text-align: center;">The TechM4Solutions Edge</p>
   <h2 class="sec-title reveal" style="text-align: center; margin-bottom: 4rem;">Why Partner <span class="g">With Us</span></h2>
   
   <div class="why-us-grid">
@@ -1508,7 +1527,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <!-- ══════ GLOBAL DELIVERY MODEL ══════ -->
 <section class="global-sect" id="global-delivery">
 <div class="global-inner">
-  <p class="sec-label reveal">// Global Scale</p>
+  <p class="sec-label reveal">Global Scale</p>
   <h2 class="sec-title reveal">Global <span class="g">Delivery Model</span></h2>
   <p class="sec-sub reveal" style="margin: 0 auto;">"Serving clients globally through remote-first engineering and consulting."</p>
   
@@ -1562,7 +1581,7 @@ footer{background:#04040c;padding:72px 30px 32px;border-top:1px solid rgba(255,2
 <section class="cta-sol" id="contact">
 <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(255,107,53,.07),transparent 70%);pointer-events:none"></div>
 <div class="cta-sol-inner">
-  <p class="reveal" style="color:var(--orange)">// Let's Build Together</p>
+  <p class="reveal" style="color:var(--orange)">Let's Build Together</p>
   <h2 class="reveal">Ready to Transform Your <span style="background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Digital Core?</span></h2>
   <p class="reveal">Whether you need custom enterprise ERP, automated data intelligence pipelines, or next-generation agentic AI applications—TechM4Solutions delivers robust execution from concept to global scale.</p>
   <div class="reveal" style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap">
@@ -2090,6 +2109,21 @@ document.addEventListener('keydown', function(event) {
     closeProjectModal();
   }
 });
+
+// Auto-open project modal if hash is present in URL
+function checkUrlHash() {
+  const hash = window.location.hash;
+  if (hash.startsWith('#product-')) {
+    const prodNum = parseInt(hash.replace('#product-', ''));
+    if (!isNaN(prodNum)) {
+      setTimeout(() => {
+        openProjectModal(prodNum);
+      }, 300);
+    }
+  }
+}
+window.addEventListener('DOMContentLoaded', checkUrlHash);
+window.addEventListener('hashchange', checkUrlHash);
 </script>
 
 <script src="../assets/js/site-init.js"></script>

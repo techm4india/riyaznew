@@ -98,7 +98,7 @@
 .hero-inner{position:relative;z-index:2;max-width:840px;margin:0 auto}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:7px 18px;font-size:.75rem;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.5px;text-transform:uppercase;margin-bottom:28px}
 .hero h1{font-size:clamp(2.6rem,6vw,5rem);color:#fff;line-height:1.08;margin-bottom:20px;letter-spacing:-2px}
-.hero h1 .g{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .g{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:640px;margin:0 auto 40px}
 .div-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .div-tab{padding:10px 24px;border-radius:99px;font-family:'Sora',sans-serif;font-weight:800;font-size:.85rem;text-decoration:none;border:1.5px solid rgba(255,255,255,.18);color:rgba(255,255,255,.7);transition:.2s}
@@ -183,7 +183,8 @@ section{padding:96px 32px}.sec-inner{max-width:1280px;margin:0 auto}
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -231,7 +232,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div id="loader">
 <div class="loader-blueprint"></div>
 <div class="loader-ring"></div>
-<div class="loader-brand">Tech<span>M4</span>India</div>
+<div class="loader-brand">Tech <span>M4</span> India</div>
 <div class="loader-sub">Ecosystem Overview</div>
 <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -239,7 +240,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="/">Tech<span>M4</span>India</a>
+<a class="nav-logo" href="/"><img src="../logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a href="/">Home</a></li>
@@ -356,12 +357,12 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 </div>
 </div>
 <div class="div-features">
-<div class="df-card reveal"><div class="df-icon">🎓</div><h4>EAMCET Predictor</h4><p>AI-powered college rank prediction for Telangana students. Real historical data, real accuracy, free for students.</p></div>
-<div class="df-card reveal"><div class="df-icon">🔐</div><h4>StaySecure</h4><p>Affordable cybersecurity threat detection for Indian SMEs who can't afford enterprise SOC tools.</p></div>
-<div class="df-card reveal"><div class="df-icon">🌾</div><h4>RythuSeva</h4><p>AI advisory for Telangana farmers — crop recommendations, soil analysis, market price alerts in Telugu.</p></div>
-<div class="df-card reveal"><div class="df-icon">🤝</div><h4>AutoHire.AI</h4><p>AI-powered recruitment screening and matching for SMEs. Trained on Indian job market data.</p></div>
-<div class="df-card reveal"><div class="df-icon">🧭</div><h4>CareerBuddy</h4><p>Student career path AI — personalised guidance based on branch, performance, interests, and market demand.</p></div>
-<div class="df-card reveal"><div class="df-icon">🏫</div><h4>SchoolOS</h4><p>End-to-end school management platform built for Indian schools — admissions, attendance, fees, and parent communication.</p></div>
+<div class="df-card reveal"><div class="df-icon">💨</div><h4>AirGuard Pro</h4><p>Ultrasonic SDR compressed air leak detector — 30–40% energy cost saving for manufacturing plants.</p></div>
+<div class="df-card reveal"><div class="df-icon">🔥</div><h4>FlameSmart</h4><p>AI boiler combustion controller — 15–22% fuel saving with NDIR gas analysis + Zirconia O2 tracking.</p></div>
+<div class="df-card reveal"><div class="df-icon">🛠️</div><h4>ToolSense AI</h4><p>MEMS mic + CT clamp CNC tool breakage predictor — 40% scrap reduction by stopping faults before they happen.</p></div>
+<div class="df-card reveal"><div class="df-icon">🔊</div><h4>AcoustiCast</h4><p>Acoustic emission in-mould solidification defect detector — 40% foundry scrap reduction through real-time telemetry.</p></div>
+<div class="df-card reveal"><div class="df-icon">🍎</div><h4>FoodSpectra</h4><p>Handheld NIR food adulteration detector — 45-second on-site quality analysis versus 3-day lab waiting times.</p></div>
+<div class="df-card reveal"><div class="df-icon">❄️</div><h4>ColdChainEye</h4><p>Reusable pharma cold chain tag: PCI indicator + BLE + Blockchain tracking at Rs 950 per unit.</p></div>
 </div>
 </div>
 <div class="div-divider"></div>

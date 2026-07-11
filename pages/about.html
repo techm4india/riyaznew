@@ -141,7 +141,7 @@ h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;font-weight:900}
 .hero-badge .dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
 .hero h1{font-size:clamp(2.6rem,6vw,5rem);color:#fff;line-height:1.1;margin-bottom:24px;letter-spacing:-2px}
-.hero h1 .g{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .g{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:1.15rem;color:rgba(255,255,255,.6);max-width:640px;margin:0 auto 48px;line-height:1.8}
 .hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:40px;margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08)}
 .hero-stat{text-align:center}
@@ -196,11 +196,24 @@ section{padding:40px 16px}
 .tl-item{display:grid;grid-template-columns:1fr 60px 1fr;gap:24px;align-items:center;margin-bottom:48px}
 .tl-empty{min-height:1px}
 .tl-dot{width:52px;height:52px;border-radius:50%;background:var(--ink);border:4px solid var(--orange);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:900;font-size:.7rem;color:var(--orange);margin:0 auto;z-index:1;position:relative}
-.tl-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:24px;transition:transform .3s,box-shadow .3s}
-.tl-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.tl-card{background:rgba(11,31,58,.4);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);border-radius:16px;display:flex;min-height:220px;overflow:hidden;padding:0;transition:all .3s ease;color:#fff}
+.tl-card:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:0 12px 30px rgba(255,107,53,.15)}
+.tl-card-text{flex:1.2;padding:24px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.tl-card-img-wrap{flex:1;overflow:hidden;position:relative}
+.tl-card-img{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .5s ease}
+.tl-card:hover .tl-card-img{transform:scale(1.06)}
 .tl-card .year{font-size:.75rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.tl-card h4{font-size:1.05rem;margin-bottom:8px;color:var(--ink)}
-.tl-card p{font-size:.88rem;color:rgba(26,26,46,.55);line-height:1.6}
+.tl-card h4{font-size:1.1rem;margin-bottom:8px;color:#fff}
+.tl-card p{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.6;margin:0}
+
+/* Alternate order for right cards */
+.tl-item:nth-child(even) .tl-card{flex-direction:row-reverse}
+
+/* Mobile responsive timeline split */
+@media(max-width:768px){
+  .tl-card, .tl-item:nth-child(even) .tl-card{flex-direction:column-reverse;min-height:auto}
+  .tl-card-img-wrap{height:180px;width:100%}
+}
 
 /* DIVISIONS */
 .div-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:40px}
@@ -240,10 +253,9 @@ section{padding:40px 16px}
 @keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* COLLABORATORS */
-.collab-row{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:48px}
-.collab-chip{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:99px;padding:12px 24px;font-size:.88rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;transition:transform .3s,box-shadow .3s,border-color .3s}
-.collab-chip:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1);border-color:var(--orange)}
-.collab-chip span{font-size:1.2rem}
+.collab-row{display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:center;align-items:center;margin-top:48px;max-width:1100px;margin-left:auto;margin-right:auto}
+.collab-logo-item{display:flex;align-items:center;justify-content:center;min-width:120px;height:60px}
+.collab-logo-item img{max-height:50px;max-width:135px;object-fit:contain;transition:all 0.3s ease}
 
 /* IMPACT NUMBERS */
 .impact-grid{display:grid;grid-template-columns:1fr;gap:2px;margin-top:40px;border-radius:20px;overflow:hidden}
@@ -398,7 +410,8 @@ section{padding:40px 16px}
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -450,7 +463,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div aria-hidden="true" id="loader">
 <div class="loader-blueprint"></div>
 <div class="loader-ring"></div>
-<div class="loader-brand">Tech<span>M4</span>India</div>
+<div class="loader-brand">Tech <span>M4</span> India</div>
 <div class="loader-sub">Transforming India Through Technology</div>
 <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -458,7 +471,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="/">Tech<span>M4</span>India</a>
+<a class="nav-logo" href="/"><img src="../logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a href="/">Home</a></li>
@@ -591,10 +604,15 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="timeline">
 <div class="tl-item">
 <div class="tl-card reveal-l">
+<div class="tl-card-text">
 <div class="year">2022 — The Spark</div>
 <h4>TechM4India is Founded</h4>
 <p>Founded with a clear mission: bridge the skill gap between what colleges teach and what industry demands. First batch: 45 engineering students from Telangana.</p>
 </div>
+<div class="tl-card-img-wrap">
+<div class="tl-card-img" style="background-image: url('../assets/images/journey_spark.png');"></div>
+</div>
+</div>
 <div class="tl-dot">2022</div>
 <div class="tl-empty"></div>
 </div>
@@ -602,17 +620,27 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="tl-empty"></div>
 <div class="tl-dot">2022</div>
 <div class="tl-card reveal-r">
+<div class="tl-card-text">
 <div class="year">2022 — AI &amp; Innovation</div>
 <h4>TechM4Solutions Launches</h4>
-<p>TechM4Solutions established to deliver digital engineering, enterprise software, and AI systems globally. Initial platforms include StaySecure and RythuSeva.</p>
+<p>TechM4Solutions established to deliver digital engineering, enterprise software, and AI systems globally. Initial platforms include AirGuard Pro and FoodSpectra.</p>
+</div>
+<div class="tl-card-img-wrap">
+<div class="tl-card-img" style="background-image: url('../assets/images/journey_solutions.png');"></div>
+</div>
 </div>
 </div>
 <div class="tl-item">
 <div class="tl-card reveal-l">
+<div class="tl-card-text">
 <div class="year">2023 — Sky's No Limit</div>
 <h4>Space Technology Division Born</h4>
 <p>India's first school-level space lab curriculum launches. Students build and launch model rockets, program satellites, and study orbital mechanics.</p>
 </div>
+<div class="tl-card-img-wrap">
+<div class="tl-card-img" style="background-image: url('../assets/images/journey_space.png');"></div>
+</div>
+</div>
 <div class="tl-dot">2023</div>
 <div class="tl-empty"></div>
 </div>
@@ -620,16 +648,26 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="tl-empty"></div>
 <div class="tl-dot">2023</div>
 <div class="tl-card reveal-r">
+<div class="tl-card-text">
 <div class="year">2023 — Going Deeper</div>
 <h4>TechM4India Schools Division</h4>
 <p>CareerBuddy AI and SchoolOS platforms launched. 50 schools in first cohort. 3,000 young minds ignited with the power of technology and self-belief.</p>
 </div>
+<div class="tl-card-img-wrap">
+<div class="tl-card-img" style="background-image: url('../assets/images/journey_schools.png');"></div>
+</div>
+</div>
 </div>
 <div class="tl-item">
 <div class="tl-card reveal-l">
+<div class="tl-card-text">
 <div class="year">2024 — Scale Begins</div>
 <h4>200+ Institutions. 10,000+ Students.</h4>
 <p>TechM4India signs partnerships with engineering colleges, CBSE schools, and state government skill development boards. The movement goes national.</p>
+</div>
+<div class="tl-card-img-wrap">
+<div class="tl-card-img" style="background-image: url('../assets/images/journey_scale.png');"></div>
+</div>
 </div>
 <div class="tl-dot">2024</div>
 <div class="tl-empty"></div>
@@ -638,9 +676,14 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="tl-empty"></div>
 <div class="tl-dot">2025</div>
 <div class="tl-card reveal-r">
+<div class="tl-card-text">
 <div class="year">2025 — Global Ambition</div>
 <h4>International Expansion &amp; AI Integration</h4>
 <p>Launching AI-powered personalised learning paths. Partnering with global universities. Building India's next generation of world-class tech leaders.</p>
+</div>
+<div class="tl-card-img-wrap">
+<div class="tl-card-img" style="background-image: url('../assets/images/journey_global.png');"></div>
+</div>
 </div>
 </div>
 </div>
@@ -723,6 +766,22 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <p class="sec-sub" style="margin:0 auto 0">Educators, engineers, designers, and dreamers — united by one mission: transform every student's future through technology.</p>
 </div>
 <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#7B2FF7,#FF6B35)">
+          <img src="../assets/images/rammurthy.jpg" alt="Thanniru Rammurthy">
+        </div>
+        <div class="team-info">
+          <h4>Thanniru Rammurthy</h4>
+          <div class="role">Founder &amp; Chairman</div>
+          <div class="bio">Providing strategic leadership, governance, and vision to drive TechM4India's mission of transforming education and building scalable technology ecosystems.</div>
+          <div class="team-social">
+            <a href="mailto:chairman@techm4india.com" title="Email: chairman@techm4india.com">
+              <span class="icon-btn">✉️</span>
+              chairman@techm4india.com
+            </a>
+          </div>
+        </div>
+      </div>
       <div class="team-card reveal">
         <div class="team-avatar" style="background:linear-gradient(135deg,#FF6B35,#FF4D8D)">
           <img src="../assets/images/mahesh.png" alt="Thanniru Mahesh">
@@ -815,16 +874,17 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <p class="sec-sub" style="margin:0 auto 0">From government bodies to private engineering colleges, schools to space organizations — our growing network spans the entire nation.</p>
 </div>
 <div class="collab-row reveal">
-<div class="collab-chip"><span>🏛️</span> Telangana State Board</div>
-<div class="collab-chip"><span>🎓</span> JNTU Affiliated Colleges</div>
-<div class="collab-chip"><span>🏫</span> CBSE Partner Schools</div>
-<div class="collab-chip"><span>🚀</span> ISRO Education Partners</div>
-<div class="collab-chip"><span>💼</span> TCS &amp; Infosys Alumni Network</div>
-<div class="collab-chip"><span>🌐</span> NASSCOM Ecosystem</div>
-<div class="collab-chip"><span>⚙️</span> IEEE Student Chapters</div>
-<div class="collab-chip"><span>🔬</span> DRDO Research Affiliates</div>
-<div class="collab-chip"><span>🏢</span> State Skill Development Boards</div>
-<div class="collab-chip"><span>🌱</span> Startup India Network</div>
+  <div class="collab-logo-item" title="Telangana State Board"><img src="../assets/images/logo_telangana_state.png" alt="Telangana State Board Logo"></div>
+  <div class="collab-logo-item" title="JNTU Affiliated Colleges"><img src="../assets/images/logo_jntu.png" alt="JNTU Logo"></div>
+  <div class="collab-logo-item" title="CBSE Partner Schools"><img src="../assets/images/logo_cbse.png" alt="CBSE Logo"></div>
+  <div class="collab-logo-item" title="ISRO Education Partners"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg" alt="ISRO Logo"></div>
+  <div class="collab-logo-item" title="TCS Alumni Network"><img src="../assets/images/logo_tcs.png" alt="TCS Logo"></div>
+  <div class="collab-logo-item" title="Infosys Alumni Network"><img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys Logo"></div>
+  <div class="collab-logo-item" title="NASSCOM Ecosystem"><img src="../assets/images/logo_nasscom.png" alt="NASSCOM Logo"></div>
+  <div class="collab-logo-item" title="IEEE Student Chapters"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/IEEE_logo.svg" alt="IEEE Logo"></div>
+  <div class="collab-logo-item" title="DRDO Research Affiliates"><img src="../assets/images/logo_drdo.png" alt="DRDO Logo"></div>
+  <div class="collab-logo-item" title="State Skill Development Boards"><img src="../assets/images/logo_nsdc.png" alt="NSDC Logo"></div>
+  <div class="collab-logo-item" title="Startup India Network"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India Logo"></div>
 </div>
 </div>
 </section>

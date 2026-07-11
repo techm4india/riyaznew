@@ -116,7 +116,7 @@ h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:900}
 .badge-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
 .hero h1{font-size:clamp(2.6rem,6vw,5rem);color:#fff;line-height:1.08;margin-bottom:20px;letter-spacing:-2px}
-.hero h1 .g{background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .g{background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:580px;margin:0 auto 40px}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn-p{background:var(--g-main);color:#fff;padding:12px 30px;border-radius:99px;font-family:'Sora',sans-serif;font-weight:800;font-size:.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 6px 24px rgba(255,107,53,.35);transition:.2s}
@@ -290,7 +290,8 @@ section{padding:96px 32px}
 nav{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(11,31,58,.08);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 32px rgba(11,31,58,.1)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:8px}
-.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy, #0B1F3A);text-decoration:none;margin-right:auto;letter-spacing:-0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.nav-logo img{height:34px;width:auto;vertical-align:middle;object-fit:contain}
 .nav-logo span{background:var(--g-brand, linear-gradient(135deg,#FF6B35,#D72638));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:600;color:var(--ink, #0D1B2A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
@@ -338,7 +339,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div id="loader">
 <div class="loader-blueprint"></div>
 <div class="loader-ring"></div>
-<div class="loader-brand">Tech<span>M4</span>India</div>
+<div class="loader-brand">Tech <span>M4</span> India</div>
 <div class="loader-sub">Academic &amp; Credit Programs</div>
 <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -346,7 +347,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <button aria-label="Close navigation overlay" class="nav-overlay" id="navOverlay" type="button"></button>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="/">Tech<span>M4</span>India</a>
+<a class="nav-logo" href="/"><img src="../logo.png" alt="TechM4India Logo">Tech <span>M4</span> India</a>
 <ul class="nav-links" id="navLinks">
 <li><button aria-label="Close menu" class="nav-close" id="navClose" type="button">×</button></li>
 <li><a href="/">Home</a></li>
@@ -454,7 +455,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="prog-icon pi-3">💻</div>
 <div class="prog-tag pt-3">LSEP · Internship</div>
 <h3>Live Software Engineering Program</h3>
-<p>A 6-month internship where students work directly on TechM4Solutions' deployed AI and SaaS products — EAMCET Predictor, AutoHire.AI, RythuSeva, SchoolOS. Not a simulation. Students maintain real code in production with real users. Assessment rubric provided to institutions.</p>
+<p>A 6-month internship where students work directly on TechM4Solutions' deployed AI and SaaS products — AirGuard Pro, FoodSpectra, and ColdChainEye. Not a simulation. Students maintain real code in production with real users. Assessment rubric provided to institutions.</p>
 <div class="prog-pills">
 <span class="pill pill-g">Live Products</span><span class="pill pill-g">6 Months</span><span class="pill pill-g">Production Code</span><span class="pill pill-p">Placement Track</span>
 </div>
@@ -485,7 +486,7 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
 <div class="boot-icon bi-b">🌐</div>
 <div class="boot-content">
 <h4>Cybersecurity Hackathon</h4>
-<p>Capture-the-flag format security competition. Real vulnerabilities, real systems, real stakes. Top performers get fast-tracked into StaySecure product team as interns.</p>
+<p>Capture-the-flag format security competition. Real vulnerabilities, real systems, real stakes. Top performers get fast-tracked into AirGuard Pro product team as interns.</p>
 <div class="boot-meta"><span class="boot-chip">72 Hours</span><span class="boot-chip">CTF Format</span><span class="boot-chip">Internship Pipeline</span></div>
 </div>
 </div>
