@@ -656,6 +656,83 @@ footer{background:#060E1A;padding:72px 40px 32px;border-top:1px solid rgba(255,2
   .footer-top{grid-template-columns:1fr}
 }
 
+/* ===== ENTRY POPUP MODAL ===== */
+.entry-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.entry-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.entry-modal-container {
+  position: relative;
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.15);
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  background: #0b0f19;
+}
+.entry-modal-overlay.active .entry-modal-container {
+  transform: scale(1) translateY(0);
+}
+.entry-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.entry-modal-close:hover {
+  background: rgba(239, 68, 68, 0.9);
+  border-color: rgba(239, 68, 68, 1);
+  transform: scale(1.1) rotate(90deg);
+}
+.entry-modal-body {
+  overflow-y: auto;
+  width: 100%;
+  max-height: 90vh;
+  -webkit-overflow-scrolling: touch;
+}
+.entry-modal-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 </style>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -1412,6 +1489,48 @@ document.addEventListener('DOMContentLoaded', () => {
       renderHomepageProducts(e.target.getAttribute('data-filter'));
     });
   });
+});
+</script>
+<!-- ENTRY POPUP MODAL -->
+<div class="entry-modal-overlay" id="entryModal">
+  <div class="entry-modal-container">
+    <button class="entry-modal-close" id="closeEntryModal" aria-label="Close Modal">&times;</button>
+    <div class="entry-modal-body">
+      <img src="assets/images/ignite_ai_popup.jpg" alt="IGNITE AI Campus Transformation Program - TechM4India x TGIIC">
+    </div>
+  </div>
+</div>
+
+<script>
+window.addEventListener('load', () => {
+  const modal = document.getElementById('entryModal');
+  const closeBtn = document.getElementById('closeEntryModal');
+
+  if (modal) {
+    setTimeout(() => {
+      modal.classList.add('active');
+    }, 600);
+
+    const closeModal = () => {
+      modal.classList.remove('active');
+    };
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  }
 });
 </script>
 <script src="assets/js/site-init.js"></script>
